@@ -18,5 +18,6 @@ Regras:
 - 20/11/2026 | TAEG (proposta trocada a pedido do utilizador) | ensinar | finanças pessoais | frasco com % | não | nenhuma | não publicada
 - 20/11/2026 | Prazos do IVA mensal e trimestral (proposta trocada a pedido do utilizador) | ensinar | empresas | envelope numa caixa "IVA" | não | nenhuma | não publicada
 - 21/11/2026 | 40 anos do IVA em Portugal (1986 a 2026) | curiosidade | empresas | carrossel de 7: figura com calendário 1986, três casas com moedas (antes só duas, depois as três), talão rasgado com moedas a cair, talão 16% e pão, dois talões IVA menos IVA com seta para o Estado, figura com talão 23% | não | Guarde para ler o IVA da próxima fatura. | publicada
+- 22/11/2026 | Quiz: quantas taxas de IVA fixa o Código do IVA (6%, 13%, 23%) | só story | empresas | três talões de tamanhos diferentes alinhados sobre um traço âmbar | não | nenhuma | pendente
 
 Nota: os dois vídeos de 19/11 foram exemplos feitos a pedido; contam para a semana de 16 a 22/11 (limite atingido, sem vídeos até domingo 22/11).
