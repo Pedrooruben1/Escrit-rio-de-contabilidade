@@ -1,6 +1,13 @@
 import json, os, sys, html, base64
 from playwright.sync_api import sync_playwright
 
+def sem_quebras(t):
+    """Junta o número ao € e o + ao valor seguinte, para não partirem na mudança de linha."""
+    import re as _re
+    t = _re.sub(r"(\d) (€)", "\\1\u00a0\\2", t)
+    t = _re.sub(r"([+=×−-]) (\d)", "\\1\u00a0\\2", t)
+    return t
+
 def abrir_chromium(p):
     """Usa o Chromium do Playwright; se a versão não bater certo, procura o pré-instalado."""
     try:
@@ -52,7 +59,7 @@ n = len(d["slides"])
 with sync_playwright() as p:
     b = abrir_chromium(p); pg = b.new_page(viewport={"width":1080,"height":1350})
     for i, s in enumerate(d["slides"], 1):
-        t = html.escape(s["texto"]).replace("[", "<em>").replace("]", "</em>")
+        t = html.escape(sem_quebras(s["texto"])).replace("[", "<em>").replace("]", "</em>")
         fs = 92 if len(s["texto"]) < 70 else 74
         num = ""
         k = s.get("svg")

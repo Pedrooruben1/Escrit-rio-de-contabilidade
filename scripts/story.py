@@ -1,6 +1,13 @@
 import json, os, sys, html, base64
 from playwright.sync_api import sync_playwright
 
+def sem_quebras(t):
+    """Junta o número ao € e o + ao valor seguinte, para não partirem na mudança de linha."""
+    import re as _re
+    t = _re.sub(r"(\d) (€)", "\\1\u00a0\\2", t)
+    t = _re.sub(r"([+=×−-]) (\d)", "\\1\u00a0\\2", t)
+    return t
+
 def abrir_chromium(p):
     """Usa o Chromium do Playwright; se a versão não bater certo, procura o pré-instalado."""
     try:
@@ -46,7 +53,7 @@ js = """(fg) => {
 }"""
 with sync_playwright() as p:
     b = abrir_chromium(p); pg = b.new_page(viewport={"width":1080,"height":1920})
-    t = html.escape(d["texto"]).replace("[", "<em>").replace("]", "</em>")
+    t = html.escape(sem_quebras(d["texto"])).replace("[", "<em>").replace("]", "</em>")
     fs = 88 if len(d["texto"]) < 60 else 72
     k = d.get("svg")
     des = f'<svg width=1080 height=300 style="position:absolute;left:0;top:{d.get("topo_desenho", 820)}px;overflow:visible"><g fill="none" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" filter="url(#rough2)">{k.replace("FG", fg).replace("BG", bg)}</g><defs><filter id="rough2"><feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="2" seed="7"/><feDisplacementMap in="SourceGraphic" scale="6"/></filter></defs></svg>' if k else ""

@@ -19,6 +19,27 @@ REGRA MAIS IMPORTANTE: NUNCA INVENTAR INFORMAÇÃO
 - Vê a data da fonte. Se a fonte for antiga, não uses valores ou limites que possam ter mudado (montantes, taxas, limites); usa só definições estáveis.
 - Antes de enviar, relê a mensagem frase a frase e confirma que cada uma está apoiada na fonte. Se alguma não estiver, retira-a.
 
+RIGOR PROFISSIONAL (a bem.contado é um escritório de contabilidade: um erro técnico numa publicação custa credibilidade)
+Termos técnicos
+- Usa o termo fiscal exato e não o da conversa corrente. Exemplos: o consumidor final "suporta" o IVA, as empresas "liquidam" e "entregam" o imposto ao Estado (não escrevas que o consumidor "paga o IVA todo" nem que a empresa "paga o IVA"); "isento" e "taxa zero" não são a mesma coisa; "dedução" e "reembolso" também não; "rendimento bruto", "rendimento coletável" e "rendimento líquido" são coisas diferentes. Usa o termo que a fonte usa.
+- Quando uma afirmação tem exceções conhecidas, escreve "em regra" (ou equivalente) em vez de a apresentar como absoluta. Não escondas as exceções para a frase ficar mais forte.
+- Se a fonte e o texto pedido pelo utilizador usarem termos diferentes para a mesma coisa (por exemplo "isentos" e "taxa zero"), não escolhas em silêncio: usa o da fonte e diz a diferença na mensagem.
+Números e exemplos
+- Todas as contas de um exemplo (somas, percentagens, IVA, retenções) são calculadas com python3 antes de escrever, nunca de cabeça. Na mensagem do Telegram, na linha "Porquê hoje" ou no fim, escreve a conta verificada (por exemplo "Conta verificada: 23 + 11,50 = 34,50; 23% de 150 = 34,50").
+- Um exemplo numérico usa valores redondos e fáceis de seguir, diz que é um exemplo e usa a taxa em vigor que a fonte indica.
+- Escreve os valores em euros como "100 €" (o script das imagens junta o número ao símbolo para não partir na mudança de linha) e as percentagens como "23%".
+Ilustrações que explicam sozinhas
+- O desenho tem de fechar a ideia do slide sem ser preciso ler o texto. Se o slide tem um exemplo com números, os números aparecem no desenho junto ao elemento a que pertencem e a conta fecha visualmente (por exemplo, o que cada empresa entrega por cima de cada empresa e o total suportado pelo consumidor por cima do consumidor).
+- Cores com significado fixo: valores intermédios e elementos neutros a azul (FG); o resultado, o total ou o elemento principal a âmbar. Nunca dois elementos a âmbar que signifiquem coisas diferentes no mesmo desenho.
+- Antes de enviar, olha para cada imagem e pergunta: alguém que só veja o desenho percebe a ideia? Se não, acrescenta o que falta ou simplifica.
+Factos vindos do utilizador
+- Quando o utilizador dá textos ou factos, usa-os, mas confirma-os numa fonte como farias com os teus. Se não conseguires confirmar algum, publica-o só se o utilizador o tiver pedido explicitamente e diz na mensagem, numa linha "Por confirmar:", quais não foram verificados.
+Textos do utilizador
+- Textos dados pelo utilizador usam-se palavra por palavra. Não encurtes, não reescrevas e não mudes palavras sem dizer. Se um texto não couber num slide, divide-o em dois slides e diz isso na mensagem. Se um texto violar uma regra (comprimento, mais de uma parte em âmbar, palavra da lista), mantém-no e diz na mensagem qual regra fica de fora e porquê.
+- Um carrossel tem no máximo 10 imagens (limite do Instagram).
+Revisões
+- Numa correção, envia para o Telegram só as imagens que mudaram, com legenda a dizer qual substituem e uma mensagem a explicar a ordem final do carrossel. Grava cada imagem alterada com um nome novo (slide_9b.png, slide_9c.png, ...), porque os links públicos ficam alguns minutos em cache e o Telegram e o Instagram podiam ir buscar a versão antiga.
+
 IMPARCIALIDADE (OBRIGATÓRIO)
 - A bem.contado é totalmente imparcial em política. Nunca nomear partidos, deputados, ministros, líderes políticos ou coligações, nem na imagem, nem no vídeo, nem no descritivo, nem no story, nem na mensagem do Telegram.
 - Nunca dizer quem propôs, quem votou a favor ou contra, quem ajudou a aprovar ou quem chumbou uma medida. Falar só da medida em si: o que é, a quem se aplica, desde quando, e em que fase está.
@@ -154,7 +175,7 @@ Story: [sondagem, quiz ou caixa de perguntas]: [pergunta escrita na imagem] | [o
 
 Fonte: [link da fonte principal, ou um link por linha]
 
-4. Grava a mensagem do passo 3 em mensagem.txt e, depois do passo 5, corre python3 "$REPO/scripts/verificar.py" mensagem.txt dados*.json (todos os dados_*.json que existirem). Corrige todos os ERROS e volta a gerar o que for preciso até não haver nenhum; lê os AVISOS e decide caso a caso. O script não verifica factos, por isso faz também estas verificações em cada opção: (a) cada frase (incluindo os textos do vídeo, de todas as imagens do carrossel e do story) está apoiada na fonte lida; (b) português de Portugal; (c) nenhum padrão da lista "SEM LINGUAGEM DE IA"; (d) o descritivo tem uma curiosidade, explicação ou dado prático útil; (e) nada sobre o Orçamento do Estado; (f) nada de partidos, políticos ou opinião política; (g) siglas menos conhecidas explicadas na primeira vez; (h) a frase de guardar ou enviar só aparece se fizer sentido e não repete a dos últimos dias. Se alguma falhar, reescreve.
+4. Grava a mensagem do passo 3 em mensagem.txt e, depois do passo 5, corre python3 "$REPO/scripts/verificar.py" mensagem.txt dados*.json (todos os dados_*.json que existirem). Corrige todos os ERROS e volta a gerar o que for preciso até não haver nenhum; lê os AVISOS e decide caso a caso. O script não verifica factos, por isso faz também estas verificações em cada opção: (a) cada frase (incluindo os textos do vídeo, de todas as imagens do carrossel e do story) está apoiada na fonte lida; (b) português de Portugal; (c) nenhum padrão da lista "SEM LINGUAGEM DE IA"; (d) o descritivo tem uma curiosidade, explicação ou dado prático útil; (e) nada sobre o Orçamento do Estado; (f) nada de partidos, políticos ou opinião política; (g) siglas menos conhecidas explicadas na primeira vez; (h) a frase de guardar ou enviar só aparece se fizer sentido e não repete a dos últimos dias; (i) termos técnicos exatos e "em regra" onde há exceções; (j) contas verificadas com python3 e escritas na mensagem; (k) cada ilustração explica a ideia sem o texto, com os números no desenho quando há exemplo; (l) factos não confirmados listados em "Por confirmar:". Se alguma falhar, reescreve.
 
 5. GERAR AS IMAGENS (publicação: 1080x1350 px, uma por opção, ou uma por imagem no carrossel; story: 1080x1920 px, um por opção). Com "Só story", faz só os passos 5a e 5f. Com "Não publicar hoje", salta os passos 5 e 6.
 a) Se python3 -c "import playwright" falhar, instala com pip install -q playwright (não corras playwright install: os scripts encontram o Chromium já instalado). Na pasta de rascunho (scratchpad), cria uma pasta "img" e obtém a letra Manrope pelo npm (o Google Fonts está bloqueado pelo proxy): npm pack @fontsource/manrope@5.0.20 e depois tar xzf fontsource-manrope-5.0.20.tgz. Os ficheiros ficam em package/files.

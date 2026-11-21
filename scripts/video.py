@@ -1,6 +1,13 @@
 import os, sys, json, html, base64, subprocess, re
 from playwright.sync_api import sync_playwright
 
+def sem_quebras(t):
+    """Junta o número ao € e o + ao valor seguinte, para não partirem na mudança de linha."""
+    import re as _re
+    t = _re.sub(r"(\d) (€)", "\\1\u00a0\\2", t)
+    t = _re.sub(r"([+=×−-]) (\d)", "\\1\u00a0\\2", t)
+    return t
+
 def abrir_chromium(p):
     """Usa o Chromium do Playwright; se a versão não bater certo, procura o pré-instalado."""
     try:
@@ -32,6 +39,7 @@ em{{font-style:normal;color:{am}}}
 svg.top{{position:absolute;left:20px;top:20px;overflow:visible}}"""
 grao = """<svg class=grao width=1120 height=1960><filter id=n><feTurbulence type=fractalNoise baseFrequency=.85 numOctaves=3 seed=3/><feColorMatrix values="COR  0 0 0 1 0"/></filter><rect width=100% height=100% filter=url(#n)/></svg>"""
 def words(t):
+    t = sem_quebras(t)
     out=[]; inem=False
     for tok in re.split(r'(\[|\])', t):
         if tok=='[': inem=True; continue

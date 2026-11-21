@@ -138,8 +138,10 @@ def verificar_texto(texto, onde):
         erro(onde, "negrito em markdown (** ou __)")
 
     baixo = texto.lower()
+    # termos técnicos legítimos que contêm palavras da lista
+    limpo = re.sub(r"bens (de primeira necessidade|essenciais)|serviços essenciais|serviços mínimos", "", texto, flags=re.I)
     for p in PALAVRAS_IA:
-        if tem_palavra(texto, p):
+        if tem_palavra(limpo, p):
             erro(onde, f"palavra de IA: '{p}'")
     for e in EXPRESSOES_IA:
         if e in baixo:
@@ -176,6 +178,11 @@ def verificar_texto(texto, onde):
         if o in baixo:
             erro(onde, "tema do Orçamento do Estado (excluído)")
             break
+
+    for m in re.finditer(r"\b(paga|pagam|pagar) o iva\b|\bo iva todo\b", baixo):
+        aviso(onde, f"'{m.group(0)}': confirmar o termo (o consumidor final suporta o IVA; as empresas liquidam e entregam)")
+    if re.search(r"\bisent[oa]s?\b", baixo) and "taxa zero" in baixo:
+        aviso(onde, "'isento' e 'taxa zero' no mesmo texto: não são a mesma coisa, confirmar com a fonte")
 
     usados = [c for c in CONECTORES if c in baixo]
     if len(usados) > 1:
@@ -242,6 +249,8 @@ def verificar_imagens(texto, onde):
 
 def verificar_mensagem(mensagem):
     verificar_texto(mensagem, "mensagem")
+    if re.search(r"\d[\d,.]*\s?€\s?[+\-=]\s?\d", mensagem) and "conta verificada" not in mensagem.lower():
+        aviso("mensagem", "há contas com euros mas falta a linha 'Conta verificada: ...' (calcular com python3)")
     siglas(mensagem, "mensagem")
     bs = blocos(mensagem)
     nomes = [b[0] for b in bs]
