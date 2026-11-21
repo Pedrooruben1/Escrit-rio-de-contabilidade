@@ -117,6 +117,8 @@ def pagina(titulo_pagina, descricao, corpo):
 <link rel="canonical" href="https://bemcontadopt.pt/prazos/">
 <meta name="theme-color" content="#F7F5F0">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
 <link rel="preload" href="../fonts/manrope-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="../estilo.css">
 <script src="../site.js"></script>
@@ -126,7 +128,7 @@ def pagina(titulo_pagina, descricao, corpo):
   <filter id="traco"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="7"/><feDisplacementMap in="SourceGraphic" scale="4"/></filter>
 </svg>
 <header class="topo wrap">
-  <a class="marca" href="../" aria-label="bem.contado, início">bem<span>.</span>contado</a>
+  <a class="marca" href="../" aria-label="bem.contado, início">bem<svg class="ponto" viewBox="0 0 10 10" aria-hidden="true"><circle cx="5" cy="5.4" r="4.2"/></svg>contado</a>
   <nav aria-label="Ligações">
     <a href="../prazos/" aria-current="page">Prazos</a>
     <a href="https://www.instagram.com/bem.contadopt/">Instagram</a>
@@ -139,7 +141,7 @@ def pagina(titulo_pagina, descricao, corpo):
 <footer class="wrap">
   <svg class="linha" viewBox="0 0 1000 20" preserveAspectRatio="none" aria-hidden="true"><path class="pontilhado" d="M0 10 C 250 4, 520 16, 1000 8"/></svg>
   <div class="rodape">
-    <p class="marca">bem<span>.</span>contado</p>
+    <p class="marca" aria-label="bem.contado">bem<svg class="ponto" viewBox="0 0 10 10" aria-hidden="true"><circle cx="5" cy="5.4" r="4.2"/></svg>contado</p>
     <p><a href="../">Início</a> · <a href="https://www.instagram.com/bem.contadopt/">Instagram</a> · <a href="https://poupanca.bemcontadopt.pt/instalar/">App Poupança</a> · <a href="mailto:bem.contado@outlook.pt">bem.contado@outlook.pt</a></p>
   </div>
   <p class="nota">Este site conta as visitas de forma anónima e sem cookies. Não recolhe dados pessoais. A informação publicada é geral e não substitui a análise de cada caso.</p>
