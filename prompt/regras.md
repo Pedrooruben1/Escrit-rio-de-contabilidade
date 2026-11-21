@@ -1,9 +1,21 @@
-Tarefa diária (começa às 8h20, hora de Lisboa): preparar a recomendação do dia para o Instagram da bem.contado, baseada no que está a acontecer hoje em Portugal ou, nos dias sem notícia forte, num tema prático para ensinar ou numa curiosidade contada como história. O foco principal é finanças pessoais e contabilidade de empresas. Aos sábados a publicação é uma curiosidade contada como história num carrossel (ver secção SÁBADO). Primeiro gerar as imagens da publicação (e, só quando o tema ganhar mesmo com isso, um vídeo em forma de história, ver REGRA DOS VÍDEOS) e a imagem do story. Depois, às 8h34, enviar as imagens e a mensagem de texto (que inclui o descritivo) para o grupo de Telegram "Contabilidade", onde o utilizador aprova ou recusa (ver ENTREGA E APROVAÇÃO).
+Tarefa diária (começa às 18h37, hora de Lisboa): preparar a proposta do DIA SEGUINTE para o Instagram da bem.contado, segundo a GRELHA SEMANAL. O foco é finanças pessoais e contabilidade de empresas. Primeiro gerar as imagens da publicação (à sexta, o vídeo; ver REGRA DOS VÍDEOS) e a imagem do story. Depois, às 19h00, enviar as imagens e a mensagem de texto (que inclui o descritivo) para o grupo de Telegram "Contabilidade", onde o utilizador aprova ou recusa (ver ENTREGA E APROVAÇÃO).
+Em todo este documento, "o dia da publicação" é o dia seguinte ao da execução. A data, o dia da semana, a série da grelha, o fundo e a hora de publicação vêm das linhas pub_* do scripts/hoje.py. Nas secções seguintes, "hoje" e "do dia" querem dizer o dia da publicação.
+
+GRELHA SEMANAL (séries fixas; o dia é o da publicação)
+- Segunda: Prazos da semana. Os prazos fiscais e contributivos dessa semana (segunda a domingo, linha pub_semana) que interessam a particulares, independentes e empresas, com fonte oficial (agenda fiscal do Portal das Finanças, Segurança Social). Imagem única se forem 1 ou 2 prazos; carrossel de 2 a 4 imagens se forem mais. Se não houver prazos relevantes nessa semana, mostra os da semana seguinte e diz isso, ou propõe um tema de ensinar e explica porquê.
+- Quarta: Aprender. Carrossel de 4 a 6 imagens com um conceito prático e, sempre que o tema o permita, um exemplo com números (ver RIGOR PROFISSIONAL).
+- Sexta: Reel. Vídeo em história de 15 a 25 segundos sobre um tema de ensinar (ver REGRA DOS VÍDEOS).
+- Sábado: Curiosidade contada como história, carrossel de 6 a 8 imagens (ver SÁBADO).
+- Terça, quinta e domingo: só story (quiz, sondagem ou caixa de perguntas), sem publicação no feed.
+- Etiquetas: "Prazos · semana de DD/MM", "Aprender · tema" (também no Reel), "Curiosidade · tema"; no story, "Pergunta · tema" ou "Quiz · tema".
+- O formato de cada série repete-se de semana para semana, para as pessoas reconhecerem a série. O tema e o desenho mudam sempre.
+- Notícias: só fora da grelha e só quando mudam alguma coisa para as pessoas (prazo novo, taxa nova, medida que entrou em vigor). Nesse caso podes trocar a série desse dia pela notícia, ou propô-la num dia de só story como publicação extra, e dizes porquê na linha Recomendação.
+- Ideias do utilizador: antes de escolher o tema, lê publicacoes/ideias.md (no branch claude/publicacoes). Se houver uma ideia por usar que sirva a série do dia, usa-a primeiro e, quando a proposta for enviada, marca-a como usada (troca "- [ ]" por "- [x]" e acrescenta a data da publicação).
 
 RECOMENDAÇÃO DO DIA (PUBLICAR, SÓ STORY OU NADA)
-- Não é obrigatório publicar todos os dias. Decide qual destas opções é a melhor para hoje e diz porquê numa frase:
-  (1) "Publicação + story" (o normal): há um tema com conteúdo suficiente para uma publicação.
-  (2) "Só story": o tema é pequeno ou rápido (um lembrete de prazo, uma pergunta, um dado curto) e não justifica uma publicação; ou já houve publicações seguidas nos últimos dias (vê o histórico) e é melhor não saturar.
+- A recomendação de base vem da grelha (linha pub_recomendacao_base do hoje.py). Só te afastas dela com motivo, dito numa frase. As três recomendações possíveis:
+  (1) "Publicação + story": segunda, quarta, sexta e sábado.
+  (2) "Só story": terça, quinta e domingo; noutro dia, só se o tema dessa série não tiver conteúdo suficiente.
   (3) "Não publicar hoje": não há nada útil nem interessante para dizer, nem de ensinar, nem curiosidade que valha a pena. Deve ser raro.
 - Sempre que a recomendação inclua story (opções 1 e 2), tens de gerar e enviar a imagem do story (passo 5f). O story nunca fica só descrito.
 - Com a opção 2, não geres imagens de publicação nem vídeo, não escrevas descritivo nem texto alternativo; prepara só o story.
@@ -25,7 +37,7 @@ Termos técnicos
 - Quando uma afirmação tem exceções conhecidas, escreve "em regra" (ou equivalente) em vez de a apresentar como absoluta. Não escondas as exceções para a frase ficar mais forte.
 - Se a fonte e o texto pedido pelo utilizador usarem termos diferentes para a mesma coisa (por exemplo "isentos" e "taxa zero"), não escolhas em silêncio: usa o da fonte e diz a diferença na mensagem.
 Números e exemplos
-- Todas as contas de um exemplo (somas, percentagens, IVA, retenções) são calculadas com python3 antes de escrever, nunca de cabeça. Na mensagem do Telegram, na linha "Porquê hoje" ou no fim, escreve a conta verificada (por exemplo "Conta verificada: 23 + 11,50 = 34,50; 23% de 150 = 34,50").
+- Todas as contas de um exemplo (somas, percentagens, IVA, retenções) são calculadas com python3 antes de escrever, nunca de cabeça. Na mensagem do Telegram, na linha "Conta verificada:", escreve as contas feitas (por exemplo "Conta verificada: 23 + 11,50 = 34,50; 23% de 150 = 34,50").
 - Um exemplo numérico usa valores redondos e fáceis de seguir, diz que é um exemplo e usa a taxa em vigor que a fonte indica.
 - Quando a publicação tem um exemplo numérico, o descritivo explica-o passo a passo, com um pequeno título por passo e a conta escrita (por exemplo "1. Produtor → loja", "2. Loja → consumidor", "Resultado"), dizendo qual é a simplificação do exemplo. Nestes casos o descritivo pode ter mais do que 5 frases, até 2200 caracteres.
 - Escreve os valores em euros como "100 €" (o script das imagens junta o número ao símbolo para não partir na mudança de linha) e as percentagens como "23%".
@@ -49,17 +61,16 @@ IMPARCIALIDADE (OBRIGATÓRIO)
 - Não usar temas que sejam sobretudo disputa política.
 
 SEMPRE ALGO NOVO (NADA GENÉRICO)
-- Cada dia tem de ser diferente dos anteriores: tema, desenho, composição e forma de contar. Nada de desenhos de catálogo nem de ícones genéricos.
+- O tema e o desenho mudam sempre; o formato de cada série da grelha repete-se (é isso que torna a série reconhecível). Nada de desenhos de catálogo nem de ícones genéricos.
 - Os desenhos (da imagem, do story e do vídeo) são criados de raiz nesse dia para aquele tema concreto, em SVG de traço à mão (ver passos 5 e 6). Procura uma ideia visual própria do tema (por exemplo, para recibos verdes: um recibo a sair de uma impressora antiga; para o NIF: um cartão com números a acenderem um a um; para a TAEG: uma balança com juros e comissões). Não repitas a ideia visual de dias anteriores.
 - Lê no início o ficheiro "historico_publicacoes.md" no branch claude/publicacoes do repositório para veres temas, desenhos e vídeos já feitos (ver ENTREGA E APROVAÇÃO para o acrescentar no fim).
 
 TEMAS (FOCO: FINANÇAS PESSOAIS E CONTABILIDADE DE EMPRESAS)
-- NÃO falar do Orçamento do Estado (nem propostas, votações ou medidas do Orçamento). Ignora estas notícias.
+- Orçamento do Estado: enquanto estiver em proposta, discussão ou votação, não se fala dele (nem propostas, nem votações, nem medidas anunciadas). Depois de a lei do Orçamento estar publicada em Diário da República, pode falar-se das medidas fiscais que entraram em vigor (por exemplo, o que muda no IRS), só da medida, com a fonte no Diário da República ou no Portal das Finanças e seguindo a IMPARCIALIDADE.
 - Dá preferência a dois grandes blocos:
   (1) Finanças pessoais: orçamento familiar, poupança, crédito e juros, cartões, contas bancárias, IRS do dia a dia, recibo de vencimento, primeiro emprego, estudantes.
   (2) Contabilidade de empresas e trabalhadores independentes: IVA, IRC, faturação e faturas, e-fatura, SAF-T, contabilidade organizada e regime simplificado, recibos verdes, Segurança Social dos independentes, abrir atividade ou empresa, prazos declarativos de empresas.
-- Prioridade 1: notícia ou prazo do dia, de um destes blocos, com algo concreto e útil, de preferência de fonte oficial.
-- Prioridade 2 (dias sem notícia forte): ensinar algo prático de um destes blocos, ou contar uma curiosidade como história (como ao sábado, em imagem única ou num carrossel curto de 4 a 6 imagens). Nunca forçar uma notícia fraca. Exemplos de temas de ensinar: diferença entre cartão de débito e de crédito; o que é a retenção na fonte; como ler um recibo de vencimento; o que é a TAEG; o que é uma conta de serviços mínimos bancários; o que é o IVA e quem o entrega ao Estado; o que é o SAF-T; diferença entre regime simplificado e contabilidade organizada; o que muda ao abrir atividade nas Finanças; o que distingue uma conta para empresa de uma conta pessoal. Não repitas temas já usados.
+- O tema segue a série da grelha. Dá preferência a temas que continuam úteis daqui a um ano (como funciona, como se calcula, como se lê um documento), que as pessoas guardam e partilham. As notícias seguem a regra da GRELHA SEMANAL. Nunca forçar um tema fraco. Exemplos de temas de ensinar: diferença entre cartão de débito e de crédito; o que é a retenção na fonte; como ler um recibo de vencimento; o que é a TAEG; o que é uma conta de serviços mínimos bancários; o que é o IVA e quem o entrega ao Estado; o que é o SAF-T; diferença entre regime simplificado e contabilidade organizada; o que muda ao abrir atividade nas Finanças; o que distingue uma conta para empresa de uma conta pessoal. Não repitas temas já usados.
 - Fontes para temas de ensinar: Portal do Cliente Bancário e Portal "Todos Contam" do Banco de Portugal, Portal das Finanças, Segurança Social, gov.pt, ePortugal, IAPMEI, Ordem dos Contabilistas Certificados, DECO Proteste. Não compares bancos pelo nome nem recomendes produtos de um banco.
 
 IDEIAS NÃO PUBLICADAS (REAPROVEITAR)
@@ -68,7 +79,7 @@ IDEIAS NÃO PUBLICADAS (REAPROVEITAR)
 - Ao reaproveitar, podes manter o tema mas faz um desenho novo, e acrescenta no histórico uma linha nova com a data de hoje e "(reaproveitada de DD/MM)" na coluna do tema.
 
 SÁBADO: CURIOSIDADE CONTADA COMO HISTÓRIA (CARROSSEL)
-- Confirma o dia da semana com: TZ=Europe/Lisbon date +%u (6 = sábado). Aos sábados ignora as prioridades 1 e 2 da secção TEMAS: não há notícia nem prazo. A publicação é uma curiosidade de um dos dois blocos, contada como uma pequena história num carrossel de 6 a 8 imagens.
+- O dia da semana da publicação vem do hoje.py (pub_dia_semana). Quando a publicação é ao sábado (proposta preparada na sexta à noite), não há notícia nem prazo. A publicação é uma curiosidade de um dos dois blocos, contada como uma pequena história num carrossel de 6 a 8 imagens.
 - Exemplos do género (são só exemplos, escolhe um tema que ainda não esteja no histórico): porque é que existe o IRS e de onde veio; a importância de poupar (alguém recebe o salário, paga as despesas do mês, surge um imprevisto, o que muda quando há uma reserva); porque é que se paga IVA; de onde vem a palavra "imposto"; como apareceram os recibos verdes; para que serve o NIF.
 - Estrutura de história: a imagem 1 é o gancho, uma afirmação curiosa ou uma situação que dá vontade de passar à seguinte (nunca uma pergunta retórica do tipo "Sabia que...?"); as imagens do meio contam a história passo a passo, uma ideia por imagem, por ordem; a penúltima dá a explicação prática; a última fecha com a ideia principal numa frase.
 - Os desenhos de cada imagem são novos, mas ligados entre si para parecer uma sequência: a mesma figura genérica em traço simples, o mesmo mealheiro, o mesmo documento, a evoluir de imagem para imagem.
@@ -84,11 +95,13 @@ UMA OU DUAS OPÇÕES DE TEMA
 - Se houver vários temas fortes no dia, prepara DUAS opções (Opção A e Opção B), de preferência uma de finanças pessoais e outra de contabilidade de empresas, para o utilizador escolher. Cada opção tem o seu tema, texto da imagem, imagem, descritivo, texto alternativo, story (com a sua imagem) e fonte. Nunca mais de duas.
 - Aos sábados, só uma opção (ver secção SÁBADO).
 
-REGRA DOS VÍDEOS (OPCIONAIS, SÃO A EXCEÇÃO)
-- O vídeo é opcional. Faz um só quando o tema de ensinar ganha mesmo em ser contado com movimento (um processo com passos, uma linha do tempo, algo que muda de estado). Na dúvida, não faças. Pode haver semanas sem nenhum vídeo.
-- Máximo de 2 vídeos por semana (de segunda a domingo). Vê no "historico_publicacoes.md" quantos já houve esta semana (a semana vem do scripts/hoje.py). Se o histórico não estiver disponível, não faças vídeo.
-- Só para temas de ensinar e só com a recomendação "Publicação + story". Quando houver duas opções, no máximo um vídeo, e só para a opção de ensinar.
-- Aos sábados não há vídeo.
+REGRA DOS VÍDEOS (O REEL DE SEXTA)
+- Há um vídeo por semana: a publicação de sexta é um Reel, um vídeo em história (passo 6) sobre um tema de ensinar que ganhe com movimento (um processo com passos, uma linha do tempo, algo que muda de estado). Nos outros dias não há vídeo, salvo se o utilizador o pedir.
+- O Reel tem uma capa: gera-a com o story.py (1080x1920), com a etiqueta "Aprender · tema" e o texto = a frase principal do vídeo (menos de 70 caracteres), e grava-a como capa.png.
+- A legenda do Reel segue as regras do descritivo. O texto alternativo é uma descrição do vídeo em 1 ou 2 frases.
+- No estado.json, a opção do Reel tem "formato":"Reel", "video": o endereço público do mp4, "capa": o endereço público da capa.png e "imagens": [o endereço da capa].
+- No Telegram, envia a capa com send_photo e põe o endereço público do vídeo na mensagem, na linha "Vídeo (ficheiro):".
+- Se o vídeo falhar ao gerar, propõe o mesmo tema como carrossel Aprender e diz porquê.
 
 SEMPRE EM PORTUGUÊS DE PORTUGAL
 - Toda a mensagem em português europeu, com a ortografia do Acordo Ortográfico em vigor em Portugal.
@@ -140,29 +153,29 @@ DESCRITIVO PARA O INSTAGRAM COM VALOR PARA AS PESSOAS
 - O mesmo descritivo serve para a imagem e para o vídeo da mesma opção. É enviado na mensagem do Telegram e é o texto que vai para o Instagram se for aprovado.
 
 PUBLICAÇÃO E INTERAÇÃO
-- Hora de publicação (em teste): de segunda a sexta às 13h00; ao sábado e ao domingo às 18h00. Indica-a na mensagem na linha "Publicar às" (vale para a publicação e, se for só story, para o story).
+- Hora de publicação (em teste): 13h00 de segunda a sexta, 18h00 ao sábado (linha pub_publicar_as do hoje.py). Indica-a na linha "Publicar às" com o dia e a data (por exemplo "segunda, 23/11, às 13h00"). Nos dias de só story não há publicação automática: escreve "Publicar às: story à mão na terça, 24/11, à hora que quiserem".
 - Story do dia: para cada opção, um story ligado ao tema, com imagem própria (passo 5f) e um autocolante interativo do Instagram para o utilizador acrescentar na aplicação: sondagem (pergunta e 2 opções), quiz (pergunta, 3 ou 4 opções e a resposta certa) ou caixa de perguntas (uma frase a convidar a deixar dúvidas sobre o tema). A pergunta aparece escrita na imagem; as opções vão no autocolante, por isso a imagem deixa livre a zona do meio para baixo. A resposta certa de um quiz tem de vir da fonte lida. Nada sobre política. No autocolante do story é permitido fazer uma pergunta direta.
 - Texto alternativo: para cada imagem da publicação, uma descrição de 1 ou 2 frases do que se vê e do texto principal, que vai gravado automaticamente no campo "Texto alternativo" de cada imagem quando a publicação sai (acessibilidade). Sem prefixos nem aspas no texto em si.
 
-FUNDO (alternar todos os dias, vale para as imagens, o story e o vídeo)
-Usa o fundo que o scripts/hoje.py indica (não contes os dias de cabeça). Alterna a partir de 18/11/2026, que foi azul.
+FUNDO (alterna por publicação feita; vale para as imagens, o story e o vídeo)
+Usa o fundo da linha pub_fundo do scripts/hoje.py (não decidas de cabeça). É o contrário do fundo da última publicação feita, para o perfil manter o padrão azul/branco mesmo nos dias sem publicação. Grava o fundo usado no estado.json (campo "fundo"). Nos dias de só story, o story usa o pub_fundo (os stories não contam para o padrão do perfil).
 - Fundo AZUL #17324D: texto creme, destaque em âmbar #E09F3E.
 - Fundo BRANCO #FFFFFF: texto azul #17324D, destaque em âmbar #E09F3E.
 
 PASSOS
-1. Corre python3 "$REPO/scripts/hoje.py" (dia da semana, fundo, hora de publicação, semana). Lê "historico_publicacoes.md" (incluindo as ideias marcadas "não publicada"). Se for sábado, segue a secção SÁBADO e procura fontes para a curiosidade escolhida. Nos outros dias, pesquisa na web as notícias e temas do dia em Portugal sobre finanças pessoais, contabilidade e fiscalidade de empresas, IRS, IVA, IRC, Autoridade Tributária, Segurança Social e prazos fiscais da semana (sem Orçamento do Estado). Usa a data de hoje nas pesquisas. Dá prioridade a fontes oficiais (Portal das Finanças, Diário da República, Segurança Social, gov.pt, Banco de Portugal) e a jornais económicos portugueses. Vê também se há prazos fiscais nos próximos 7 dias. Abre e lê a página da fonte principal de cada opção antes de escrever.
-2. Decide a RECOMENDAÇÃO DO DIA. Escolhe o tema (ou os dois temas) segundo as secções TEMAS, IDEIAS NÃO PUBLICADAS, SÁBADO, UMA OU DUAS OPÇÕES, IMPARCIALIDADE e SEMPRE ALGO NOVO. Decide se há vídeo segundo a REGRA DOS VÍDEOS (na dúvida, sem vídeo).
+1. Prepara o branch claude/publicacoes em /tmp/pub (ver ENTREGA E APROVAÇÃO) e corre python3 "$REPO/scripts/hoje.py" --pub /tmp/pub/publicacoes. Usa as linhas pub_* em tudo (data, dia da semana, série, fundo, hora). Lê "historico_publicacoes.md" (incluindo as ideias marcadas "não publicada") e "publicacoes/ideias.md". Escolhe o tema segundo a série do dia (GRELHA SEMANAL): para Prazos, abre a agenda fiscal do Portal das Finanças e a Segurança Social para a semana pub_semana; para Aprender, Reel e Curiosidade, escolhe um tema ainda não usado e procura fontes; nos dias de só story, um tema curto (um prazo próximo ou uma pergunta ligada à última publicação). Pesquisa também se há alguma notícia que mude alguma coisa para as pessoas (regra das notícias na GRELHA SEMANAL). Dá prioridade a fontes oficiais (Portal das Finanças, Diário da República, Segurança Social, gov.pt, Banco de Portugal) e a jornais económicos portugueses. Abre e lê a página da fonte principal de cada opção antes de escrever.
+2. Decide a RECOMENDAÇÃO DO DIA (a de base vem da grelha). Escolhe o tema (ou os dois temas) segundo as secções TEMAS, IDEIAS NÃO PUBLICADAS, SÁBADO, UMA OU DUAS OPÇÕES, IMPARCIALIDADE e SEMPRE ALGO NOVO. Há vídeo só quando a publicação é à sexta (REGRA DOS VÍDEOS).
 3. Escreve a mensagem em português de Portugal, em texto simples. Com uma só opção, usa este formato; com duas, repete o bloco a partir de "Tema" para cada uma, com os títulos "Opção A" e "Opção B". Com "Só story", omite as linhas Formato, Texto da imagem, Vídeo, Descritivo e Texto alternativo. Com "Não publicar hoje", escreve só o cabeçalho, a linha Recomendação e, se houver, "Guardada para outro dia: [ideia]".
 
-Ideia para a próxima publicação ([data de hoje])
+Proposta para [dia da semana, data da publicação] · [série]
 
 Recomendação: [Publicação + story / Só story / Não publicar hoje], porque [uma frase]
 
 Tema: [uma linha]
-Porquê hoje: [uma ou duas frases sobre a notícia ou prazo, com o número ou data concreta; ou, se for tema de ensinar ou curiosidade, porque é útil ou interessante]
-Formato: [imagem única, ou imagem única + vídeo em história de N segundos, ou carrossel de N imagens (história)]
+Porquê este tema: [uma ou duas frases sobre a notícia ou prazo, com o número ou data concreta; ou, se for tema de ensinar ou curiosidade, porque é útil ou interessante]
+Formato: [imagem única, ou carrossel de N imagens, ou Reel de N segundos]
 Fundo: [azul ou branco, com as cores do texto e do destaque]
-Publicar às: [13h00 de segunda a sexta, 18h00 ao sábado e domingo]
+Publicar às: [dia, data e hora; nos dias de só story, "story à mão"]
 Texto da imagem: [o texto da imagem; no carrossel, uma linha por imagem: "Imagem 1: ...", "Imagem 2: ..."]
 Vídeo: [só se houver: uma linha por cena, com o texto da cena e o que acontece no desenho]
 
@@ -175,8 +188,11 @@ Texto alternativo:
 Story: [sondagem, quiz ou caixa de perguntas]: [pergunta escrita na imagem] | [opções do autocolante, e no quiz a resposta certa] (a imagem do story vai no Telegram; o autocolante coloca-se na zona livre a meio, na aplicação)
 
 Fonte: [link da fonte principal, ou um link por linha]
+Conta verificada: [só se houver contas: as contas feitas com python3]
+Por confirmar: [só se houver factos que não conseguiste confirmar numa fonte]
 
 4. Grava a mensagem do passo 3 em mensagem.txt e, depois do passo 5, corre python3 "$REPO/scripts/verificar.py" mensagem.txt dados*.json (todos os dados_*.json que existirem). Corrige todos os ERROS e volta a gerar o que for preciso até não haver nenhum; lê os AVISOS e decide caso a caso. O script não verifica factos, por isso faz também estas verificações em cada opção: (a) cada frase (incluindo os textos do vídeo, de todas as imagens do carrossel e do story) está apoiada na fonte lida; (b) português de Portugal; (c) nenhum padrão da lista "SEM LINGUAGEM DE IA"; (d) o descritivo tem uma curiosidade, explicação ou dado prático útil; (e) nada sobre o Orçamento do Estado; (f) nada de partidos, políticos ou opinião política; (g) siglas menos conhecidas explicadas na primeira vez; (h) a frase de guardar ou enviar só aparece se fizer sentido e não repete a dos últimos dias; (i) termos técnicos exatos e "em regra" onde há exceções; (j) contas verificadas com python3 e escritas na mensagem; (k) cada ilustração explica a ideia sem o texto, com os números no desenho quando há exemplo; (l) factos não confirmados listados em "Por confirmar:". Se alguma falhar, reescreve.
+   REVISÃO INDEPENDENTE (depois do verificar.py e com tudo gerado): lança um subagente (ferramenta Agent ou Task) com contexto limpo e dá-lhe a mensagem, os caminhos das imagens (slide_N.png, story.png, capa.png, video_cena_N.png), os links das fontes e as secções REGRA MAIS IMPORTANTE e RIGOR PROFISSIONAL deste ficheiro. Pede-lhe que leia como um contabilista certificado exigente: abre as fontes e confirma cada facto e cada número; confirma os termos técnicos e se falta um "em regra"; olha para cada imagem e diz se o desenho explica a ideia sem o texto; e devolve uma lista de problemas concretos, ou "sem problemas". Corrige o que ele encontrar e, se mudaste alguma coisa, volta a correr o verificar.py. No máximo duas rondas; o que ficar por resolver vai para a linha "Por confirmar:". Se não houver ferramenta de subagentes, faz tu essa leitura no fim, como se fosses outra pessoa.
 
 5. GERAR AS IMAGENS (publicação: 1080x1350 px, uma por opção, ou uma por imagem no carrossel; story: 1080x1920 px, um por opção). Com "Só story", faz só os passos 5a e 5f. Com "Não publicar hoje", salta os passos 5 e 6.
 a) Se python3 -c "import playwright" falhar, instala com pip install -q playwright (não corras playwright install: os scripts encontram o Chromium já instalado). Na pasta de rascunho (scratchpad), cria uma pasta "img" e obtém a letra Manrope pelo npm (o Google Fonts está bloqueado pelo proxy): npm pack @fontsource/manrope@5.0.20 e depois tar xzf fontsource-manrope-5.0.20.tgz. Os ficheiros ficam em package/files.
@@ -206,25 +222,26 @@ Repositório e ficheiros
 - O repositório é github.com/Pedrooruben1/Escrit-rio-de-contabilidade (público). REPO é a pasta onde está clonado. Todo o conteúdo do Instagram (imagens, estado do dia e histórico) vive no branch claude/publicacoes. Os scripts e estas regras vivem no branch por defeito.
 - Antes de escrever no branch, prepara-o numa pasta à parte: cd "$REPO" && git fetch origin claude/publicacoes && git worktree add -f /tmp/pub -B claude/publicacoes origin/claude/publicacoes (se /tmp/pub já existir, entra nela e faz git pull --rebase origin claude/publicacoes). Trabalha sempre em /tmp/pub. Antes de cada push faz git pull --rebase origin claude/publicacoes. Push com git push origin claude/publicacoes (até 4 tentativas, com espera de 2, 4, 8 e 16 segundos se a rede falhar).
 - Endereço público de um ficheiro: https://raw.githubusercontent.com/Pedrooruben1/Escrit-rio-de-contabilidade/claude/publicacoes/CAMINHO
-- Pasta do dia: publicacoes/AAAA-MM-DD/. Com duas opções, subpastas A/ e B/. Nomes: slide_1.png, slide_2.png, ..., story.png, video.mp4. Numa nova proposta do mesmo dia (ver REVISÃO), usa a subpasta p2/, p3/, etc. (com A/ e B/ dentro, se houver duas opções).
+- Pasta do dia: publicacoes/AAAA-MM-DD/, com a data da publicação (linha pub_data_iso). Com duas opções, subpastas A/ e B/. Nomes: slide_1.png, slide_2.png, ..., story.png, video.mp4. Numa nova proposta do mesmo dia (ver REVISÃO), usa a subpasta p2/, p3/, etc. (com A/ e B/ dentro, se houver duas opções).
 - Estado do dia: publicacoes/AAAA-MM-DD/estado.json, com este formato:
-  {"data":"AAAA-MM-DD", "publicar_as":"13:00" ou "18:00", "proposta":1, "estado":"pendente", "enviado_em":null, "tentativas":0, "opcao_aprovada":null, "publicar_video":false, "media_id":null, "permalink":null, "ultima_resposta":null,
-   "opcoes":{"A":{"tema":"...", "formato":"...", "imagens":[URL,...], "video":URL ou null, "story":URL ou null, "descritivo":"texto completo com hashtags", "texto_alternativo":["..."], "story_texto":"linha Story"}}}
-  Com uma só opção, a chave é "A". Estados possíveis: pendente, aprovada, publicada, recusada, nao_publicar (opção 3 da recomendação).
+  {"data":"AAAA-MM-DD", "serie":"prazos|aprender|reel|curiosidade|story", "fundo":"azul" ou "branco", "publicar_as":"13:00" ou "18:00", "proposta":1, "estado":"pendente", "enviado_em":null, "tentativas":0, "opcao_aprovada":null, "publicar_video":false, "media_id":null, "permalink":null, "ultima_resposta":null,
+   "opcoes":{"A":{"tema":"...", "formato":"...", "imagens":[URL,...], "video":URL ou null, "capa":URL ou null, "story":URL ou null, "descritivo":"texto completo com hashtags", "texto_alternativo":["..."], "story_texto":"linha Story"}}}
+  Com uma só opção, a chave é "A". Estados possíveis: pendente, aprovada, publicada, recusada, nao_publicar (opção 3 da recomendação), so_story (dia sem publicação no feed: não há nada para aprovar).
 
 7. GUARDAR NO REPOSITÓRIO: copia as imagens, o story e o vídeo para a pasta do dia, escreve o estado.json e faz commit ("Ideia de DD/MM") e push. Confirma com curl -s -o /dev/null -w "%{http_code}" que o endereço público da primeira imagem dá 200 (pode demorar até um minuto; tenta de 15 em 15 segundos, no máximo 8 vezes). Se nunca der 200, segue na mesma e indica o problema na mensagem do Telegram.
 
-8. ESPERAR ATÉ ÀS 8h34 (só na execução da manhã; numa REVISÃO envia logo). Vê a hora de Lisboa com TZ=Europe/Lisbon date +%H:%M:%S. Se for antes das 8h34:00, espera com sleep até essa hora (cada chamada de Bash tem limite de 10 minutos).
+8. ESPERAR ATÉ ÀS 19h00 (só na execução da véspera; numa REVISÃO envia logo). Vê a hora de Lisboa com TZ=Europe/Lisbon date +%H:%M:%S. Se for antes das 19h00:00, espera com sleep até essa hora (cada chamada de Bash tem limite de 10 minutos).
 
 9. ENVIAR PARA O TELEGRAM pelo Zapier (app Telegram, sempre chat_id "-1003970082558", grupo "Contabilidade"; não envies para nenhum outro chat). Confirma os schemas com inspect_zapier_actions antes de executar.
-   a) Para cada opção, por ordem: cada imagem da publicação com a ação send_photo (photo = endereço público, caption = "Opção A, imagem 1 de N" ou "Imagem 1 de N" se for opção única), depois a imagem do story (caption "Story, opção A" ou "Story"). Se houver vídeo, não o envies como foto: põe o endereço público do vídeo na mensagem de texto, na linha "Vídeo (ficheiro):".
+   a) Para cada opção, por ordem: cada imagem da publicação com a ação send_photo (photo = endereço público, caption = "Opção A, imagem 1 de N" ou "Imagem 1 de N" se for opção única), depois a imagem do story (caption "Story, opção A" ou "Story"). Num Reel, envia a capa como foto (caption "Capa do Reel") e põe o endereço público do vídeo na mensagem, na linha "Vídeo (ficheiro):".
    b) Depois, uma mensagem de texto com a ação send_message (format "plaintext", disable_link_preview "true"): a mensagem do passo 3, e no fim estas linhas:
       Para responder:
-      sim (ou sim A / sim B) para publicar às [hora de publicação]
-      sim vídeo, para publicar o vídeo em vez da imagem (se houver vídeo)
-      não, para não publicar hoje
+      sim (ou sim A / sim B) para publicar [dia] às [hora]
+      não, para não publicar
       não, seguido do que prefere (por exemplo "não, quero algo sobre IVA para independentes"), para receber outra proposta
       altera, seguido do que mudar (por exemplo "altera, a primeira frase está longa"), para corrigir esta proposta
+      ideia, seguido de um tema, para o guardar para outro dia
+      Nos dias de só story, em vez destas linhas: "Story para [dia, data]: publicar à mão. Não precisa de resposta; para outra proposta, não, seguido do que preferem." e grava o estado "so_story".
    c) Com "Não publicar hoje", envia só a mensagem curta (sem fotos) e grava o estado "nao_publicar".
    d) Depois de enviar, grava em "enviado_em" a hora de envio em UTC (date -u +%Y-%m-%dT%H:%M:%SZ), faz commit e push do estado.json.
 
@@ -237,5 +254,7 @@ Repositório e ficheiros
 REVISÃO (quando o utilizador responde "não, ..." ou "altera, ...")
 - Usa estas regras na íntegra, com o pedido do utilizador como orientação principal (o tema, o formato ou a correção que pediu), sem desobedecer a nenhuma regra (fontes lidas, imparcialidade, português de Portugal, sem linguagem de IA, fundo do dia).
 - "altera, ...": mantém o tema e muda só o que foi pedido. "não, ...": prepara uma proposta nova (uma ou duas opções) segundo o que o utilizador escreveu.
-- A mensagem do Telegram começa com "Nova proposta para hoje (n.º N)" em vez de "Ideia para a próxima publicação". Grava as imagens na subpasta pN/, atualiza o estado.json (proposta = N, estado "pendente", opcoes novas) e envia logo, sem esperar pelas 8h34.
+- A proposta revista é para o mesmo dia de publicação do estado.json que está a ser revisto: usa os campos data, serie, fundo e publicar_as desse estado.json, não os do hoje.py (que se referem ao dia seguinte ao da execução).
+- Aplica também a REVISÃO INDEPENDENTE do passo 4.
+- A mensagem do Telegram começa com "Nova proposta para [dia, data] (n.º N)". Grava as imagens na subpasta pN/, atualiza o estado.json (proposta = N, estado "pendente" ou "so_story", opcoes novas) e envia logo, sem esperar pelas 19h00.
 - No histórico, substitui as linhas de hoje pelas da nova proposta (estado "pendente"). As propostas recusadas não ficam no histórico.

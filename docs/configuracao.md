@@ -1,70 +1,70 @@
-# Configuração do fluxo de aprovação
+# Como funciona o fluxo de publicação
 
-Como funciona:
+## Dia a dia
 
-1. Às 8h20, a tarefa "Ideia diária" gera as imagens, guarda-as no branch `claude/publicacoes` deste repositório (é daí que vêm os links públicos) e às 8h34 envia ao grupo "Contabilidade" as fotos, o story e o texto.
-2. Respondes no grupo: `sim`, `sim B`, `sim vídeo`, `não`, `não, quero algo sobre...` ou `altera, ...`.
-3. Um Zap guarda cada mensagem do grupo num ficheiro de texto do Google Drive.
-4. A tarefa "Respostas" corre de hora a hora (aos 57 minutos, das 8h57 às 21h57). Lê os ficheiros novos e:
-   - com `sim`, publica à hora marcada (13h00 durante a semana, 18h00 ao fim de semana; na prática, na execução das 12h57 ou das 17h57) ou logo, se a hora já tiver passado;
-   - com `não, ...` ou `altera, ...`, prepara outra proposta e envia-a ao grupo;
-   - às 9h57 e às 18h57, vê os comentários novos no Instagram e propõe respostas (`r1 sim`, `r1 não`, `r1, texto`).
-5. O texto alternativo vai com a publicação, pela API do Instagram. Os stories continuam à mão, porque a API não permite autocolantes.
+1. Às 18h37, a tarefa "Ideia diária (aprovação no Telegram)" prepara a proposta para o dia seguinte, segundo a grelha semanal. Gera as imagens (à sexta, o vídeo), passa tudo pelo verificador e por uma revisão independente, guarda as imagens no branch `claude/publicacoes` (é daí que vêm os links públicos) e às 19h00 envia ao grupo "Contabilidade" as fotos, o story e o texto.
+2. Respondem no grupo (comandos abaixo). Um Zap guarda cada mensagem do grupo num ficheiro de texto do Google Drive.
+3. A tarefa "Respostas do Telegram (bem.contado)" corre de hora a hora, aos 57 minutos, das 8h57 às 21h57. Lê as respostas novas e:
+   - com `sim`, publica à hora marcada (13h00 durante a semana, 18h00 ao sábado; na prática, na execução das 12h57 ou das 17h57) ou logo, se a hora já tiver passado;
+   - com `não, ...` ou `altera, ...`, prepara outra proposta e envia-a;
+   - às 9h57 e às 18h57, vê os comentários novos no Instagram e propõe respostas;
+   - faz os controlos diários (abaixo).
+4. O texto alternativo vai com a publicação, pela API do Instagram. Os stories são publicados à mão, porque a API não permite autocolantes.
 
-Uma resposta pode demorar até uma hora a ter efeito, porque o plano gratuito do Zapier não permite avisar a tarefa no momento.
+Uma resposta pode demorar até uma hora a ter efeito: as respostas são lidas de hora a hora.
 
-## O que tens de fazer
+## Grelha semanal
 
-### 1. Bot do Telegram
+| Dia | Publicação |
+| --- | --- |
+| Segunda | Prazos da semana (imagem única ou carrossel de 2 a 4) |
+| Terça | Só story |
+| Quarta | Aprender: carrossel de 4 a 6 com um exemplo com números |
+| Quinta | Só story |
+| Sexta | Reel: vídeo animado de 15 a 25 segundos |
+| Sábado | Curiosidade: carrossel de 6 a 8 contado como história |
+| Domingo | Só story |
 
-No Telegram, abre o @BotFather e envia `/setprivacy`, escolhe o bot Escravo e responde `Disable`. Depois, no grupo "Contabilidade", remove o bot e volta a adicioná-lo (a mudança só tem efeito depois disso).
+Notícias só quando mudam alguma coisa para as pessoas (prazo novo, taxa nova, medida em vigor): podem trocar a série do dia ou entrar num dia de só story.
 
-Sem isto, o bot só vê as mensagens que respondem diretamente às dele.
-
-### 2. Google Drive no Zapier (feito)
-
-Ligação com a conta bemcontado194@gmail.com, com acesso total ao Drive. É a ligação por defeito. A ligação antiga "Google Drive #2" não tem permissões e pode ser apagada em zapier.com/app/connections.
-
-### 3. Pasta no Google Drive (feito)
-
-Pasta `bem.contado - respostas Telegram`, na raiz do Drive de bemcontado194@gmail.com. Testado: criar um ficheiro de texto e lê-lo de volta pela API funciona.
-
-### 4. Zap
-
-Em zapier.com, carrega em Create, Zap:
-
-- **Gatilho:** Telegram, New Message. Conta: o bot Escravo. Chat ID: o grupo "Contabilidade". Message Type: Excludes Voice and Audio Messages.
-- **Ação:** Google Drive, Create File From Text. Conta: bemcontado194@gmail.com.
-  - Folder: `bem.contado - respostas Telegram`
-  - File Name: o campo `Message ID` do passo 1
-  - File Content, em três linhas: `Date`, depois `From First Name` e depois `Text` (todos do passo 1)
-  - Convert to Document: False
-- Testa, envia uma mensagem de teste no grupo e confirma que aparece um ficheiro na pasta. Depois liga o Zap (Publish).
-
-No plano gratuito, cada mensagem do grupo gasta uma tarefa do Zapier (100 por mês). Os alertas de revenda enviados pelo próprio bot não contam, porque o bot não recebe as próprias mensagens.
-
-### 5. Histórico
-
-O histórico deixa de estar no Projeto do Claude e passa para `historico_publicacoes.md`, no branch `claude/publicacoes`. Cola o conteúdo atual do `claude/historico_publicacoes.md` do Projeto numa conversa comigo, ou substitui tu o ficheiro no GitHub.
-
-### 6. Ativar as tarefas
-
-As duas tarefas novas já existem, mas estão desativadas: "Ideia diária (aprovação no Telegram)" e "Respostas do Telegram (bem.contado)". Foram criadas sem o conector do Zapier (não dá para o pôr a partir daqui). Em claude.ai/code/routines, em cada uma delas:
-
-- Editar, Connectors: acrescenta o **Zapier**;
-- Advanced settings, Repository: escolhe `Pedrooruben1/Escrit-rio-de-contabilidade`;
-- guarda e ativa.
-
-No mesmo dia em que ativares a nova "Ideia diária", desativa a antiga "Ideia diária para o Instagram", para não receberes duas propostas.
+O fundo alterna por publicação feita (azul, branco, azul...), não por dia, para o perfil manter o padrão.
 
 ## Comandos no grupo
 
 | Mensagem | Efeito |
 | --- | --- |
-| `sim` | Aprova a opção única e publica à hora marcada |
-| `sim A` / `sim B` | Aprova a opção indicada |
+| `sim` | Aprova a proposta à espera e publica à hora marcada |
+| `sim A` / `sim B` | Aprova a opção indicada, quando há duas |
+| `sim hoje` / `sim amanhã` | Quando há duas propostas à espera (a de hoje e a de amanhã) |
 | `sim vídeo` | Publica o vídeo como Reel em vez da imagem |
-| `não` | Não publica hoje e marca a ideia como "não publicada" |
+| `não` | Não publica e marca a ideia como "não publicada" |
 | `não, quero algo sobre ...` | Gera uma proposta nova com essa orientação |
 | `altera, ...` | Corrige a proposta atual |
+| `ideia, ...` | Guarda um tema na lista de espera, sem mexer na proposta |
 | `r1 sim` / `r1 não` / `r1, texto` | Responde (ou não) ao comentário n.º 1 |
+
+Se `config/aprovadores.txt` tiver nomes, só esses podem dar comandos. Sem nomes, qualquer membro do grupo pode.
+
+## Controlos automáticos
+
+- Às 19h57, se a proposta para o dia seguinte não tiver chegado, aviso no grupo.
+- Às 9h57, verificação das tarefas do Zapier: aviso aos 80% do limite e 3 dias antes do fim do teste do plano Pro.
+- À segunda, às 9h57, relatório da semana no grupo: seguidores e gostos e comentários de cada publicação. O alcance e os guardados precisam de uma permissão do Instagram que a ligação atual não tem.
+
+## Zapier
+
+A conta está num teste do plano Pro (1000 tarefas) até 2/12/2026; depois passa ao plano gratuito (100 tarefas por mês). Até 23/11/2026 às 17h00, cada chamada das tarefas ao Zapier custa 2 tarefas; a partir daí, segundo o Zapier, custa 0. As mensagens escritas no grupo gastam 1 tarefa cada (é o Zap que as copia para o Drive). No dia 2/12 convém confirmar que tudo continua a funcionar no plano gratuito.
+
+## Peças
+
+| Peça | Onde se gere |
+| --- | --- |
+| Tarefas "Ideia diária (aprovação no Telegram)" e "Respostas do Telegram (bem.contado)" | claude.ai/code/routines (conector Zapier e este repositório associados) |
+| Zap "Telegram message to Google Drive file" | zapier.com |
+| Pasta "bem.contado - respostas Telegram" (Drive de bemcontado194@gmail.com) | Google Drive |
+| Bot "Contabilidade" (@alertas_revenda_pedro_bot), com a privacidade desligada | Telegram, @BotFather |
+| Instagram for Business (ligado pela Página de Facebook da bem.contado) | zapier.com |
+| Regras, scripts, verificador, respostas-tipo | este repositório, branch por defeito |
+| Imagens, estado de cada dia, histórico, ideias, métricas | branch `claude/publicacoes` |
+
+A tarefa antiga "Ideia diária para o Instagram" está desativada mas não foi apagada: é o plano de recurso.

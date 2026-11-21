@@ -14,15 +14,17 @@ scripts/
   story.py       imagem do story (1080x1920), com a zona do autocolante livre
   video.py       vídeo em história (1080x1920, mp4)
   verificar.py   verifica a mensagem do dia e os dados*.json antes de publicar
-  hoje.py        dia da semana, fundo do dia, cores e hora de publicação
+  hoje.py        dia da publicação (o seguinte), série da grelha, fundo e hora
+config/
+  aprovadores.txt   quem pode dar comandos no grupo (vazio = todos)
 prompt/
   regras.md                 todas as regras da ideia diária (lidas pelas tarefas)
-  tarefa-ideia.md           prompt da tarefa da manhã
-  tarefa-respostas.md       prompt da tarefa de hora a hora (respostas, publicação, comentários)
+  tarefa-ideia.md           prompt da tarefa da véspera (18h37)
+  tarefa-respostas.md       prompt da tarefa de hora a hora (respostas, publicação, comentários, controlos)
   ideia-diaria.md           prompt antigo, de 20/11/2026 (referência)
   alteracoes-propostas.md   alterações ao prompt antigo (já incluídas em regras.md)
 docs/
-  configuracao.md           passos para pôr o fluxo de aprovação a funcionar
+  configuracao.md           como funciona o fluxo: horários, grelha, comandos, controlos
   respostas-tipo.md         bases para responder a comentários e mensagens
 exemplos/
   dados.json, dados_story.json, mensagem-boa.txt, mensagem-com-erros.txt

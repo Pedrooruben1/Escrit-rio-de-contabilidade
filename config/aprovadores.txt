@@ -1,0 +1,3 @@
+# Quem pode aprovar no grupo do Telegram: um nome por linha, tal como aparece no Telegram
+# (é o "From First Name" que o Zap grava na linha 2 de cada ficheiro do Drive).
+# Sem nomes, valem os comandos de qualquer membro do grupo.

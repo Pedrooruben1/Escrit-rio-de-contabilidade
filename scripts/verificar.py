@@ -176,7 +176,7 @@ def verificar_texto(texto, onde):
             aviso(onde, f"palavra com tom de opinião: '{p}'")
     for o in ORCAMENTO:
         if o in baixo:
-            erro(onde, "tema do Orçamento do Estado (excluído)")
+            aviso(onde, "Orçamento do Estado: só depois de publicado em Diário da República e só sobre medidas em vigor, com a fonte")
             break
 
     for m in re.finditer(r"\b(paga|pagam|pagar) o iva\b|\bo iva todo\b", baixo):
