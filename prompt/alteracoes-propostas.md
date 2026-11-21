@@ -1,3 +1,5 @@
+> Estado: estas alterações já estão incluídas em `regras.md`. Este ficheiro fica como registo.
+
 # Alterações propostas ao prompt da tarefa
 
 Ainda não aplicadas. O prompt em vigor está em `ideia-diaria.md` (cópia de 20/11/2026, 21:02).

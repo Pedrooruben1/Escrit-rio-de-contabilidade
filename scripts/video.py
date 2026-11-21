@@ -1,5 +1,16 @@
 import os, sys, json, html, base64, subprocess, re
 from playwright.sync_api import sync_playwright
+
+def abrir_chromium(p):
+    """Usa o Chromium do Playwright; se a versão não bater certo, procura o pré-instalado."""
+    try:
+        return p.chromium.launch()
+    except Exception:
+        import glob
+        exe = sorted(glob.glob("/opt/pw-browsers/chromium-*/*/chrome-linux*/chrome") + glob.glob("/opt/pw-browsers/chromium-*/chrome-linux*/chrome"))
+        if not exe:
+            raise
+        return p.chromium.launch(executable_path=exe[-1])
 d = json.load(open(sys.argv[1])); F = os.path.abspath(sys.argv[2]); out = sys.argv[3]
 u = lambda w: "data:font/woff2;base64,"+base64.b64encode(open(f"{F}/manrope-latin-{w}-normal.woff2","rb").read()).decode()
 azul = d["fundo"] == "azul"
@@ -65,7 +76,7 @@ def page_html(c):
 <div class=c><div><div class=k>{html.escape(d['etiqueta'])}</div><h1>{words(c['texto'])}</h1></div><div class=f><span>bem.contado</span><span>@bem.contadopt</span></div></div></div></body></html>"""
 files = []
 with sync_playwright() as p:
-    b = p.chromium.launch(); pg = b.new_page(viewport={"width":W,"height":H})
+    b = abrir_chromium(p); pg = b.new_page(viewport={"width":W,"height":H})
     for i, c in enumerate(d["cenas"], 1):
         pg.set_content(page_html(c)); pg.evaluate("document.fonts.ready"); pg.wait_for_timeout(300)
         pg.evaluate(setup_js.replace("FGC", fg).replace("AMC", am))

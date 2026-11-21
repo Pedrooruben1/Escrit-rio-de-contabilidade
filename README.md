@@ -2,7 +2,9 @@
 
 Material de apoio ao Instagram @bem.contadopt: os scripts que geram as imagens da ideia diária, uma verificação automática do texto e respostas-tipo para comentários e mensagens.
 
-A publicação é feita à mão. Nada neste repositório publica no Instagram nem envia para o Telegram.
+As propostas diárias vão para o grupo de Telegram e só são publicadas no Instagram depois de aprovadas lá. Ver `docs/configuracao.md`.
+
+O branch `claude/publicacoes` guarda as imagens de cada dia (é daí que vêm os links públicos usados pelo Telegram e pelo Instagram), o estado de aprovação e o histórico.
 
 ## Estrutura
 
@@ -14,17 +16,19 @@ scripts/
   verificar.py   verifica a mensagem do dia e os dados*.json antes de publicar
   hoje.py        dia da semana, fundo do dia, cores e hora de publicação
 prompt/
-  ideia-diaria.md           prompt em vigor da tarefa "Ideia diária para o Instagram"
-  alteracoes-propostas.md   alterações sugeridas ao prompt, ainda não aplicadas
+  regras.md                 todas as regras da ideia diária (lidas pelas tarefas)
+  tarefa-ideia.md           prompt da tarefa da manhã
+  tarefa-respostas.md       prompt da tarefa de hora a hora (respostas, publicação, comentários)
+  ideia-diaria.md           prompt antigo, de 20/11/2026 (referência)
+  alteracoes-propostas.md   alterações ao prompt antigo (já incluídas em regras.md)
 docs/
+  configuracao.md           passos para pôr o fluxo de aprovação a funcionar
   respostas-tipo.md         bases para responder a comentários e mensagens
 exemplos/
   dados.json, dados_story.json, mensagem-boa.txt, mensagem-com-erros.txt
 ```
 
-`gerar.py`, `story.py` e `video.py` são cópias exatas dos scripts que estão dentro do prompt. Quando um mudar, muda o outro.
-
-A tarefa agendada não lê este repositório (não tem repositório associado). Isto é a cópia de referência, com histórico de alterações.
+As tarefas agendadas clonam este repositório e correm os scripts daqui. Mudar uma regra ou um script aqui muda o comportamento da tarefa seguinte.
 
 ## Correr localmente
 
