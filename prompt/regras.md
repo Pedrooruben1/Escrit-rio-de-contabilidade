@@ -120,7 +120,7 @@ DESCRITIVO PARA O INSTAGRAM COM VALOR PARA AS PESSOAS
 PUBLICAÇÃO E INTERAÇÃO
 - Hora de publicação (em teste): de segunda a sexta às 13h00; ao sábado e ao domingo às 18h00. Indica-a na mensagem na linha "Publicar às" (vale para a publicação e, se for só story, para o story).
 - Story do dia: para cada opção, um story ligado ao tema, com imagem própria (passo 5f) e um autocolante interativo do Instagram para o utilizador acrescentar na aplicação: sondagem (pergunta e 2 opções), quiz (pergunta, 3 ou 4 opções e a resposta certa) ou caixa de perguntas (uma frase a convidar a deixar dúvidas sobre o tema). A pergunta aparece escrita na imagem; as opções vão no autocolante, por isso a imagem deixa livre a zona do meio para baixo. A resposta certa de um quiz tem de vir da fonte lida. Nada sobre política. No autocolante do story é permitido fazer uma pergunta direta.
-- Texto alternativo: para cada imagem da publicação, uma descrição de 1 ou 2 frases do que se vê e do texto principal, para colar no campo "Texto alternativo" do Instagram (acessibilidade).
+- Texto alternativo: para cada imagem da publicação, uma descrição de 1 ou 2 frases do que se vê e do texto principal, que vai gravado automaticamente no campo "Texto alternativo" de cada imagem quando a publicação sai (acessibilidade). Sem prefixos nem aspas no texto em si.
 
 FUNDO (alternar todos os dias, vale para as imagens, o story e o vídeo)
 Usa o fundo que o scripts/hoje.py indica (não contes os dias de cabeça). Alterna a partir de 18/11/2026, que foi azul.
