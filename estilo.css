@@ -18,8 +18,8 @@ a:focus-visible, .btn:focus-visible { outline: 3px solid var(--ambar); outline-o
 
 /* topo */
 .topo { display: flex; justify-content: space-between; align-items: center; padding-top: 26px; padding-bottom: 10px; gap: 16px; flex-wrap: wrap; }
-.marca { font-weight: 800; font-size: 22px; letter-spacing: -.4px; text-decoration: none; margin: 0; }
-.marca span { color: var(--ambar); }
+.marca { font-weight: 700; font-size: 22px; letter-spacing: -.3px; text-decoration: none; margin: 0; white-space: nowrap; }
+.marca .ponto { display: inline-block; width: .3em; height: .3em; margin: 0 .05em 0 .07em; fill: var(--ambar); vertical-align: baseline; }
 .topo nav { display: flex; gap: 22px; font-weight: 700; font-size: 15px; }
 .topo nav a { text-decoration: none; }
 .topo nav a:hover { text-decoration: underline; text-decoration-color: var(--ambar); text-decoration-thickness: 3px; text-underline-offset: 6px; }
