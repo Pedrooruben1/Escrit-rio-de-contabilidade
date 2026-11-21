@@ -1,7 +1,7 @@
 {
  "data": "2026-11-21",
  "publicar_as": "18:00",
- "proposta": 3,
+ "proposta": 4,
  "estado": "pendente",
  "enviado_em": "2026-11-21T08:57:34Z",
  "tentativas": 0,
@@ -13,21 +13,22 @@
  "opcoes": {
   "A": {
    "tema": "40 anos do IVA em Portugal (1986 a 2026)",
-   "formato": "carrossel de 9 imagens (história)",
+   "formato": "carrossel de 10 imagens (história)",
    "imagens": [
-    "https://raw.githubusercontent.com/Pedrooruben1/Escrit-rio-de-contabilidade/claude/publicacoes/publicacoes/2026-11-21/p3/slide_1.png",
-    "https://raw.githubusercontent.com/Pedrooruben1/Escrit-rio-de-contabilidade/claude/publicacoes/publicacoes/2026-11-21/p3/slide_2.png",
-    "https://raw.githubusercontent.com/Pedrooruben1/Escrit-rio-de-contabilidade/claude/publicacoes/publicacoes/2026-11-21/p3/slide_3.png",
-    "https://raw.githubusercontent.com/Pedrooruben1/Escrit-rio-de-contabilidade/claude/publicacoes/publicacoes/2026-11-21/p3/slide_4.png",
-    "https://raw.githubusercontent.com/Pedrooruben1/Escrit-rio-de-contabilidade/claude/publicacoes/publicacoes/2026-11-21/p3/slide_5.png",
-    "https://raw.githubusercontent.com/Pedrooruben1/Escrit-rio-de-contabilidade/claude/publicacoes/publicacoes/2026-11-21/p3/slide_6.png",
-    "https://raw.githubusercontent.com/Pedrooruben1/Escrit-rio-de-contabilidade/claude/publicacoes/publicacoes/2026-11-21/p3/slide_7.png",
-    "https://raw.githubusercontent.com/Pedrooruben1/Escrit-rio-de-contabilidade/claude/publicacoes/publicacoes/2026-11-21/p3/slide_8.png",
-    "https://raw.githubusercontent.com/Pedrooruben1/Escrit-rio-de-contabilidade/claude/publicacoes/publicacoes/2026-11-21/p3/slide_9.png"
+    "https://raw.githubusercontent.com/Pedrooruben1/Escrit-rio-de-contabilidade/claude/publicacoes/publicacoes/2026-11-21/p4/slide_1.png",
+    "https://raw.githubusercontent.com/Pedrooruben1/Escrit-rio-de-contabilidade/claude/publicacoes/publicacoes/2026-11-21/p4/slide_2.png",
+    "https://raw.githubusercontent.com/Pedrooruben1/Escrit-rio-de-contabilidade/claude/publicacoes/publicacoes/2026-11-21/p4/slide_3.png",
+    "https://raw.githubusercontent.com/Pedrooruben1/Escrit-rio-de-contabilidade/claude/publicacoes/publicacoes/2026-11-21/p4/slide_4.png",
+    "https://raw.githubusercontent.com/Pedrooruben1/Escrit-rio-de-contabilidade/claude/publicacoes/publicacoes/2026-11-21/p4/slide_5.png",
+    "https://raw.githubusercontent.com/Pedrooruben1/Escrit-rio-de-contabilidade/claude/publicacoes/publicacoes/2026-11-21/p4/slide_6.png",
+    "https://raw.githubusercontent.com/Pedrooruben1/Escrit-rio-de-contabilidade/claude/publicacoes/publicacoes/2026-11-21/p4/slide_7.png",
+    "https://raw.githubusercontent.com/Pedrooruben1/Escrit-rio-de-contabilidade/claude/publicacoes/publicacoes/2026-11-21/p4/slide_8.png",
+    "https://raw.githubusercontent.com/Pedrooruben1/Escrit-rio-de-contabilidade/claude/publicacoes/publicacoes/2026-11-21/p4/slide_9.png",
+    "https://raw.githubusercontent.com/Pedrooruben1/Escrit-rio-de-contabilidade/claude/publicacoes/publicacoes/2026-11-21/p4/slide_10.png"
    ],
    "video": null,
    "story": "https://raw.githubusercontent.com/Pedrooruben1/Escrit-rio-de-contabilidade/claude/publicacoes/publicacoes/2026-11-21/p2/story.png",
-   "descritivo": "O IVA existe em Portugal desde 1 de janeiro de 1986: este ano faz 40 anos. Substituiu o imposto de transações, de 1966, que só era cobrado a produtores e grossistas. Com o IVA, retalhistas e prestadores de serviços também passaram a cobrar e entregar o imposto. A taxa normal começou nos 16% e hoje é de 23% no continente. Cada empresa entrega o IVA das vendas menos o das compras, e quem paga o imposto todo é o consumidor final.\n\nGuarde para ler o IVA da próxima fatura.\n\n#iva #impostos #curiosidades #contabilidade #financaspessoais",
+   "descritivo": "O IVA existe em Portugal desde 1 de janeiro de 1986: este ano faz 40 anos. Substituiu o imposto de transações, de 1966, que só era cobrado a produtores e grossistas. Com o IVA, retalhistas e prestadores de serviços também passaram a cobrar e entregar o imposto. A taxa normal começou nos 16% e hoje é de 23% no continente. Cada empresa entrega o IVA das vendas menos o das compras e, em regra, quem suporta o imposto é o consumidor final.\n\nGuarde para ler o IVA da próxima fatura.\n\n#iva #impostos #curiosidades #contabilidade #financaspessoais",
    "texto_alternativo": [
     "Desenho de uma pessoa a apontar para um calendário com 1986 e o texto: O IVA chegou a Portugal a 1 de janeiro de 1986. Este ano faz 40 anos.",
     "Três casas em cadeia, as duas primeiras com uma moeda e a última com um X, e o texto: Antes havia o imposto de transações, de 1966. Só era cobrado a produtores e grossistas.",
@@ -35,8 +36,9 @@
     "Uma fatura com moedas a cair e uma pequena bandeira europeia, e o texto: O imposto antigo tinha muita evasão e fraude. E a entrada na CEE, em 1986, obrigava a adotar o IVA.",
     "Um talão com 16% ao lado de um pão com 0%, e o texto: A taxa normal começou nos 16%. O pão e outros bens essenciais ficaram com taxa zero.",
     "Um talão IVA menos outro talão IVA, com uma seta para um edifício do Estado, e o texto: Cada empresa entrega ao Estado o IVA das vendas menos o IVA das compras.",
-    "Cadeia produtor, loja e consumidor, com 23 euros por cima do produtor, e o texto: Quem paga o IVA todo é o consumidor final. O produtor vende por 100 euros mais 23 euros e entrega 23 euros.",
-    "A mesma cadeia, com 11,50 euros por cima da loja, e o texto: A loja vende por 150 euros mais 34,50 euros e entrega só 11,50 euros. O Estado recebe 34,50 euros, pagos por quem compra.",
+    "Cadeia produtor, loja e consumidor, com o consumidor destacado a laranja, e o texto: Em regra, quem suporta o IVA é o consumidor final. As empresas vão entregando ao Estado só a parte do valor que acrescentam.",
+    "Cadeia produtor, loja e consumidor, com 23 euros por cima do produtor, e o texto: O produtor vende por 100 euros mais 23 euros de IVA e entrega 23 euros.",
+    "A mesma cadeia, com 11,50 euros por cima da loja, e o texto: A loja vende por 150 euros mais 34,50 euros e entrega só 11,50 euros. O Estado recebe 34,50 euros, suportados por quem compra.",
     "Uma pessoa a apontar para um talão com 23% e o texto: Hoje a taxa normal é de 23% no continente (22% na Madeira, 16% nos Açores). Guarde para ler o IVA da próxima fatura."
    ],
    "story_texto": "quiz: Qual era a taxa normal do IVA em 1986? | 8%; 16% (certa); 23%"
