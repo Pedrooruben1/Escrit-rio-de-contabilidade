@@ -21,20 +21,20 @@ No Telegram, abre o @BotFather e envia `/setprivacy`, escolhe o bot Escravo e re
 
 Sem isto, o bot só vê as mensagens que respondem diretamente às dele.
 
-### 2. Google Drive no Zapier
+### 2. Google Drive no Zapier (feito)
 
-A ligação atual do Google Drive não tem permissões para ler nem criar ficheiros. Em zapier.com/app/connections, abre o Google Drive, carrega nos três pontos, escolhe Reconnect e, no ecrã da Google, marca todas as caixas de permissões.
+Ligação com a conta bemcontado194@gmail.com, com acesso total ao Drive. É a ligação por defeito. A ligação antiga "Google Drive #2" não tem permissões e pode ser apagada em zapier.com/app/connections.
 
-### 3. Pasta no Google Drive
+### 3. Pasta no Google Drive (feito)
 
-Cria no teu Drive uma pasta com este nome exato: `bem.contado - respostas Telegram`
+Pasta `bem.contado - respostas Telegram`, na raiz do Drive de bemcontado194@gmail.com. Testado: criar um ficheiro de texto e lê-lo de volta pela API funciona.
 
 ### 4. Zap
 
 Em zapier.com, carrega em Create, Zap:
 
 - **Gatilho:** Telegram, New Message. Conta: o bot Escravo. Chat ID: o grupo "Contabilidade". Message Type: Excludes Voice and Audio Messages.
-- **Ação:** Google Drive, Create File From Text.
+- **Ação:** Google Drive, Create File From Text. Conta: bemcontado194@gmail.com.
   - Folder: `bem.contado - respostas Telegram`
   - File Name: o campo `Message ID` do passo 1
   - File Content, em três linhas: `Date`, depois `From First Name` e depois `Text` (todos do passo 1)
