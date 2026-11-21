@@ -49,12 +49,13 @@ O histórico deixa de estar no Projeto do Claude e passa para `historico_publica
 
 ### 6. Ativar as tarefas
 
-Quando os passos 1 a 5 estiverem feitos:
+As duas tarefas novas já existem, mas estão desativadas: "Ideia diária (aprovação no Telegram)" e "Respostas do Telegram (bem.contado)". Foram criadas sem o conector do Zapier (não dá para o pôr a partir daqui). Em claude.ai/code/routines, em cada uma delas:
 
-- desativa a tarefa antiga "Ideia diária para o Instagram";
-- ativa a nova "Ideia diária (aprovação no Telegram)" e a "Respostas do Telegram".
+- Editar, Connectors: acrescenta o **Zapier**;
+- Advanced settings, Repository: escolhe `Pedrooruben1/Escrit-rio-de-contabilidade`;
+- guarda e ativa.
 
-Se, ao correr, alguma das tarefas novas não conseguir aceder ao repositório, abre-a em claude.ai/code/routines, Editar, Advanced settings, Repository, e escolhe `Pedrooruben1/Escrit-rio-de-contabilidade`.
+No mesmo dia em que ativares a nova "Ideia diária", desativa a antiga "Ideia diária para o Instagram", para não receberes duas propostas.
 
 ## Comandos no grupo
 
