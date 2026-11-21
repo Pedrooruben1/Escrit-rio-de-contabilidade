@@ -17,6 +17,9 @@ scripts/
   hoje.py        dia da publicação (o seguinte), série da grelha, fundo e hora
 config/
   aprovadores.txt   quem pode dar comandos no grupo (vazio = todos)
+site/
+  index.html, estilo.css, site.js   site bemcontadopt.pt (versão "a abrir em breve")
+  fonts/, favicon.svg, og.png         letra Manrope, ícone e imagem de partilha
 prompt/
   regras.md                 todas as regras da ideia diária (lidas pelas tarefas)
   tarefa-ideia.md           prompt da tarefa da véspera (18h37)
@@ -68,3 +71,9 @@ Dá **erro** (código de saída 1) quando encontra:
 Dá **aviso** para o que precisa de olhos humanos: siglas a confirmar se estão explicadas, gerúndios a fechar frases, "Chega" ou "Livre" com maiúscula, palavras com tom de opinião, frases a começar sempre da mesma maneira.
 
 O script não confirma factos. A regra de não inventar informação continua a depender da leitura da fonte.
+
+## Site (bemcontadopt.pt)
+
+A pasta `site/` é o site da bem.contado na versão "a abrir em breve": apresenta o projeto, o Instagram e a app Poupança, com o email de contacto. Não anuncia serviços, não tem formulário, não faz promessas nem mostra números inventados, e não tem nomes nem números da OCC enquanto a inscrição não estiver feita.
+
+O que o GitHub Pages serve é o branch `claude/site`, que tem os mesmos ficheiros na raiz e o `CNAME` com `bemcontadopt.pt`. Quando mudar alguma coisa em `site/`, é preciso copiar também para esse branch.
