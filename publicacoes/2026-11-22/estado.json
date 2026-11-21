@@ -1,0 +1,28 @@
+{
+  "data": "2026-11-22",
+  "serie": "story",
+  "fundo": "azul",
+  "publicar_as": "18:00",
+  "proposta": 1,
+  "estado": "so_story",
+  "enviado_em": null,
+  "tentativas": 0,
+  "opcao_aprovada": null,
+  "publicar_video": false,
+  "media_id": null,
+  "permalink": null,
+  "ultima_resposta": null,
+  "opcoes": {
+    "A": {
+      "tema": "Quantas taxas de IVA fixa o Código do IVA (quiz)",
+      "formato": "Só story",
+      "imagens": [],
+      "video": null,
+      "capa": null,
+      "story": "https://raw.githubusercontent.com/Pedrooruben1/Escrit-rio-de-contabilidade/claude/publicacoes/publicacoes/2026-11-22/story.png",
+      "descritivo": "",
+      "texto_alternativo": [],
+      "story_texto": "quiz: Quantas taxas de IVA fixa o Código do IVA? | 2; 3 (certa); 4"
+    }
+  }
+}
