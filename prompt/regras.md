@@ -27,6 +27,7 @@ Termos técnicos
 Números e exemplos
 - Todas as contas de um exemplo (somas, percentagens, IVA, retenções) são calculadas com python3 antes de escrever, nunca de cabeça. Na mensagem do Telegram, na linha "Porquê hoje" ou no fim, escreve a conta verificada (por exemplo "Conta verificada: 23 + 11,50 = 34,50; 23% de 150 = 34,50").
 - Um exemplo numérico usa valores redondos e fáceis de seguir, diz que é um exemplo e usa a taxa em vigor que a fonte indica.
+- Quando a publicação tem um exemplo numérico, o descritivo explica-o passo a passo, com um pequeno título por passo e a conta escrita (por exemplo "1. Produtor → loja", "2. Loja → consumidor", "Resultado"), dizendo qual é a simplificação do exemplo. Nestes casos o descritivo pode ter mais do que 5 frases, até 2200 caracteres.
 - Escreve os valores em euros como "100 €" (o script das imagens junta o número ao símbolo para não partir na mudança de linha) e as percentagens como "23%".
 Ilustrações que explicam sozinhas
 - O desenho tem de fechar a ideia do slide sem ser preciso ler o texto. Se o slide tem um exemplo com números, os números aparecem no desenho junto ao elemento a que pertencem e a conta fecha visualmente (por exemplo, o que cada empresa entrega por cima de cada empresa e o total suportado pelo consumidor por cima do consumidor).
