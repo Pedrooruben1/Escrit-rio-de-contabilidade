@@ -9,12 +9,13 @@ REGRA DE SEGURANÇA
 2. Estado. Prepara o branch claude/publicacoes em /tmp/pub como as regras indicam. Lê publicacoes/AAAA-MM-DD/estado.json de hoje.
    - Se existir um estado.json de ontem com estado "pendente" ou "aprovada" e media_id vazio, muda-o para "recusada", muda as linhas de ontem no historico_publicacoes.md para "não publicada", faz commit e push. Não avises no Telegram.
    - Se ainda não houver estado.json de hoje, salta para o passo 6 (comentários).
+   - Se o estado.json tiver "em_curso" com menos de 40 minutos, outra execução está a trabalhar: termina já, sem enviar nada. Se tiver mais de 40 minutos, considera que essa execução falhou, apaga "em_curso" e continua.
 
 3. Ler as respostas (Zapier, app Google Drive, ação Make API GET Request; confirma o schema com inspect_zapier_actions).
    a) Encontra o id da pasta: GET https://www.googleapis.com/drive/v3/files com q = "name = 'bem.contado - respostas Telegram' and mimeType = 'application/vnd.google-apps.folder' and trashed = false".
    b) Lista os ficheiros: GET https://www.googleapis.com/drive/v3/files com q = "'ID_DA_PASTA' in parents and trashed = false and createdTime > 'MARCA'", orderBy = "createdTime", fields = "files(id,name,createdTime)". MARCA é o campo "ultima_resposta" do estado.json; se estiver vazio, usa o "enviado_em" do estado.json (a hora a que a proposta foi enviada, em UTC, formato RFC 3339).
    c) Lê cada ficheiro por ordem: GET https://www.googleapis.com/drive/v3/files/ID?alt=media. Linha 1: data; linha 2: nome de quem escreveu; resto: o texto.
-   d) No fim, grava em "ultima_resposta" o createdTime do último ficheiro lido.
+   d) Logo a seguir a ler (antes de processar qualquer comando), grava em "ultima_resposta" o createdTime do último ficheiro lido e, se houver algum comando para processar, grava também "em_curso" com a hora atual em UTC; faz commit e push imediatamente. Assim nenhuma outra execução volta a ler as mesmas respostas. Quando acabares de processar, apaga "em_curso", faz commit e push.
 
 4. COMANDOS (sem distinguir maiúsculas, acentos ou pontuação no início). Processa as respostas pela ordem em que chegaram.
    - "sim", "sim A", "sim B": estado "aprovada" com a opção indicada. Com uma só opção, "sim" aprova a A. Com duas opções e só "sim", envia ao Telegram "Qual das opções, A ou B?" e mantém "pendente".
