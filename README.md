@@ -76,4 +76,8 @@ O script não confirma factos. A regra de não inventar informação continua a 
 
 A pasta `site/` é o site da bem.contado na versão "a abrir em breve": apresenta o projeto, o Instagram e a app Poupança, com o email de contacto. Não anuncia serviços, não tem formulário, não faz promessas nem mostra números inventados, e não tem nomes nem números da OCC enquanto a inscrição não estiver feita.
 
-O que o GitHub Pages serve é o branch `claude/site`, que tem os mesmos ficheiros na raiz e o `CNAME` com `bemcontadopt.pt`. Quando mudar alguma coisa em `site/`, é preciso copiar também para esse branch.
+O que o GitHub Pages serve é o branch `claude/site`, que tem os mesmos ficheiros na raiz e o `CNAME` com `bemcontadopt.pt`. Quando mudar alguma coisa em `site/`, é preciso copiar também para esse branch, sem apagar o que lá existe a mais.
+
+Partes automáticas, que só existem no branch `claude/site` e são escritas pela tarefa de publicação (`scripts/site_atualizar.py`):
+- `ultima/`: a imagem e os dados da última publicação do Instagram. A página principal mostra-a no lugar do desenho do telemóvel.
+- `prazos/`: a página "Prazos da semana", gerada a partir do `prazos.json` da publicação de segunda-feira.

@@ -53,6 +53,10 @@ REGRA DE SEGURANÇA
       Falta fazer à mão: o story (imagem enviada antes) com o autocolante: [story_texto]
       Se o texto alternativo não ficou gravado (plano B ou confirmação vazia): Texto alternativo para colar (Editar, Definições avançadas, Texto alternativo): [texto_alternativo, uma linha por imagem]
    e) Notificação com PushNotification com o mesmo resumo.
+   f) Site bemcontadopt.pt (depois de publicado; se alguma coisa falhar aqui, não desfaças a publicação: diz o erro no Telegram e segue). Prepara o branch do site numa pasta à parte: cd "$REPO" && git fetch origin claude/site && git worktree add -f /tmp/site -B claude/site origin/claude/site. Depois:
+      - Última publicação: python3 "$REPO/scripts/site_atualizar.py" ultima --site /tmp/site --imagem [primeira imagem da opção publicada, ou a capa no Reel, já descarregada para o disco: está em /tmp/pub, na pasta do dia] --data [data do estado.json] --tema "[tema]" --permalink [permalink] --alt "[texto alternativo da primeira imagem, ou do Reel]".
+      - Se a série for "prazos" e existir publicacoes/[data]/prazos.json: python3 "$REPO/scripts/site_atualizar.py" prazos --site /tmp/site --dados [esse ficheiro] --permalink [permalink].
+      - O script só mexe nas pastas ultima/ e prazos/. Commit ("Site: publicação de DD/MM") e push para claude/site (git pull --rebase origin claude/site antes, até 4 tentativas). O GitHub Pages atualiza o site em 1 a 2 minutos.
    Se a publicação falhar, não tentes outra vez nesta execução: envia ao Telegram o erro e deixa o estado "aprovada" para a próxima execução tentar de novo (no máximo 3 tentativas no total; regista-as no campo "tentativas" do estado.json).
 
 6. Comentários (só nas execuções das 9h57 e das 18h57, ou quando chegou um comando "rN").

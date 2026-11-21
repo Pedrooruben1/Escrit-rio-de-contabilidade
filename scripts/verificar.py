@@ -284,7 +284,7 @@ def verificar_mensagem(mensagem):
 
 # ---------------------------------------------------------------- json
 
-CORES_OK = {"FG", "BG", "AM", "#E09F3E", "#e09f3e", "none"}
+CORES_OK = {"FG", "BG", "AM", "#E09F3E", "#e09f3e", "#B5711A", "#b5711a", "none"}
 TAGS_OK = {"path", "circle", "ellipse", "line", "g", "text"}
 
 

@@ -45,6 +45,26 @@ document.addEventListener('DOMContentLoaded', () => {
     alvos.forEach(a => io.observe(a));
   }
 
+  // Última publicação do Instagram: a tarefa que publica escreve ultima/dados.json e ultima/imagem.png no site.
+  // Sem dados (ou se algo falhar), fica o desenho do telemóvel.
+  const slot = document.querySelector('.ultima-slot');
+  if (slot && window.fetch) {
+    const MESES = ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'];
+    const dataPT = iso => { const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso || ''); return m ? `${Number(m[3])} de ${MESES.at(Number(m[2]) - 1)}` : ''; };
+    fetch('ultima/dados.json', { cache: 'no-cache' }).then(r => (r.ok ? r.json() : null)).then(d => {
+      if (!d || !/^https:\/\/www\.instagram\.com\//.test(d.permalink || '') || !/^ultima\/[\w.-]+$/.test(d.imagem || '')) return;
+      const a = document.createElement('a');
+      a.className = 'ultima'; a.href = d.permalink; a.dataset.contar = 'ultima-publicacao';
+      const img = new Image(1080, 1350);
+      img.src = `${d.imagem}?v=${encodeURIComponent(d.v || d.data || '')}`; img.alt = d.alt || ''; img.decoding = 'async';
+      const p = document.createElement('p'); p.className = 'ultima-legenda';
+      const b = document.createElement('b'); b.textContent = 'Última publicação';
+      p.append(b, ` · ${d.tema || ''}${dataPT(d.data) ? ' · ' + dataPT(d.data) : ''}`);
+      a.append(img, p);
+      img.onload = () => slot.replaceChildren(a);
+    }).catch(() => {});
+  }
+
   // Contador anónimo (GoatCounter da bem.contado, sem cookies). Só no endereço oficial.
   if (/^(www\.)?bemcontadopt\.pt$/.test(location.hostname)) {
     const enviar = params => {

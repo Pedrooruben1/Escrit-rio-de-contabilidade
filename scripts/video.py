@@ -23,6 +23,9 @@ u = lambda w: "data:font/woff2;base64,"+base64.b64encode(open(f"{F}/manrope-lati
 azul = d["fundo"] == "azul"
 bg, fg = ("#17324D", "#F7F5F0") if azul else ("#FFFFFF", "#17324D")
 am = "#E09F3E"; W, H, FPS = 1080, 1920, 30
+# Âmbar das LETRAS: sobre fundo branco usa-se um âmbar mais escuro (#B5711A, contraste 3,6:1, chega para letra grande);
+# sobre azul fica o âmbar da marca (#E09F3E, 5,8:1). Os sublinhados e os desenhos ficam sempre no âmbar da marca.
+am_txt = am if azul else "#B5711A"
 css = f"""@font-face{{font-family:M;src:url({u('500')});font-weight:500}}
 @font-face{{font-family:M;src:url({u('700')});font-weight:700}}
 @font-face{{font-family:M;src:url({u('800')});font-weight:800}}
@@ -31,10 +34,10 @@ body{{width:{W}px;height:{H}px;background:{bg};color:{fg};font-family:M;overflow
 #cam{{position:absolute;inset:-20px;transform-origin:50% 50%}}
 .grao{{position:absolute;inset:0;opacity:.025}}
 .c{{position:absolute;inset:20px;padding:220px 100px 150px;display:flex;flex-direction:column;justify-content:space-between;box-sizing:border-box}}
-.k{{color:{am};font-weight:700;font-size:34px;letter-spacing:1.5px;text-transform:uppercase;transform:rotate(-1.2deg);transform-origin:left}}
+.k{{color:{am_txt};font-weight:700;font-size:34px;letter-spacing:1.5px;text-transform:uppercase;transform:rotate(-1.2deg);transform-origin:left}}
 h1{{font-weight:800;font-size:88px;line-height:1.14;margin:56px 0 0;letter-spacing:-1px}}
 h1 .w{{display:inline-block;opacity:0}}
-em{{font-style:normal;color:{am}}}
+em{{font-style:normal;color:{am_txt}}}
 .f{{font-weight:500;font-size:30px;display:flex;justify-content:space-between;opacity:.85}}
 svg.top{{position:absolute;left:20px;top:20px;overflow:visible}}"""
 grao = """<svg class=grao width=1120 height=1960><filter id=n><feTurbulence type=fractalNoise baseFrequency=.85 numOctaves=3 seed=3/><feColorMatrix values="COR  0 0 0 1 0"/></filter><rect width=100% height=100% filter=url(#n)/></svg>"""
@@ -77,7 +80,7 @@ anim_js = """(t) => {
 }"""
 cor = "0 0 0 0 .97  0 0 0 0 .96  0 0 0 0 .94" if azul else "0 0 0 0 .2  0 0 0 0 .2  0 0 0 0 .25"
 def page_html(c):
-    svg = c["svg"].replace('"FG"', f'"{fg}"').replace('"AM"', f'"{am}"').replace('"BG"', f'"{bg}"')
+    svg = re.sub(r'(<text\b[^>]*?)fill="AM"', lambda m: m.group(1) + f'fill="{am_txt}"', c["svg"]).replace('"FG"', f'"{fg}"').replace('"AM"', f'"{am}"').replace('"BG"', f'"{bg}"')
     return f"""<html><head><meta charset=utf-8><style>{css}</style></head><body><div id=cam>{grao.replace('COR', cor)}
 <svg class=top width=1080 height=1920><defs><filter id="rough2"><feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="2" seed="7"/><feDisplacementMap in="SourceGraphic" scale="6"/></filter></defs><g fill="none" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" filter="url(#rough2)">{svg}</g></svg>
 <svg id=top class=top width=1080 height=1920><defs><filter id="rough"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="11"/><feDisplacementMap in="SourceGraphic" scale="5"/></filter></defs></svg>
