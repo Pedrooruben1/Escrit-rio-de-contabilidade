@@ -17,5 +17,6 @@ Regras:
 - 20/11/2026 | Subsídio de Natal: função pública em novembro, setor privado até 15 de dezembro | ensinar | finanças pessoais | presente com laço âmbar, envelope aberto com carta a sair e nota de euros (âmbar, com €) | não
 - 20/11/2026 | TAEG (proposta trocada a pedido do utilizador) | ensinar | finanças pessoais | frasco com % | não | nenhuma | não publicada
 - 20/11/2026 | Prazos do IVA mensal e trimestral (proposta trocada a pedido do utilizador) | ensinar | empresas | envelope numa caixa "IVA" | não | nenhuma | não publicada
+- 21/11/2026 | sem publicação | sábado sem fonte lida: as páginas das fontes não abriram nesta execução (rede da sessão bloqueada) | guardada para outro dia: curiosidade "40 anos do IVA em Portugal (1986)"
 
 Nota: os dois vídeos de 19/11 foram exemplos feitos a pedido; contam para a semana de 16 a 22/11 (limite atingido, sem vídeos até domingo 22/11).
