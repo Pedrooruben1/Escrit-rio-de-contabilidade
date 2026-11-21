@@ -11,7 +11,8 @@ Uso:
 prazos.json:
   {"semana_inicio": "2026-11-23", "semana_fim": "2026-11-29",
    "prazos": [{"data": "2026-11-25", "titulo": "...", "quem": "...", "descricao": "...", "fonte": "https://..."}]}
-Cada prazo tem de ter os cinco campos; a fonte é o endereço da página oficial lida. Sem travessões.
+Cada prazo tem de ter os cinco campos; a fonte é o endereço da página oficial lida. A fonte não aparece no site,
+mas é obrigatória: serve para confirmar cada prazo antes de publicar. Sem travessões.
 """
 import argparse
 import html
@@ -192,14 +193,12 @@ def prazos(args):
         d = data_iso(p["data"], f"prazo {n}")
         if not re.match(r"^https://", p["fonte"]):
             falha(f"prazo {n}: a fonte tem de ser um endereço https://")
-        dominio = re.sub(r"^https://(www\.)?", "", p["fonte"]).split("/")[0]
         itens.append(f"""      <li class="prazo">
         <p class="dia"><span class="semana">{DIAS_CURTOS[d.weekday()]}</span><span class="numero">{d.day}</span><span class="mes">{MESES_CURTOS[d.month - 1]}</span></p>
         <div>
           <h2>{e(p["titulo"])}</h2>
           <p class="quem">Para quem: {e(p["quem"])}</p>
           <p>{e(p["descricao"])}</p>
-          <p class="fonte">Fonte: <a href="{e(p["fonte"])}">{e(dominio)}</a></p>
         </div>
       </li>""")
     lista_html = ("    <ol class=\"prazos\">\n" + "\n".join(itens) + "\n    </ol>") if itens else \
@@ -223,7 +222,6 @@ def prazos(args):
   </section>"""
     (pasta / "index.html").write_text(pagina(f"Prazos da semana de {intervalo(ini, fim)} · bem.contado",
         f"Prazos fiscais e da Segurança Social da semana de {intervalo(ini, fim)}, com a fonte oficial.", corpo), encoding="utf-8")
-    (pasta / "dados.json").write_text(json.dumps(dados, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     print(f"ok: {len(itens)} prazos em {pasta / 'index.html'}")
 
 
