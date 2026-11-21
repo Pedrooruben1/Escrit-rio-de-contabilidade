@@ -3,7 +3,7 @@
  "publicar_as": "18:00",
  "proposta": 2,
  "estado": "pendente",
- "enviado_em": "2026-11-21T08:34:09Z",
+ "enviado_em": "2026-11-21T08:47:39Z",
  "tentativas": 0,
  "opcao_aprovada": null,
  "publicar_video": false,
@@ -37,6 +37,5 @@
    ],
    "story_texto": "Quiz: Qual era a taxa normal do IVA em 1986? | Opções: 8%, 16%, 23% | Resposta certa: 16%"
   }
- },
- "em_curso": "2026-11-21T08:41:02Z"
+ }
 }
