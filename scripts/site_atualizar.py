@@ -157,13 +157,12 @@ def prazos(args):
     pasta.mkdir(exist_ok=True)
 
     if args.espera:
-        primeira = data_iso(args.espera, "--espera")
+        data_iso(args.espera, "--espera")  # validada, mas já não é mostrada na página
         corpo = f"""  <section class="hero wrap">
     <div class="texto">
       <p class="antes">Atualizado à segunda-feira</p>
       <h1>Prazos da semana</h1>
       <p class="sub">Todas as segundas-feiras juntamos aqui os prazos fiscais e da Segurança Social dessa semana que interessam a particulares, trabalhadores independentes e empresas, cada um com a fonte oficial.</p>
-      <p>A primeira lista sai na {DIAS[primeira.weekday()]}, {por_extenso(primeira)}, depois de publicada no Instagram.</p>
       <p class="acoes"><a class="btn" href="https://www.instagram.com/bem.contadopt/" data-contar="instagram-prazos">Seguir no Instagram</a></p>
     </div>
     {CALENDARIO}
