@@ -26,13 +26,20 @@ REGRA DE SEGURANÇA
    Faz commit e push do estado.json depois de processares as respostas.
 
 5. Publicar. Se o estado for "aprovada", media_id estiver vazio e a hora de Lisboa já for igual ou posterior a publicar_as:
-   a) Instagram for Business pelo Zapier (confirma o schema com inspect_zapier_actions): ação "Publish Photo(s)" com media = a lista "imagens" da opção aprovada (por ordem), caption = o "descritivo" completo e instagramPageId = "17841447268207569". Se publicar_video for true e houver vídeo, usa antes a ação "Publish Video" com o vídeo e o mesmo descritivo.
+   a) Publica pela API do Instagram, com o texto alternativo em cada imagem. Usa a ação "Make API Mutating Request" do Instagram for Business no Zapier (method POST, parâmetros em querystring, fail_on_errors "false"; confirma o schema com inspect_zapier_actions). IG = 17841447268207569.
+      - Uma imagem: POST https://graph.facebook.com/v21.0/IG/media com image_url = a imagem, caption = o "descritivo" completo, alt_text = a linha do "texto_alternativo" dessa imagem (sem o prefixo "Imagem 1:"). Guarda o id devolvido (contentor).
+      - Carrossel (2 a 10 imagens): para cada imagem, por ordem, POST https://graph.facebook.com/v21.0/IG/media com image_url, is_carousel_item = "true" e alt_text = a linha dessa imagem. Depois POST https://graph.facebook.com/v21.0/IG/media com media_type = "CAROUSEL", children = os ids das imagens separados por vírgulas (pela ordem) e caption = o descritivo.
+      - Antes de publicar, confirma que o contentor está pronto: GET https://graph.facebook.com/v21.0/CONTENTOR?fields=status_code (ação Make API GET Request) até dar "FINISHED" (espera 10 segundos entre tentativas, no máximo 10). "ERROR" ou "EXPIRED" = falha.
+      - Publica: POST https://graph.facebook.com/v21.0/IG/media_publish com creation_id = CONTENTOR. O id devolvido é o MEDIA_ID.
+      - Confirma o texto alternativo: GET https://graph.facebook.com/v21.0/MEDIA_ID?fields=alt_text (num carrossel, GET MEDIA_ID/children?fields=alt_text). Se vier vazio, diz isso na mensagem do passo d) e põe lá o texto alternativo para colar à mão.
+      - Se algum destes pedidos falhar antes do media_publish, usa o plano B: a ação "Publish Photo(s)" do Zapier com media = a lista "imagens", caption = o descritivo e instagramPageId = "17841447268207569" (sai sem texto alternativo; o passo d) indica-o para colar à mão).
+      - Vídeo: se publicar_video for true e houver vídeo, usa a ação "Publish Video" do Zapier com o vídeo e o mesmo descritivo.
    b) Obtém o link: ação Make API GET Request, GET https://graph.facebook.com/v21.0/MEDIA_ID?fields=permalink.
    c) Grava no estado.json: estado "publicada", media_id e permalink. No histórico, a linha da opção aprovada passa a "publicada" e a outra opção (se houver) passa a "não publicada". Commit e push.
    d) Envia ao Telegram (send_message, plaintext, chat_id "-1003970082558"):
       Publicado: [permalink]
       Falta fazer à mão: o story (imagem enviada antes) com o autocolante: [story_texto]
-      Texto alternativo (Editar, Definições avançadas, Texto alternativo): [texto_alternativo, uma linha por imagem]
+      Se o texto alternativo não ficou gravado (plano B ou confirmação vazia): Texto alternativo para colar (Editar, Definições avançadas, Texto alternativo): [texto_alternativo, uma linha por imagem]
    e) Notificação com PushNotification com o mesmo resumo.
    Se a publicação falhar, não tentes outra vez nesta execução: envia ao Telegram o erro e deixa o estado "aprovada" para a próxima execução tentar de novo (no máximo 3 tentativas no total; regista-as no campo "tentativas" do estado.json).
 

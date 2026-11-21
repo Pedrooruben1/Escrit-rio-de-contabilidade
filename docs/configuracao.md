@@ -9,7 +9,7 @@ Como funciona:
    - com `sim`, publica à hora marcada (13h00 durante a semana, 18h00 ao fim de semana; na prática, na execução das 12h57 ou das 17h57) ou logo, se a hora já tiver passado;
    - com `não, ...` ou `altera, ...`, prepara outra proposta e envia-a ao grupo;
    - às 9h57 e às 18h57, vê os comentários novos no Instagram e propõe respostas (`r1 sim`, `r1 não`, `r1, texto`).
-5. Os stories e o texto alternativo continuam a ser feitos à mão: a API do Instagram não permite autocolantes, e a ação do Zapier não tem campo para o texto alternativo.
+5. O texto alternativo vai com a publicação, pela API do Instagram. Os stories continuam à mão, porque a API não permite autocolantes.
 
 Uma resposta pode demorar até uma hora a ter efeito, porque o plano gratuito do Zapier não permite avisar a tarefa no momento.
 
