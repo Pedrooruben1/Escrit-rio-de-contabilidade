@@ -23,7 +23,7 @@
     "https://raw.githubusercontent.com/Pedrooruben1/Escrit-rio-de-contabilidade/claude/publicacoes/publicacoes/2026-11-21/p4/slide_6.png",
     "https://raw.githubusercontent.com/Pedrooruben1/Escrit-rio-de-contabilidade/claude/publicacoes/publicacoes/2026-11-21/p4/slide_7.png",
     "https://raw.githubusercontent.com/Pedrooruben1/Escrit-rio-de-contabilidade/claude/publicacoes/publicacoes/2026-11-21/p4/slide_8.png",
-    "https://raw.githubusercontent.com/Pedrooruben1/Escrit-rio-de-contabilidade/claude/publicacoes/publicacoes/2026-11-21/p4/slide_9.png",
+    "https://raw.githubusercontent.com/Pedrooruben1/Escrit-rio-de-contabilidade/claude/publicacoes/publicacoes/2026-11-21/p4/slide_9b.png",
     "https://raw.githubusercontent.com/Pedrooruben1/Escrit-rio-de-contabilidade/claude/publicacoes/publicacoes/2026-11-21/p4/slide_10.png"
    ],
    "video": null,
@@ -38,7 +38,7 @@
     "Um talão IVA menos outro talão IVA, com uma seta para um edifício do Estado, e o texto: Cada empresa entrega ao Estado o IVA das vendas menos o IVA das compras.",
     "Cadeia produtor, loja e consumidor, com o consumidor destacado a laranja, e o texto: Em regra, quem suporta o IVA é o consumidor final. As empresas vão entregando ao Estado só a parte do valor que acrescentam.",
     "Cadeia produtor, loja e consumidor, com 23 euros por cima do produtor, e o texto: O produtor vende por 100 euros mais 23 euros de IVA e entrega 23 euros.",
-    "A mesma cadeia, com 11,50 euros por cima da loja, e o texto: A loja vende por 150 euros mais 34,50 euros e entrega só 11,50 euros. O Estado recebe 34,50 euros, suportados por quem compra.",
+    "Cadeia produtor, loja e consumidor, com 23 euros por cima do produtor, 11,50 euros por cima da loja e 34,50 euros a laranja por cima do consumidor, e o texto: A loja vende por 150 euros mais 34,50 euros e entrega só 11,50 euros. O Estado recebe 34,50 euros, suportados por quem compra.",
     "Uma pessoa a apontar para um talão com 23% e o texto: Hoje a taxa normal é de 23% no continente (22% na Madeira, 16% nos Açores). Guarde para ler o IVA da próxima fatura."
    ],
    "story_texto": "quiz: Qual era a taxa normal do IVA em 1986? | 8%; 16% (certa); 23%"
