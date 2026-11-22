@@ -198,13 +198,14 @@ FERRAMENTA = """  <section class="wrap ferramenta" id="teus" aria-labelledby="t-
     <div id="lista-teus" aria-live="polite"></div>
     <div class="calendario-acoes" id="cal" hidden>
       <h3>Juntar ao calendário</h3>
-      <p>O ficheiro tem só os prazos do caso que escolheste, com aviso três dias antes e na véspera.</p>
+      <p>Só com os prazos do caso que escolheste, com aviso três dias antes e na véspera.</p>
       <p class="ligacoes">
-        <a class="ligacao" id="cal-sub" href="#" data-contar="calendario-subscrever">Subscrever no iPhone ou Mac</a>
-        <a class="ligacao" id="cal-ics" href="#" download data-contar="calendario-descarregar">Descarregar o ficheiro .ics</a>
-        <button class="ligacao" type="button" id="cal-copiar" data-contar="calendario-copiar">Copiar o endereço para o Google Calendar</button>
+        <a class="ligacao" id="cal-google" href="#" target="_blank" rel="noopener" data-contar="calendario-google">Google Calendar (Android)</a>
+        <a class="ligacao" id="cal-sub" href="#" data-contar="calendario-apple">iPhone ou Mac</a>
+        <a class="ligacao" id="cal-outlook" href="#" target="_blank" rel="noopener" data-contar="calendario-outlook">Outlook</a>
       </p>
-      <p class="pequeno">Ao subscrever, os prazos novos aparecem sozinhos no calendário quando atualizarmos a lista. O ficheiro descarregado fica como está. No Google Calendar, no computador: Outros calendários, Adicionar a partir de URL, e cola o endereço.</p>
+      <p class="pequeno">Assim o calendário fica subscrito: quando acrescentarmos prazos, aparecem sozinhos, sem teres de voltar aqui. No Google Calendar pede para entrares na conta Google e confirmares; depois aparece também na app do telemóvel (se não aparecer, na app vai a Definições e liga o calendário "Prazos (bem.contado)").</p>
+      <p class="pequeno">Outra aplicação? <a id="cal-ics" href="#" download data-contar="calendario-descarregar">Descarrega o ficheiro .ics</a> (fica como está, não atualiza) ou <button class="texto" type="button" id="cal-copiar" data-contar="calendario-copiar">copia o endereço</button> para subscrever.</p>
     </div>
     <p class="aviso">Informação geral, a partir da agenda fiscal da Autoridade Tributária e da Segurança Social. Mostramos os prazos mais comuns: há obrigações para casos específicos (operações com outros países da União Europeia, imposto do selo, setores especiais) que não estão aqui. Os prazos podem ser prorrogados por despacho, por isso confirma sempre antes de entregar ou pagar.</p>
   </section>"""

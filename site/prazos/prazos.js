@@ -53,7 +53,10 @@
     var nome = p.s + p.i + p.t + p.c + p.h + ".ics";
     var url = "https://bemcontadopt.pt/prazos/ics/" + nome;
     document.getElementById("cal-ics").href = "ics/" + nome;
-    document.getElementById("cal-sub").href = "webcal://bemcontadopt.pt/prazos/ics/" + nome;
+    var webcal = "webcal://bemcontadopt.pt/prazos/ics/" + nome;
+    document.getElementById("cal-sub").href = webcal;
+    document.getElementById("cal-google").href = "https://calendar.google.com/calendar/render?cid=" + encodeURIComponent(webcal);
+    document.getElementById("cal-outlook").href = "https://outlook.live.com/calendar/0/addfromweb?url=" + encodeURIComponent(url) + "&name=" + encodeURIComponent("Prazos (bem.contado)");
     document.getElementById("cal-copiar").dataset.url = url;
 
     caixa.textContent = "";
@@ -108,9 +111,9 @@
     } catch (e) {}
     form.addEventListener("change", function () { desenhar(form); });
     document.getElementById("cal-copiar").addEventListener("click", function () {
-      var b = this, url = b.dataset.url, antes = "Copiar o endereço para o Google Calendar";
+      var b = this, url = b.dataset.url, antes = "copia o endereço";
       function feito(txt) { b.textContent = txt; setTimeout(function () { b.textContent = antes; }, 2500); }
-      if (navigator.clipboard) navigator.clipboard.writeText(url).then(function () { feito("Endereço copiado"); }, function () { window.prompt("Copia este endereço:", url); });
+      if (navigator.clipboard) navigator.clipboard.writeText(url).then(function () { feito("endereço copiado"); }, function () { window.prompt("Copia este endereço:", url); });
       else window.prompt("Copia este endereço:", url);
     });
     document.getElementById("cal").hidden = false;
