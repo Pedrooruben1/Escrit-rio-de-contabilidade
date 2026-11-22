@@ -10,6 +10,8 @@
    - IRS Jovem: artigo 12.º-B do CIRS e folheto "IRS Jovem 2025" da AT (isenção sobre o rendimento bruto,
      limite de 55 x IAS, rendimento isento conta para a taxa). Na categoria B aplicamos a parte isenta em
      proporção ao rendimento coletável: é uma aproximação.
+   - Pagamentos por conta: artigo 102.º do CIRS (65 % do IRS do penúltimo ano, em julho, setembro e dezembro;
+     não são exigíveis abaixo de 50 € cada). Aqui estimados com o IRS deste ano, como se o rendimento fosse estável.
    - Segurança Social: Guia Prático "Novo regime dos trabalhadores independentes" v1.14 (21,4 %, 70 % / 20 %,
      mínimo de 20 €, máximo de 12 x IAS, primeiro enquadramento só ao fim de 12 meses). */
 var CALC = (function () {
@@ -47,14 +49,19 @@ var CALC = (function () {
 
   function pctJovem(n) { return !n ? 0 : n === 1 ? 1 : n <= 4 ? 0.75 : n <= 7 ? 0.5 : n <= 10 ? 0.25 : 0; }
 
-  // e: {mensal, tipo: p|o|s|v, ano: 1|2|3 (3 = terceiro ou seguintes), despesas (mensais), retencao: 0|0.5|1, jovem: 0 ou ano 1 a 10}
+  // e: {mensal, tipo: p|o|s|v, ano: 1|2|3 (3 = há mais tempo), mes: 1 a 12 (mês de início, para ano 1 e 2),
+  //     ajuste: -0.25 a 0.25 (ajuste da base da Segurança Social), despesas (mensais), retencao: 0|0.5|1, jovem: 0 ou 1 a 10}
   function calcular(e) {
     var bruto = e.mensal * 12;
     var servicos = e.tipo !== "v";
-    // Segurança Social (por mês, sobre a média; isenção nos primeiros 12 meses)
-    var baseSS = Math.min((servicos ? 0.7 : 0.2) * e.mensal, 12 * IAS);
-    var ssMes = e.ano === 1 ? 0 : (e.mensal > 0 ? Math.max(20, 0.214 * baseSS) : 20);
-    var ssAno = ssMes * 12;
+    // Segurança Social: 21,4 % da base (70 % ou 20 % da média mensal, com o ajuste escolhido), mínimo 20 €, máximo 12 x IAS.
+    // O primeiro enquadramento só produz efeitos no 12.º mês depois do início: quem abriu no ano passado no mês m
+    // paga, este ano, os meses de m a dezembro (13 - m meses); quem abriu este ano não paga nada este ano.
+    var baseSS = Math.min((servicos ? 0.7 : 0.2) * e.mensal * (1 + (e.ajuste || 0)), 12 * IAS);
+    var ssMesCheio = Math.max(20, 0.214 * baseSS);
+    var meses = e.ano === 1 ? 0 : e.ano === 2 ? 13 - (e.mes || 1) : 12;
+    var ssAno = ssMesCheio * meses;
+    var ssMes = meses > 0 ? ssMesCheio : 0;
     // IRS
     var coef = COEF[e.tipo];
     if (servicos && e.ano === 1) coef *= 0.5;
@@ -76,7 +83,10 @@ var CALC = (function () {
     var retido = bruto * RET[e.tipo] * e.retencao;
     var acerto = irs - retido;                                     // > 0: a pagar em agosto; < 0: reembolso
     var porMes = ssMes + Math.max(0, acerto) / 12;
-    return { bruto: bruto, ssMes: ssMes, ssAno: ssAno, irs: irs, retido: retido, acerto: acerto, porMes: porMes,
+    // pagamentos por conta (só faz sentido com atividade há mais de dois anos)
+    var ppc = 0.65 * Math.max(0, irs - retido) / 3;
+    if (e.ano !== 3 || ppc < 50) ppc = 0;
+    return { bruto: bruto, ssMes: ssMes, ssMesCheio: ssMesCheio, ssMeses: meses, ppc: ppc, ssAno: ssAno, irs: irs, retido: retido, acerto: acerto, porMes: porMes,
              isento: isento, coletavel: coletavel, faltaDespesas: faltaDespesas, abatimento: abat,
              pct: e.mensal > 0 ? porMes / e.mensal : 0 };
   }

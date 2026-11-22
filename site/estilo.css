@@ -214,3 +214,10 @@ button.texto { font: inherit; color: inherit; background: none; border: 0; paddi
 .calc-form.com-jovem .so-jovem { display: block; }
 .calc-form select { font: inherit; font-size: 17px; color: var(--azul); padding: 10px 12px; border: 2px solid var(--azul); border-radius: 12px; background: #fff; max-width: 100%; }
 .calc-form select:focus-visible { outline: 3px solid var(--ambar); outline-offset: 2px; }
+.so-inicio { display: none; }
+.calc-form.com-inicio .so-inicio { display: block; }
+.resultado .soma { margin: -8px 0 18px; font-size: 15px; color: #c8d2dc; }
+.dt-nota { display: block; font-size: 13px; color: #9fb0c0; }
+.resultado .partilhar { margin: 16px 0 0; }
+.resultado button.texto { color: var(--creme); font-weight: 700; }
+.faq h3 { font-size: 20px; margin: 26px 0 6px; }

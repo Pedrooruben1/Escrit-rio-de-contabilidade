@@ -15,10 +15,10 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<link rel="stylesheet" href="/estilo.css">
+<link rel="stylesheet" href="/estilo.css?v=3">
 <script src="/site.js"></script>
-<script src="calculo.js" defer></script>
-<script src="pagina.js" defer></script>
+<script src="calculo.js?v=3" defer></script>
+<script src="pagina.js?v=3" defer></script>
 </head>
 <body>
 <svg class="defs" width="0" height="0" aria-hidden="true" focusable="false">
@@ -61,12 +61,27 @@
         <label><input type="radio" name="retencao" value="1"> Sim, em todos</label>
         <label><input type="radio" name="retencao" value="0.5"> Só em parte (cerca de metade)</label>
         <p class="pequeno" id="taxa-ret"></p>
+        <p class="legenda segunda"><label for="ajuste">Ajuste da base da Segurança Social</label></p>
+        <select id="ajuste" name="ajuste">
+          <option value="-0.25">Menos 25 %</option><option value="-0.2">Menos 20 %</option><option value="-0.15">Menos 15 %</option><option value="-0.1">Menos 10 %</option><option value="-0.05">Menos 5 %</option>
+          <option value="0" selected>Sem ajuste</option>
+          <option value="0.05">Mais 5 %</option><option value="0.1">Mais 10 %</option><option value="0.15">Mais 15 %</option><option value="0.2">Mais 20 %</option><option value="0.25">Mais 25 %</option>
+        </select>
+        <p class="pequeno">Na declaração trimestral podes pedir que a base seja até 25 % abaixo ou acima, em saltos de 5 %. Pagas menos agora, mas também descontas menos para a reforma e para os subsídios.</p>
       </fieldset>
       <fieldset>
         <legend>Abriste atividade</legend>
         <label><input type="radio" name="ano" value="1"> Este ano, pela primeira vez</label>
         <label><input type="radio" name="ano" value="2"> No ano passado, pela primeira vez</label>
         <label><input type="radio" name="ano" value="3" checked> Há mais tempo</label>
+        <div class="so-inicio">
+          <p class="legenda segunda"><label for="mes">Em que mês</label></p>
+          <select id="mes" name="mes">
+            <option value="1">janeiro</option><option value="2">fevereiro</option><option value="3">março</option><option value="4">abril</option>
+            <option value="5">maio</option><option value="6">junho</option><option value="7">julho</option><option value="8">agosto</option>
+            <option value="9">setembro</option><option value="10">outubro</option><option value="11">novembro</option><option value="12">dezembro</option>
+          </select>
+        </div>
         <div class="so-servicos">
           <p class="legenda segunda"><label for="despesas">Despesas da atividade com fatura</label></p>
           <p class="campo-euro"><input id="despesas" name="despesas" type="text" inputmode="decimal" autocomplete="off" value="0,00"> <span>€ por mês</span></p>
@@ -92,25 +107,48 @@
       <p class="rotulo">Põe de lado cerca de</p>
       <p class="valor"><span id="r-mes">0</span> € <small>por mês</small></p>
       <p class="pct" id="r-pct"></p>
+      <p class="soma" id="r-soma"></p>
       <dl class="parcelas">
         <div><dt>Segurança Social</dt><dd id="r-ss"></dd></div>
-        <div><dt>IRS do ano (estimativa)</dt><dd id="r-irs"></dd></div>
+        <div><dt>IRS do ano (estimativa)<span class="dt-nota">já com 250 € de despesas gerais familiares</span></dt><dd id="r-irs"></dd></div>
         <div id="l-ret"><dt>Já retido pelos clientes</dt><dd id="r-ret"></dd></div>
         <div><dt id="r-acerto-t">Acerto na declaração de IRS</dt><dd id="r-acerto"></dd></div>
       </dl>
       <p class="pequeno" id="r-notas"></p>
+      <p class="pequeno" id="r-compara"></p>
+      <p class="partilhar"><button class="texto" type="button" id="copiar-ligacao">Copiar a ligação com estes valores</button></p>
     </div>
     <noscript><p>A calculadora precisa do JavaScript ligado.</p></noscript>
   </section>
 
   <section class="wrap explicacao" aria-labelledby="t-como">
     <h2 id="t-como">Como fazemos a conta</h2>
-    <p><b>Segurança Social.</b> 21,4 % sobre 70 % do que faturas em serviços (20 % nas vendas), com um mínimo de 20 € por mês. Quem abre atividade pela primeira vez só começa a pagar ao fim de 12 meses.</p>
+    <p><b>Segurança Social.</b> 21,4 % sobre 70 % do que faturas em serviços (20 % nas vendas), com um mínimo de 20 € por mês. Quem abre atividade pela primeira vez só começa a pagar no 12.º mês depois do início. Na declaração trimestral podes pedir que a base seja até 25 % abaixo ou acima.</p>
     <p><b>IRS.</b> No regime simplificado, só uma parte do que faturas conta como rendimento: 75 % nas profissões da tabela do artigo 151.º, 35 % nos outros serviços e 15 % nas vendas. Nos serviços, no ano em que abres atividade e no seguinte, essa parte desce para metade e para três quartos, se não tiveres salário nem pensão e não tiveres fechado atividade nos cinco anos anteriores. Nos serviços, uma parte tem de ser justificada com despesas: 15 % do que faturas, de que se descontam logo 4.587,09 €. Ao rendimento que sobra aplicamos as taxas de 2026 (e a taxa adicional de solidariedade, acima de 80.000 €) e descontamos 250 € de despesas gerais familiares, que quase toda a gente atinge. Nas profissões da tabela (exceto o código 1519), quem fatura até cerca de 16.500 € por ano tem ainda o desconto do mínimo de existência.</p>
     <p><b>IRS Jovem.</b> Até aos 35 anos, quem não é dependente pode ter uma parte do rendimento isenta nos primeiros 10 anos de rendimentos do trabalho: 100 % no primeiro, 75 % do segundo ao quarto, 50 % do quinto ao sétimo e 25 % do oitavo ao décimo, até 29.542,15 € por ano. A parte isenta não paga IRS, mas conta para a taxa aplicada ao resto. Não muda a Segurança Social. Nos recibos verdes, a forma exata como a AT reparte a isenção no regime simplificado ainda não está esclarecida num documento oficial, por isso este valor é uma aproximação.</p>
     <p><b>O que fica de fora.</b> Esta conta parte do princípio de que os recibos verdes são o teu único rendimento e de que entregas a declaração sozinho. Não entram salários, rendas ou pensões, dependentes e outras deduções, o IVA (que não é teu: se o cobras, guarda-o à parte) nem a contabilidade organizada. Com qualquer uma destas, a conta muda e vale a pena falar com um contabilista certificado.</p>
     <p class="aviso">Estimativa com informação geral, a partir do Código do IRS, do Código Contributivo e dos valores publicados para 2026. Não substitui a análise do teu caso.</p>
   </section>
+
+  <section class="wrap explicacao faq" aria-labelledby="t-faq">
+    <h2 id="t-faq">Perguntas frequentes</h2>
+    <h3>Quanto devo pôr de lado nos recibos verdes?</h3>
+    <p>Depende do que faturas, da atividade e de os clientes reterem IRS ou não. Por exemplo, quem fatura 1.500 € por mês numa profissão da tabela do artigo 151.º, sem retenção e com atividade há mais de dois anos, deve guardar cerca de 343 € por mês: 225 € para a Segurança Social e 118 € para o IRS. Usa a calculadora acima para o teu caso.</p>
+    <h3>Quando se paga a Segurança Social como trabalhador independente?</h3>
+    <p>Todos os meses, entre o dia 10 e o dia 20, sobre o mês anterior. O valor é calculado a partir da declaração trimestral, que se entrega até ao fim de janeiro, abril, julho e outubro. Quem abre atividade pela primeira vez só começa a pagar no 12.º mês depois do início.</p>
+    <h3>O que são os pagamentos por conta?</h3>
+    <p>São adiantamentos do IRS que quem tem rendimentos de categoria B paga até ao dia 20 de julho, de setembro e de dezembro. No total correspondem a 65 % do IRS de há dois anos, descontadas as retenções, e não se pagam se cada um ficar abaixo de 50 €. O que pagares por conta é descontado no IRS da declaração seguinte.</p>
+    <h3>Até quanto posso faturar sem cobrar IVA?</h3>
+    <p>Pelo artigo 53.º do Código do IVA, ficas isento se no ano anterior não passaste dos 15.000 € de volume de negócios em Portugal e não fazes exportações. Se num ano passares dos 15.000 €, deixas de ter a isenção a partir do ano seguinte. Se passares dos 18.750 €, perdes a isenção logo a partir da fatura que ultrapassa esse valor.</p>
+  </section>
+  <script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Quanto devo pôr de lado nos recibos verdes?","acceptedAnswer":{"@type":"Answer","text":"Depende do que faturas, da atividade e de os clientes reterem IRS ou não. Por exemplo, quem fatura 1.500 € por mês numa profissão da tabela do artigo 151.º, sem retenção e com atividade há mais de dois anos, deve guardar cerca de 343 € por mês: 225 € para a Segurança Social e 118 € para o IRS."}},
+{"@type":"Question","name":"Quando se paga a Segurança Social como trabalhador independente?","acceptedAnswer":{"@type":"Answer","text":"Todos os meses, entre o dia 10 e o dia 20, sobre o mês anterior. O valor é calculado a partir da declaração trimestral, entregue até ao fim de janeiro, abril, julho e outubro. Quem abre atividade pela primeira vez só começa a pagar no 12.º mês depois do início."}},
+{"@type":"Question","name":"O que são os pagamentos por conta?","acceptedAnswer":{"@type":"Answer","text":"São adiantamentos do IRS que quem tem rendimentos de categoria B paga até ao dia 20 de julho, de setembro e de dezembro. No total correspondem a 65 % do IRS de há dois anos, descontadas as retenções, e não se pagam se cada um ficar abaixo de 50 €."}},
+{"@type":"Question","name":"Até quanto posso faturar sem cobrar IVA?","acceptedAnswer":{"@type":"Answer","text":"Pelo artigo 53.º do Código do IVA, ficas isento se no ano anterior não passaste dos 15.000 € de volume de negócios em Portugal e não fazes exportações. Se num ano passares dos 15.000 €, deixas de ter a isenção a partir do ano seguinte. Se passares dos 18.750 €, perdes a isenção logo a partir da fatura que ultrapassa esse valor."}}
+]}
+  </script>
 </main>
 <footer class="wrap">
   <svg class="linha" viewBox="0 0 1000 20" preserveAspectRatio="none" aria-hidden="true"><path class="pontilhado" d="M0 10 C 250 4, 520 16, 1000 8"/></svg>
