@@ -27,7 +27,11 @@
     var inicial = q.get("modo") || (q.has("m") ? "r" : null);
     document.querySelectorAll('input[name="modo"]').forEach(function (r) {
       if (r.value === inicial) r.checked = true;
-      r.addEventListener("change", function () { mostrar(r.value); });
+      r.addEventListener("change", function () {
+        mostrar(r.value);
+        var alvo = $(r.value === "c" ? "modo-c" : "modo-r");
+        if (alvo && alvo.scrollIntoView) alvo.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
     });
     if (inicial) mostrar(inicial);
 
