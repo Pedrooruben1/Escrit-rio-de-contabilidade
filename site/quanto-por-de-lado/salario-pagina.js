@@ -22,6 +22,7 @@
     function mostrar(modo) {
       $("modo-c").hidden = modo !== "c";
       $("modo-r").hidden = modo !== "r";
+      document.documentElement.setAttribute("data-modo", modo);
       document.dispatchEvent(new Event("modo-mudou"));
     }
     var inicial = q.get("modo") || (q.has("m") ? "r" : null);
