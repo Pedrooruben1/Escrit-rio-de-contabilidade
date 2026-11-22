@@ -1,0 +1,5 @@
+{"semana_inicio": "2026-11-23", "semana_fim": "2026-11-29",
+ "prazos": [
+  {"data": "2026-11-25", "titulo": "Pagamento do IVA de setembro ou do 3.º trimestre", "quem": "Empresas e independentes no regime normal do IVA", "descricao": "Pagamento do IVA apurado na declaração de setembro, no regime mensal, ou na declaração do 3.º trimestre (julho a setembro), no regime trimestral.", "fonte": "https://info.portaldasfinancas.gov.pt/pt/apoio_contribuinte/calendario_fiscal/Documents/Obrigacoes_pagamento.pdf"},
+  {"data": "2026-11-25", "titulo": "Contribuições à Segurança Social (outubro)", "quem": "Quem tem trabalhadores", "descricao": "Pagamento das contribuições relativas aos salários de outubro, que se pagam entre o dia 10 e o dia 25. Depois do prazo há juros de mora e uma contraordenação.", "fonte": "https://www.gov.pt/servicos/obter-informacoes-sobre-as-contribuicoes-para-a-seguranca-social-pagamento-de-entidade-empregadora-por-trabalhador-por-conta-de-outrem"}
+ ]}

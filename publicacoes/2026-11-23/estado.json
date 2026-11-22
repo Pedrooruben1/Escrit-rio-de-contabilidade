@@ -1,0 +1,38 @@
+{
+ "data": "2026-11-23",
+ "serie": "prazos",
+ "fundo": "azul",
+ "publicar_as": "13:00",
+ "proposta": 1,
+ "estado": "pendente",
+ "enviado_em": null,
+ "tentativas": 0,
+ "opcao_aprovada": null,
+ "publicar_video": false,
+ "media_id": null,
+ "permalink": null,
+ "ultima_resposta": null,
+ "opcoes": {
+  "A": {
+   "tema": "Prazos da semana de 23 a 29 de novembro (IVA e Segurança Social a 25/11; IMI e IUC a 30/11)",
+   "formato": "carrossel de 4 imagens",
+   "imagens": [
+    "https://raw.githubusercontent.com/Pedrooruben1/Escrit-rio-de-contabilidade/claude/publicacoes/publicacoes/2026-11-23/slide_1.png",
+    "https://raw.githubusercontent.com/Pedrooruben1/Escrit-rio-de-contabilidade/claude/publicacoes/publicacoes/2026-11-23/slide_2.png",
+    "https://raw.githubusercontent.com/Pedrooruben1/Escrit-rio-de-contabilidade/claude/publicacoes/publicacoes/2026-11-23/slide_3.png",
+    "https://raw.githubusercontent.com/Pedrooruben1/Escrit-rio-de-contabilidade/claude/publicacoes/publicacoes/2026-11-23/slide_4.png"
+   ],
+   "video": null,
+   "capa": null,
+   "story": "https://raw.githubusercontent.com/Pedrooruben1/Escrit-rio-de-contabilidade/claude/publicacoes/publicacoes/2026-11-23/story.png",
+   "descritivo": "Prazos da semana de 23 a 29 de novembro, para quem tem IVA a pagar ou trabalhadores a cargo.\n\nAté quarta, 25/11, paga-se o IVA apurado na declaração de setembro, por quem está na periodicidade mensal do regime normal, ou na declaração do 3.º trimestre (julho a setembro), por quem está na periodicidade trimestral.\n\nNo mesmo dia termina o prazo para as entidades empregadoras pagarem à Segurança Social as contribuições relativas a outubro. Estas contribuições pagam-se entre o dia 10 e o dia 25 de cada mês e, depois do prazo, há juros de mora e uma contraordenação.\n\nNa segunda seguinte, 30/11, acaba novembro e com ele o prazo de duas obrigações de quem tem imóveis ou carro: em regra, a prestação de novembro do Imposto Municipal sobre Imóveis (IMI) de 2025 (a 2.ª, se o imposto foi acima de 100 € e até 500 €, ou a 3.ª, se passou dos 500 €) e o Imposto Único de Circulação (IUC) dos veículos cujo aniversário da matrícula é em novembro.\n\nEnvie a quem trata das contas da empresa ou da casa.\n#prazosfiscais #IVA #segurancasocial #IMI #IUC",
+   "texto_alternativo": [
+    "Fundo azul com a frase \"Os prazos de IVA e de Segurança Social desta semana terminam a quarta, 25/11\" e uma folha de calendário com o dia 25 rodeado a âmbar e as siglas IVA e SS (Segurança Social) a apontar para ele.",
+    "Fundo azul com a frase \"IVA apurado na declaração de setembro ou do 3.º trimestre: pagar até 25/11\" e uma declaração com a sigla IVA e uma seta para uma pilha de moedas com o dia 25.",
+    "Fundo azul com a frase \"Quem tem trabalhadores paga até 25/11 as contribuições de outubro à Segurança Social\" e uma empresa com dois trabalhadores, moedas e uma seta para um edifício de colunas com a sigla SS, com o dia 25.",
+    "Fundo azul com a frase \"Logo a seguir, a 30/11, termina o prazo da prestação do IMI e do IUC de novembro\" e uma casa e um carro com o dia 30 por cima."
+   ],
+   "story_texto": "Story: quiz: Até que dia se paga o [IVA do 3.º trimestre]? | 20/11; 25/11 (certa); 30/11 (a imagem do story vai no Telegram; o autocolante coloca-se na zona livre a meio, na aplicação)"
+  }
+ }
+}
