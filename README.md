@@ -78,6 +78,10 @@ A pasta `site/` é o site da bem.contado na versão "a abrir em breve": apresent
 
 O que o GitHub Pages serve é o branch `claude/site`, que tem os mesmos ficheiros na raiz e o `CNAME` com `bemcontadopt.pt`. Quando mudar alguma coisa em `site/`, é preciso copiar também para esse branch, sem apagar o que lá existe a mais.
 
+Depois de copiar, corre `python3 scripts/versoes_site.py PASTA_DO_BRANCH_claude/site`. O script acrescenta aos endereços dos CSS e JS uma impressão do conteúdo (`?v=...`): assim, quando um ficheiro muda, o browser vai buscar o novo em vez de usar o que guardou (o GitHub Pages deixa guardar 10 minutos e, sem isto, pode juntar HTML novo com JS antigo). A página de prazos gerada pelo `site_atualizar.py` já leva as versões sozinha.
+
+A política de segurança (CSP) de cada página só deixa carregar ficheiros do próprio site e falar com o GoatCounter (`img-src` e `connect-src`). Se acrescentares um serviço externo, tens de o pôr lá, senão o browser bloqueia-o sem aviso visível.
+
 Partes automáticas, que só existem no branch `claude/site` e são escritas pela tarefa de publicação (`scripts/site_atualizar.py`):
 - `ultima/`: a imagem e os dados da última publicação do Instagram. A página principal mostra-a no lugar do desenho do telemóvel.
 - `prazos/`: a página de prazos. Tem a ferramenta "Os teus prazos" (filtro por perfil, guardado só no browser, e ficheiros `.ics` para o calendário, um por perfil em `prazos/ics/`) e, por baixo, os prazos da semana gerados a partir do `prazos.json` da publicação de segunda-feira.

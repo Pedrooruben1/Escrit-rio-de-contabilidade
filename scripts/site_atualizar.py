@@ -119,7 +119,14 @@ CALENDARIO = """<svg class="desenho" viewBox="0 0 400 330" role="img" aria-label
     </svg>"""
 
 
-def pagina(titulo_pagina, descricao, corpo, extra_head='<script src="prazos.js" defer></script>'):
+def versao(caminho):
+    """Impressão curta do conteúdo, para o endereço mudar quando o ficheiro muda (ver versoes_site.py)."""
+    p = Path(caminho)
+    return hashlib.sha1(p.read_bytes()).hexdigest()[:8] if p.exists() else "0"
+
+
+def pagina(titulo_pagina, descricao, corpo, site="."):
+    extra_head = f'<script src="prazos.js?v={versao(Path(site) / "prazos" / "prazos.js")}" defer></script>'
     return f"""<!doctype html>
 <html lang="pt-PT">
 <head>
@@ -127,10 +134,16 @@ def pagina(titulo_pagina, descricao, corpo, extra_head='<script src="prazos.js" 
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>{e(titulo_pagina)}</title>
 <meta name="description" content="{e(descricao)}">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data: https://bemcontadopt.goatcounter.com; base-uri 'none'; form-action 'none'; object-src 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data: https://bemcontadopt.goatcounter.com; connect-src 'self' https://bemcontadopt.goatcounter.com; base-uri 'none'; form-action 'none'; object-src 'none'">
 <meta property="og:title" content="{e(titulo_pagina)}">
 <meta property="og:description" content="{e(descricao)}">
-<meta property="og:image" content="https://bemcontadopt.pt/og.png">
+<meta property="og:image" content="https://bemcontadopt.pt/og-prazos.jpg">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="bem.contado">
+<meta property="og:locale" content="pt_PT">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <meta property="og:url" content="https://bemcontadopt.pt/prazos/">
 <link rel="canonical" href="https://bemcontadopt.pt/prazos/">
 <meta name="theme-color" content="#F7F5F0">
@@ -138,8 +151,8 @@ def pagina(titulo_pagina, descricao, corpo, extra_head='<script src="prazos.js" 
 <link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
 <link rel="preload" href="../fonts/manrope-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="../estilo.css">
-<script src="../site.js"></script>
+<link rel="stylesheet" href="../estilo.css?v={versao(Path(site) / "estilo.css")}">
+<script src="../site.js?v={versao(Path(site) / "site.js")}"></script>
 {extra_head}
 </head>
 <body>
@@ -147,7 +160,7 @@ def pagina(titulo_pagina, descricao, corpo, extra_head='<script src="prazos.js" 
   <filter id="traco"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="7"/><feDisplacementMap in="SourceGraphic" scale="4"/></filter>
 </svg>
 <header class="topo wrap">
-  <a class="marca" href="../" aria-label="bem.contado, início">bem<svg class="ponto" viewBox="0 0 10 10" aria-hidden="true"><rect x="1" y="1.6" width="8" height="8"/></svg>contado</a>
+  <a class="marca" href="../">bem<span class="sr">.</span><svg class="ponto" viewBox="0 0 10 10" aria-hidden="true"><rect x="1" y="1.6" width="8" height="8"/></svg>contado<span class="sr">, início</span></a>
   <nav aria-label="Ligações">
     <a href="../prazos/" aria-current="page">Prazos</a>
     <a href="../quanto-por-de-lado/">Calculadora</a>
@@ -161,7 +174,7 @@ def pagina(titulo_pagina, descricao, corpo, extra_head='<script src="prazos.js" 
 <footer class="wrap">
   <svg class="linha" viewBox="0 0 1000 20" preserveAspectRatio="none" aria-hidden="true"><path class="pontilhado" d="M0 10 C 250 4, 520 16, 1000 8"/></svg>
   <div class="rodape">
-    <p class="marca" aria-label="bem.contado">bem<svg class="ponto" viewBox="0 0 10 10" aria-hidden="true"><rect x="1" y="1.6" width="8" height="8"/></svg>contado</p>
+    <p class="marca">bem<span class="sr">.</span><svg class="ponto" viewBox="0 0 10 10" aria-hidden="true"><rect x="1" y="1.6" width="8" height="8"/></svg>contado</p>
     <p><a href="../">Início</a> · <a href="../quanto-por-de-lado/">Calculadora</a> · <a href="https://www.instagram.com/bem.contadopt/">Instagram</a> · <a href="https://poupanca.bemcontadopt.pt/instalar/">App Poupança</a> · <a href="mailto:bem.contado@outlook.pt">bem.contado@outlook.pt</a></p>
   </div>
   <p class="nota">Este site conta as visitas de forma anónima e sem cookies. Não recolhe dados pessoais. A informação publicada é geral e não substitui a análise de cada caso.</p>
@@ -195,6 +208,7 @@ FERRAMENTA = """  <section class="wrap ferramenta" id="teus" aria-labelledby="t-
         <label><input type="checkbox" name="h" checked> Casa ou outro imóvel</label>
       </fieldset>
     </form>
+    <p class="pequeno">A tua escolha fica guardada só neste browser, para a página abrir já filtrada da próxima vez.</p>
     <noscript><p>Para filtrar os prazos é preciso ter o JavaScript ligado.</p></noscript>
     <div id="lista-teus" aria-live="polite"></div>
     <div class="calendario-acoes" id="cal" hidden>
@@ -232,7 +246,7 @@ def prazos(args):
   </section>
 {FERRAMENTA}"""
         (pasta / "index.html").write_text(pagina("Prazos fiscais e da Segurança Social · bem.contado",
-            "Os prazos das Finanças e da Segurança Social filtrados para o teu caso: particular, trabalhador independente ou empresa, IVA mensal ou trimestral. Com ficheiro para o calendário.", corpo), encoding="utf-8")
+            "Os prazos das Finanças e da Segurança Social filtrados para o teu caso: particular, trabalhador independente ou empresa, IVA mensal ou trimestral. Com ficheiro para o calendário.", corpo, site), encoding="utf-8")
         print(f"ok: página de espera em {pasta / 'index.html'}")
         return
 
@@ -283,10 +297,10 @@ def prazos(args):
   <section class="wrap semana" id="lista" aria-labelledby="t-semana">
     <h2 id="t-semana">Esta semana: {intervalo(ini, fim)}</h2>
 {lista_html}
-    <p class="aviso">Informação geral. Os prazos podem ser prorrogados por despacho: antes de entregar ou pagar, confirme sempre na fonte oficial.</p>
+    <p class="aviso">Informação geral. Os prazos podem ser prorrogados por despacho: antes de entregar ou pagar, confirma sempre na fonte oficial.</p>
   </section>"""
     (pasta / "index.html").write_text(pagina("Prazos fiscais e da Segurança Social · bem.contado",
-        f"Os prazos das Finanças e da Segurança Social filtrados para o teu caso, com ficheiro para o calendário. Esta semana: {intervalo(ini, fim)}.", corpo), encoding="utf-8")
+        f"Os prazos das Finanças e da Segurança Social filtrados para o teu caso, com ficheiro para o calendário. Esta semana: {intervalo(ini, fim)}.", corpo, site), encoding="utf-8")
     print(f"ok: {len(itens)} prazos em {pasta / 'index.html'}")
 
 
