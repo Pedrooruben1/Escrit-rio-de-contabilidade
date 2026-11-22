@@ -30,6 +30,7 @@
     if (q.has("r")) marcar("retencao", q.get("r"));
     if (q.has("i")) $("mes").value = q.get("i");
     if (q.has("s")) $("ajuste").value = q.get("s");
+    if (q.has("z")) $("regiao").value = q.get("z");
     if (q.has("j") && q.get("j") !== "0") { f["jovem-sim"].checked = true; $("jovem-ano").value = q.get("j"); }
     // garante que os campos de texto começam formatados e legíveis
     ["mensal", "despesas"].forEach(function (id) {
@@ -40,7 +41,7 @@
     });
 
     function dados() {
-      return { mensal: lerEuros($("mensal").value), tipo: val("tipo"), ano: parseInt(val("ano"), 10),
+      return { regiao: $("regiao").value, mensal: lerEuros($("mensal").value), tipo: val("tipo"), ano: parseInt(val("ano"), 10),
                mes: parseInt($("mes").value, 10), ajuste: parseFloat($("ajuste").value) || 0,
                despesas: lerEuros($("despesas").value), retencao: parseFloat(val("retencao")),
                jovem: f["jovem-sim"].checked ? parseInt($("jovem-ano").value, 10) : 0 };
@@ -52,6 +53,7 @@
       if (e.despesas) p.set("d", String(e.despesas));
       if (e.ajuste) p.set("s", String(e.ajuste));
       if (e.jovem) p.set("j", String(e.jovem));
+      if (e.regiao !== "cont") p.set("z", e.regiao);
       return location.origin + location.pathname + "?" + p.toString();
     }
 

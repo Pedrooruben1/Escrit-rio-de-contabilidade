@@ -42,6 +42,7 @@
       if (q.has("b")) $("s-base").value = q.get("b");
       if (q.has("v")) $("s-ref").value = q.get("v");
       if (q.has("o")) $("s-outros").value = q.get("o");
+      if (q.has("z")) $("s-regiao").value = q.get("z");
       if (q.get("os") === "0") $("s-outros-ss").checked = false;
       if (q.has("n")) $("s-dias").value = q.get("n");
       if (q.has("u")) marcar("s-duod", q.get("u"));
@@ -59,7 +60,7 @@
     function val(nome) { var r = f.querySelector('input[name="' + nome + '"]:checked'); return r ? r.value : null; }
 
     function dados() {
-      return { base: lerEuros($("s-base").value), outros: lerEuros($("s-outros").value), outrosSS: $("s-outros-ss").checked, duodecimos: val("s-duod") === "1", refeicao: lerEuros($("s-ref").value),
+      return { regiao: $("s-regiao").value, base: lerEuros($("s-base").value), outros: lerEuros($("s-outros").value), outrosSS: $("s-outros-ss").checked, duodecimos: val("s-duod") === "1", refeicao: lerEuros($("s-ref").value),
                dias: Math.min(31, Math.round(lerEuros($("s-dias").value))), forma: val("s-forma"), situacao: val("s-sit"),
                dependentes: parseInt($("s-dep").value, 10) || 0,
                jovem: $("s-jovem-sim").checked ? parseInt($("s-jovem-ano").value, 10) : 0 };
@@ -69,6 +70,7 @@
                                     f: e.forma, e: e.situacao, k: String(e.dependentes) });
       if (e.jovem) p.set("j", String(e.jovem));
       if (e.outros) { p.set("o", String(e.outros)); if (!e.outrosSS) p.set("os", "0"); }
+      if (e.regiao !== "cont") p.set("z", e.regiao);
       return location.origin + location.pathname + "?" + p.toString();
     }
 
@@ -100,6 +102,7 @@
         }
       }
       if (e.jovem > 0) notas.push("Com o IRS Jovem, a empresa calcula a taxa sobre o salário todo e aplica-a só à parte que não está isenta.");
+      if (e.regiao !== "cont") notas.push("Usámos as tabelas de retenção " + (e.regiao === "mad" ? "da Madeira" : "dos Açores") + ", que dependem da tua residência e não da sede da empresa.");
       if (e.dependentes >= 3) notas.push("Com três ou mais dependentes, a taxa desce um ponto percentual.");
       notas.push("A retenção é um adiantamento: na declaração de IRS pode haver reembolso ou imposto a pagar.");
       $("s-notas").textContent = notas.join(" ");

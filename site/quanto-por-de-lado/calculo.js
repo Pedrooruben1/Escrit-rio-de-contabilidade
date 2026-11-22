@@ -2,6 +2,9 @@
    Valores de 2026. Fontes (confirmadas em 22/11/2026):
    - IRS, taxas: artigo 68.º do CIRS, redação do DL 212/2026 (Portal das Finanças); taxa adicional de
      solidariedade: artigo 68.º-A (2,5 % de 80.000 a 250.000 €, 5 % acima).
+   - Madeira: taxas do Decreto Legislativo Regional n.º 17/2026/M (70 % das nacionais, todos os escalões).
+     Açores: redução de 30 % às taxas nacionais (artigo 4.º do Decreto Legislativo Regional n.º 2/99/A).
+     A taxa adicional de solidariedade não tem redução. A retenção dos clientes segue as taxas nacionais.
    - Regime simplificado: artigo 31.º do CIRS (coeficientes, n.º 2, n.º 10, n.º 13).
    - Dedução específica: artigo 25.º, n.º 1, a) do CIRS (8,54 x IAS).
    - Mínimo de existência: artigo 70.º do CIRS.
@@ -23,10 +26,10 @@ var CALC = (function () {
   var RET = { p: 0.23, o: 0.23, s: 0.115, v: 0 };
   var DESP_GERAIS = 250;                          // dedução à coleta por despesas gerais familiares (assumida)
 
-  function irsTaxas(c) {
-    var imposto = 0, ant = 0;
+  function irsTaxas(c, fator) {
+    var imposto = 0, ant = 0, f = fator || 1;
     for (var i = 0; i < ESCALOES.length; i++) {
-      var lim = ESCALOES[i][0], t = ESCALOES[i][1];
+      var lim = ESCALOES[i][0], t = ESCALOES[i][1] * f;
       if (c > ant) imposto += (Math.min(c, lim) - ant) * t;
       ant = lim;
     }
@@ -79,7 +82,8 @@ var CALC = (function () {
     var coletavel = Math.max(0, rl - abat);
     var isento = Math.min(pctJovem(e.jovem) * bruto, 55 * IAS);
     var parteTributada = bruto > 0 ? 1 - isento / bruto : 1;
-    var irs = Math.max(0, irsTaxas(coletavel) * parteTributada - DESP_GERAIS);
+    var fator = e.regiao === "mad" || e.regiao === "aco" ? 0.7 : 1;
+    var irs = Math.max(0, irsTaxas(coletavel, fator) * parteTributada - DESP_GERAIS);
     var retido = bruto * RET[e.tipo] * e.retencao;
     var acerto = irs - retido;                                     // > 0: a pagar em agosto; < 0: reembolso
     var porMes = ssMes + Math.max(0, acerto) / 12;
