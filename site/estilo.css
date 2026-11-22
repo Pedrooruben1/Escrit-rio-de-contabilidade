@@ -208,3 +208,9 @@ button.texto { font: inherit; color: inherit; background: none; border: 0; paddi
 .perfil legend label, .legenda label { cursor: default; padding: 0; display: inline; font-size: inherit; }
 .perfil .campo-euro input { width: 7.5em; height: auto; margin: 0; flex: none; accent-color: auto; }
 .parcelas div[hidden] { display: none; }
+.calc-form { grid-template-columns: 1fr 1fr; }
+.calc-form fieldset:first-child { grid-column: auto; }
+.so-jovem { display: none; }
+.calc-form.com-jovem .so-jovem { display: block; }
+.calc-form select { font: inherit; font-size: 17px; color: var(--azul); padding: 10px 12px; border: 2px solid var(--azul); border-radius: 12px; background: #fff; max-width: 100%; }
+.calc-form select:focus-visible { outline: 3px solid var(--ambar); outline-offset: 2px; }

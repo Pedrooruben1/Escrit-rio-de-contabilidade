@@ -87,4 +87,4 @@ O `prazos.js` (em `site/prazos/`) é copiado para `prazos/` no branch `claude/si
 
 ### Calculadora "Quanto pôr de lado"
 
-`site/quanto-por-de-lado/` calcula quanto guardar por mês para o IRS e a Segurança Social nos recibos verdes (regime simplificado). Os valores estão todos no início de `calculo.js`, com a fonte de cada um: escalões do IRS (artigo 68.º), IAS, mínimo de existência, coeficientes, taxas de retenção e da Segurança Social. São valores de 2026. Todos os anos, quando sair o Orçamento do Estado e a portaria do IAS, é preciso confirmá-los e mudar o "valores de 2026" na página.
+`site/quanto-por-de-lado/` calcula quanto guardar por mês para o IRS e a Segurança Social nos recibos verdes (regime simplificado). Os valores estão todos no início de `calculo.js`, com a fonte de cada um: escalões do IRS (artigos 68.º e 68.º-A), IAS, IRS Jovem (55 x IAS), mínimo de existência, coeficientes, taxas de retenção e da Segurança Social. São valores de 2026. Todos os anos, quando sair o Orçamento do Estado e a portaria do IAS, é preciso confirmá-los e mudar o "valores de 2026" na página.
