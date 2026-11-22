@@ -221,3 +221,20 @@ button.texto { font: inherit; color: inherit; background: none; border: 0; paddi
 .resultado .partilhar { margin: 16px 0 0; }
 .resultado button.texto { color: var(--creme); font-weight: 700; }
 .faq h3 { font-size: 20px; margin: 26px 0 6px; }
+
+/* escolha do modo da calculadora */
+.modos { padding-bottom: 28px; }
+.pergunta { font-size: clamp(24px, 3.4vw, 30px); margin: 0 0 14px; }
+.modo-opcoes { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; max-width: 760px; }
+.modo-opcao { position: relative; display: block; cursor: pointer; }
+.modo-opcao input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.modo-opcao span { display: block; padding: 20px 22px; border: 3px solid rgba(23, 50, 77, .35); border-radius: 20px; background: #fff; font-size: 16px; color: var(--suave); line-height: 1.4; }
+.modo-opcao span b { display: block; font-size: 20px; color: var(--azul); margin-bottom: 4px; }
+.modo-opcao input:checked + span { border-color: var(--azul); box-shadow: inset 0 0 0 1px var(--azul); }
+.modo-opcao input:checked + span b::after { content: ""; display: inline-block; width: .32em; height: .32em; margin-left: .25em; background: var(--ambar); vertical-align: .1em; }
+.modo-opcao input:focus-visible + span { outline: 3px solid var(--ambar); outline-offset: 3px; }
+.so-jovem-s { display: none; }
+.calc-form.com-jovem-s .so-jovem-s { display: block; }
+#s-dias { width: 4.5em; }
+@media (max-width: 600px) { .modo-opcoes { grid-template-columns: 1fr; } }
+@media (max-width: 640px) { .calc-form { grid-template-columns: 1fr; } .campo-euro input { max-width: 100%; } .parcelas dd { white-space: nowrap; } }
