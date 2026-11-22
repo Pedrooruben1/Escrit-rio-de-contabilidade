@@ -5,19 +5,26 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>bem.contado · Contas bem feitas. E bem explicadas.</title>
 <meta name="description" content="A bem.contado é um projeto de escritório de contabilidade e consultadoria em Portugal. Enquanto não abre, explica finanças pessoais e contabilidade de empresas no Instagram.">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data: https://bemcontadopt.goatcounter.com; base-uri 'none'; form-action 'none'; object-src 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data: https://bemcontadopt.goatcounter.com; connect-src 'self' https://bemcontadopt.goatcounter.com; base-uri 'none'; form-action 'none'; object-src 'none'">
 <meta property="og:title" content="bem.contado · Contas bem feitas. E bem explicadas.">
 <meta property="og:description" content="Um projeto de escritório de contabilidade e consultadoria em Portugal. Ainda não abriu: até lá, explica finanças sem complicar.">
-<meta property="og:image" content="https://bemcontadopt.pt/og.png">
+<meta property="og:image" content="https://bemcontadopt.pt/og.jpg">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="bem.contado">
+<meta property="og:locale" content="pt_PT">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <meta property="og:url" content="https://bemcontadopt.pt/">
 <meta name="theme-color" content="#F7F5F0">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="canonical" href="https://bemcontadopt.pt/">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"bem.contado","url":"https://bemcontadopt.pt/","logo":"https://bemcontadopt.pt/apple-touch-icon.png","email":"bem.contado@outlook.pt","sameAs":["https://www.instagram.com/bem.contadopt/"]}</script>
 <link rel="preload" href="fonts/manrope-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="estilo.css">
-<script src="site.js"></script>
+<link rel="stylesheet" href="estilo.css?v=21a48b6f">
+<script src="site.js?v=8dec7a93"></script>
 </head>
 <body>
 <svg class="defs" width="0" height="0" aria-hidden="true" focusable="false">
@@ -25,7 +32,7 @@
 </svg>
 
 <header class="topo wrap">
-  <a class="marca" href="./" aria-label="bem.contado, início">bem<svg class="ponto" viewBox="0 0 10 10" aria-hidden="true"><rect x="1" y="1.6" width="8" height="8"/></svg>contado</a>
+  <a class="marca" href="./">bem<span class="sr">.</span><svg class="ponto" viewBox="0 0 10 10" aria-hidden="true"><rect x="1" y="1.6" width="8" height="8"/></svg>contado<span class="sr">, início</span></a>
   <nav aria-label="Ligações">
     <a href="prazos/">Prazos</a>
     <a href="quanto-por-de-lado/">Calculadora</a>
@@ -58,6 +65,16 @@
       <text class="num d4" x="304" y="146" text-anchor="end">+ 23,00</text>
       <text class="num ambar-txt d6" x="304" y="208" text-anchor="end">123,00</text>
     </svg>
+  </section>
+
+  <section class="wrap ferramentas" id="ferramentas" aria-labelledby="t-ferr">
+    <h2 id="t-ferr">Para usar já, sem registo.</h2>
+    <p>Três ferramentas grátis, no telemóvel ou no computador.</p>
+    <div class="cartoes">
+      <a class="cartao-ferr" href="prazos/" data-contar="ferr-prazos"><h3>Os teus prazos</h3><p>Escolhes o teu caso e vês só os prazos das Finanças e da Segurança Social que te dizem respeito. Juntas tudo ao calendário com um toque.</p><span class="ir">Ver os prazos</span></a>
+      <a class="cartao-ferr" href="quanto-por-de-lado/" data-contar="ferr-calculadora"><h3>Calculadora</h3><p>O salário líquido com as tabelas de retenção de 2026 ou, a recibos verdes, quanto pôr de lado por mês para o IRS e a Segurança Social.</p><span class="ir">Fazer a conta</span></a>
+      <a class="cartao-ferr" href="https://poupanca.bemcontadopt.pt/instalar/" data-contar="ferr-poupanca"><h3>App Poupança</h3><p>Regista despesas em segundos e mostra para onde vai o dinheiro. Sem conta, sem anúncios e com os dados só no telemóvel.</p><span class="ir">Conhecer a app</span></a>
+    </div>
   </section>
 
   <svg class="linha wrap" viewBox="0 0 1000 20" preserveAspectRatio="none" aria-hidden="true"><path class="pontilhado" d="M0 10 C 250 4, 520 16, 1000 8"/></svg>
@@ -117,10 +134,10 @@
         <h2>Explicar é metade do trabalho.</h2>
         <p>Quem percebe o que paga e porquê decide melhor. É por isso que escrevemos como se estivéssemos a explicar a um amigo, com o termo certo e sem rodeios.</p>
       </div>
-      <div class="dialogo" aria-label="Exemplo do que explicamos: o que é a retenção na fonte">
+      <figure class="dialogo" aria-label="Exemplo do que explicamos: o que é a retenção na fonte">
         <div class="bolha pergunta"><p class="quem">Pergunta</p><p class="falado" data-texto="O que é a retenção na fonte?">O que é a retenção na fonte?</p></div>
         <div class="bolha resposta"><p class="quem">bem.contado</p><p class="falado" data-texto="É IRS que a entidade patronal desconta do salário todos os meses e entrega ao Estado. Na declaração anual faz-se a conta final.">É IRS que a entidade patronal desconta do salário todos os meses e entrega ao Estado. Na declaração anual faz-se a conta final.</p></div>
-      </div>
+      </figure>
     </div>
   </section>
 
@@ -136,7 +153,7 @@
     </svg>
     <div class="texto">
       <h2>Ainda não aceitamos clientes.</h2>
-      <p>Quando a bem.contado abrir, avisamos aqui e no Instagram. Até lá, para perguntas, sugestões de temas ou propostas de parceria, escreva para:</p>
+      <p>Quando a bem.contado abrir, avisamos aqui e no Instagram. Até lá, para perguntas, sugestões de temas ou propostas de parceria, escreve para:</p>
       <p class="email"><a href="mailto:bem.contado@outlook.pt" data-contar="email">bem.contado@outlook.pt</a></p>
     </div>
   </section>
@@ -145,7 +162,7 @@
 <footer class="wrap">
   <svg class="linha" viewBox="0 0 1000 20" preserveAspectRatio="none" aria-hidden="true"><path class="pontilhado" d="M0 10 C 250 4, 520 16, 1000 8"/></svg>
   <div class="rodape">
-    <p class="marca" aria-label="bem.contado">bem<svg class="ponto" viewBox="0 0 10 10" aria-hidden="true"><rect x="1" y="1.6" width="8" height="8"/></svg>contado</p>
+    <p class="marca">bem<span class="sr">.</span><svg class="ponto" viewBox="0 0 10 10" aria-hidden="true"><rect x="1" y="1.6" width="8" height="8"/></svg>contado</p>
     <p><a href="prazos/">Prazos</a> · <a href="quanto-por-de-lado/">Calculadora</a> · <a href="https://www.instagram.com/bem.contadopt/">Instagram</a> · <a href="https://poupanca.bemcontadopt.pt/instalar/">App Poupança</a> · <a href="mailto:bem.contado@outlook.pt">bem.contado@outlook.pt</a></p>
   </div>
   <p class="nota">Este site conta as visitas de forma anónima e sem cookies. Não recolhe dados pessoais. A informação publicada é geral e não substitui a análise de cada caso.</p>
