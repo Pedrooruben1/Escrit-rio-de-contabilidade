@@ -19,5 +19,6 @@ Regras:
 - 20/11/2026 | Prazos do IVA mensal e trimestral (proposta trocada a pedido do utilizador) | ensinar | empresas | envelope numa caixa "IVA" | não | nenhuma | não publicada
 - 21/11/2026 | 40 anos do IVA em Portugal (1986 a 2026) | curiosidade | empresas | carrossel de 7: figura com calendário 1986, três casas com moedas (antes só duas, depois as três), talão rasgado com moedas a cair, talão 16% e pão, dois talões IVA menos IVA com seta para o Estado, figura com talão 23% | não | Guarde para ler o IVA da próxima fatura. | publicada
 - 22/11/2026 | Quiz: quantas taxas de IVA fixa o Código do IVA (6%, 13%, 23%) | só story | empresas | três talões de tamanhos diferentes alinhados sobre um traço âmbar | não | nenhuma | pendente
+- 23/11/2026 | Prazos da semana de 23 a 29/11: IVA e contribuições à Segurança Social a 25/11; prestação do IMI e IUC a 30/11 | notícia | empresas | carrossel de 4: calendário com o 25 rodeado e siglas IVA/SS, declaração IVA com seta para moedas, fábrica com trabalhadores e moedas para edifício SS, casa e carro com o 30 | não | Envie a quem trata das contas da empresa ou da casa. | pendente
 
 Nota: os dois vídeos de 19/11 foram exemplos feitos a pedido; contam para a semana de 16 a 22/11 (limite atingido, sem vídeos até domingo 22/11).
