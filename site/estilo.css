@@ -172,3 +172,39 @@ button.ligacao { font-family: inherit; font-size: inherit; font-weight: 800; bac
 }
 button.texto { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; text-decoration: underline; text-decoration-color: var(--ambar); text-underline-offset: 4px; }
 .calendario-acoes .pequeno a { color: inherit; font-weight: 500; text-decoration-color: var(--ambar); text-underline-offset: 4px; }
+
+/* calculadora */
+.calc-topo { grid-template-columns: 1fr; padding-bottom: 8px; }
+.calculadora { display: grid; grid-template-columns: 1.35fr .9fr; gap: 40px; align-items: start; padding-bottom: 56px; }
+.calc-form { grid-template-columns: 1fr 1fr; margin: 0; }
+.calc-form fieldset:first-child { grid-column: 1 / -1; }
+.calc-form .segunda { margin-top: 18px; }
+.campo-euro { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin: 4px 0 6px; }
+.campo-euro input { font: inherit; font-size: 26px; font-weight: 800; color: var(--azul); width: 7.5em; padding: 8px 12px; border: 2px solid var(--azul); border-radius: 12px; background: #fff; }
+.campo-euro input:focus-visible { outline: 3px solid var(--ambar); outline-offset: 2px; }
+.campo-euro span { color: var(--suave); }
+.calc-form.vendas .so-retencao, .calc-form.vendas .so-servicos { display: none; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.resultado { position: sticky; top: 20px; background: var(--azul); color: var(--creme); border-radius: 24px; padding: 28px 28px 22px; }
+.resultado .rotulo { margin: 0; font-weight: 700; color: #c8d2dc; }
+.resultado .valor { margin: 4px 0 0; font-size: clamp(44px, 6vw, 60px); font-weight: 800; letter-spacing: -1.5px; line-height: 1.05; color: var(--creme); }
+.resultado .valor small { font-size: 18px; letter-spacing: 0; font-weight: 700; color: #c8d2dc; }
+.resultado .pct { margin: 6px 0 18px; color: var(--ambar); font-weight: 700; }
+.parcelas { margin: 0; border-top: 2px dotted rgba(247, 245, 240, .35); }
+.parcelas div { display: flex; justify-content: space-between; gap: 16px; padding: 10px 0; border-bottom: 2px dotted rgba(247, 245, 240, .35); }
+.parcelas dt { color: #c8d2dc; }
+.parcelas dd { margin: 0; font-weight: 800; text-align: right; }
+.resultado .pequeno { color: #c8d2dc; margin: 14px 0 0; }
+.explicacao { padding-bottom: 56px; }
+.explicacao p { max-width: 46em; }
+@media (max-width: 900px) {
+  .calculadora { grid-template-columns: 1fr; }
+  .resultado { position: static; }
+}
+@media (max-width: 600px) {
+  .calc-form { grid-template-columns: 1fr; }
+}
+.legenda { font-weight: 800; font-size: 15px; letter-spacing: 1.2px; text-transform: uppercase; color: var(--ambar-letra-pequena); margin: 0 0 8px; }
+.perfil legend label, .legenda label { cursor: default; padding: 0; display: inline; font-size: inherit; }
+.perfil .campo-euro input { width: 7.5em; height: auto; margin: 0; flex: none; accent-color: auto; }
+.parcelas div[hidden] { display: none; }

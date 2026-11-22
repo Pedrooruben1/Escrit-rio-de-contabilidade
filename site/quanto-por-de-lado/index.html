@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Quanto pôr de lado nos recibos verdes · bem.contado</title>
+<meta name="description" content="Calcula quanto pôr de lado por mês para o IRS e a Segurança Social se passas recibos verdes no regime simplificado. Valores de 2026, sem registo.">
+<meta property="og:title" content="Quanto pôr de lado nos recibos verdes">
+<meta property="og:description" content="Quanto guardar por mês para o IRS e a Segurança Social, a partir do que faturas. Valores de 2026.">
+<meta property="og:image" content="https://bemcontadopt.pt/og.png">
+<meta property="og:url" content="https://bemcontadopt.pt/quanto-por-de-lado/">
+<link rel="canonical" href="https://bemcontadopt.pt/quanto-por-de-lado/">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data: https://bemcontadopt.goatcounter.com; base-uri 'none'; form-action 'none'; object-src 'none'">
+<meta name="theme-color" content="#F7F5F0">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/estilo.css">
+<script src="/site.js"></script>
+<script src="calculo.js" defer></script>
+<script src="pagina.js" defer></script>
+</head>
+<body>
+<svg class="defs" width="0" height="0" aria-hidden="true" focusable="false">
+  <filter id="traco"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="7"/><feDisplacementMap in="SourceGraphic" scale="4"/></filter>
+</svg>
+<header class="topo wrap">
+  <a class="marca" href="/" aria-label="bem.contado, início">bem<svg class="ponto" viewBox="0 0 10 10" aria-hidden="true"><rect x="1" y="1.6" width="8" height="8"/></svg>contado</a>
+  <nav aria-label="Ligações">
+    <a href="/prazos/">Prazos</a>
+    <a href="/quanto-por-de-lado/" aria-current="page">Calculadora</a>
+    <a href="https://www.instagram.com/bem.contadopt/">Instagram</a>
+    <a href="https://poupanca.bemcontadopt.pt/instalar/">App Poupança</a>
+  </nav>
+</header>
+<main>
+  <section class="hero wrap calc-topo">
+    <div class="texto">
+      <p class="antes">Recibos verdes · valores de 2026</p>
+      <h1>Quanto pôr de lado</h1>
+      <p class="sub">Quanto guardar todos os meses para o IRS e a Segurança Social, a partir do que faturas. Para quem passa recibos verdes no regime simplificado.</p>
+    </div>
+  </section>
+
+  <section class="wrap calculadora" aria-labelledby="t-dados">
+    <form class="perfil calc-form" id="calc" aria-label="Os teus dados">
+      <h2 id="t-dados" class="sr">Os teus dados</h2>
+      <fieldset>
+        <legend><label for="mensal">Quanto faturas por mês</label></legend>
+        <p class="campo-euro"><input id="mensal" name="mensal" type="number" inputmode="decimal" min="0" step="50" value="1500"> <span>€ por mês, em média, sem IVA</span></p>
+        <p class="legenda segunda" id="l-tipo">Atividade</p>
+        <label><input type="radio" name="tipo" value="p" checked> Profissão da tabela do artigo 151.º do Código do IRS</label>
+        <label><input type="radio" name="tipo" value="o"> Outros prestadores de serviços (código 1519 da mesma tabela)</label>
+        <label><input type="radio" name="tipo" value="s"> Outra prestação de serviços (código CAE)</label>
+        <label><input type="radio" name="tipo" value="v"> Venda de bens</label>
+        <p class="pequeno">Não sabes? É o código da atividade com que te inscreveste nas Finanças. Os códigos da tabela do artigo 151.º têm quatro algarismos; os códigos CAE têm cinco.</p>
+      </fieldset>
+      <fieldset>
+        <legend>Abriste atividade</legend>
+        <label><input type="radio" name="ano" value="1"> Este ano, pela primeira vez</label>
+        <label><input type="radio" name="ano" value="2"> No ano passado, pela primeira vez</label>
+        <label><input type="radio" name="ano" value="3" checked> Há mais tempo</label>
+        <div class="so-servicos">
+          <p class="legenda segunda"><label for="despesas">Despesas da atividade com fatura</label></p>
+          <p class="campo-euro"><input id="despesas" name="despesas" type="number" inputmode="decimal" min="0" step="10" value="0"> <span>€ por mês</span></p>
+        </div>
+      </fieldset>
+      <fieldset class="so-retencao">
+        <legend>Os teus clientes retêm IRS?</legend>
+        <label><input type="radio" name="retencao" value="0" checked> Não</label>
+        <label><input type="radio" name="retencao" value="0.5"> Cerca de metade</label>
+        <label><input type="radio" name="retencao" value="1"> Todos</label>
+        <p class="pequeno" id="taxa-ret"></p>
+      </fieldset>
+    </form>
+
+    <div class="resultado" id="resultado" aria-live="polite" hidden>
+      <p class="rotulo">Põe de lado cerca de</p>
+      <p class="valor"><span id="r-mes">0</span> € <small>por mês</small></p>
+      <p class="pct" id="r-pct"></p>
+      <dl class="parcelas">
+        <div><dt>Segurança Social</dt><dd id="r-ss"></dd></div>
+        <div><dt>IRS do ano (estimativa)</dt><dd id="r-irs"></dd></div>
+        <div id="l-ret"><dt>Já retido pelos clientes</dt><dd id="r-ret"></dd></div>
+        <div><dt id="r-acerto-t">Acerto na declaração de IRS</dt><dd id="r-acerto"></dd></div>
+      </dl>
+      <p class="pequeno" id="r-notas"></p>
+    </div>
+    <noscript><p>A calculadora precisa do JavaScript ligado.</p></noscript>
+  </section>
+
+  <section class="wrap explicacao" aria-labelledby="t-como">
+    <h2 id="t-como">Como fazemos a conta</h2>
+    <p><b>Segurança Social.</b> 21,4 % sobre 70 % do que faturas em serviços (20 % nas vendas), com um mínimo de 20 € por mês. Quem abre atividade pela primeira vez só começa a pagar ao fim de 12 meses.</p>
+    <p><b>IRS.</b> No regime simplificado, só uma parte do que faturas conta como rendimento: 75 % nas profissões da tabela do artigo 151.º, 35 % nos outros serviços e 15 % nas vendas. Nos serviços, no ano em que abres atividade e no seguinte, essa parte desce para metade e para três quartos, se não tiveres salário nem pensão e não tiveres fechado atividade nos cinco anos anteriores. Nos serviços, uma parte tem de ser justificada com despesas: 15 % do que faturas, de que se descontam logo 4587,09 €. Ao rendimento que sobra aplicamos as taxas de 2026 e descontamos 250 € de despesas gerais familiares, que quase toda a gente atinge. Nas profissões da tabela (exceto o código 1519), quem fatura até cerca de 16.500 € por ano tem ainda o desconto do mínimo de existência.</p>
+    <p><b>O que fica de fora.</b> Esta conta parte do princípio de que os recibos verdes são o teu único rendimento e de que entregas a declaração sozinho. Não entram salários, rendas ou pensões, o IRS Jovem, dependentes e outras deduções, o IVA (que não é teu: se o cobras, guarda-o à parte) nem a contabilidade organizada. Com qualquer uma destas, a conta muda e vale a pena falar com um contabilista certificado.</p>
+    <p class="aviso">Estimativa com informação geral, a partir do Código do IRS, do Código Contributivo e dos valores publicados para 2026. Não substitui a análise do teu caso.</p>
+  </section>
+</main>
+<footer class="wrap">
+  <svg class="linha" viewBox="0 0 1000 20" preserveAspectRatio="none" aria-hidden="true"><path class="pontilhado" d="M0 10 C 250 4, 520 16, 1000 8"/></svg>
+  <div class="rodape">
+    <p class="marca" aria-label="bem.contado">bem<svg class="ponto" viewBox="0 0 10 10" aria-hidden="true"><rect x="1" y="1.6" width="8" height="8"/></svg>contado</p>
+    <p><a href="/">Início</a> · <a href="/prazos/">Prazos</a> · <a href="/quanto-por-de-lado/">Quanto pôr de lado</a> · <a href="https://www.instagram.com/bem.contadopt/">Instagram</a> · <a href="mailto:bem.contado@outlook.pt">bem.contado@outlook.pt</a></p>
+  </div>
+</footer>
+</body>
+</html>
