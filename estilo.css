@@ -243,3 +243,4 @@ button.texto { font: inherit; color: inherit; background: none; border: 0; paddi
 .ajuda-modo summary { cursor: pointer; font-weight: 700; color: var(--azul); text-decoration: underline; text-decoration-color: var(--ambar); text-underline-offset: 5px; width: fit-content; }
 .ajuda-modo p { margin: 10px 0 0; max-width: 46em; }
 html[data-modo="c"] .so-r, html[data-modo="r"] .so-c { display: none; }
+.resultado .valor small { display: block; margin-top: 2px; }

@@ -41,7 +41,7 @@ var SALARIO = (function () {
     return Math.max(0, R * taxa - parcela - t.dep * dependentes);
   }
 
-  // e: {base, duodecimos: bool, refeicao (€/dia), dias, forma: "cartao"|"dinheiro", situacao: n|d|u, dependentes, jovem: 0 ou 1-10}
+  // e: {base, outros (abonos mensais com IRS), outrosSS: bool, duodecimos: bool, refeicao (€/dia), dias, forma: "cartao"|"dinheiro", situacao: n|d|u, dependentes, jovem: 0 ou 1-10}
   function calcular(e) {
     var lim = LIM[e.forma] || LIM.dinheiro;
     var refDia = e.refeicao || 0, dias = e.dias || 0;
@@ -55,18 +55,19 @@ var SALARIO = (function () {
       return r * (1 - isento / R);
     }
     // mês normal
-    var R = e.base + refTributado;
+    var outros = e.outros || 0;
+    var R = e.base + outros + refTributado;
     var irsMes = retido(R);
     var subsidio = e.base;                                 // cada subsídio igual ao salário base
     var irsSubsidio = retido(subsidio);
     var duod = e.duodecimos ? 2 * subsidio / 12 : 0;
     var irsDuod = e.duodecimos ? 2 * irsSubsidio / 12 : 0;
-    var ss = 0.11 * (e.base + refTributado + duod);
-    var liquido = e.base + duod + (e.forma === "dinheiro" ? refTotal : 0) - irsMes - irsDuod - ss;
+    var ss = 0.11 * (e.base + refTributado + duod + (e.outrosSS ? outros : 0));
+    var liquido = e.base + outros + duod + (e.forma === "dinheiro" ? refTotal : 0) - irsMes - irsDuod - ss;
     // em cartão, o subsídio vai para o cartão (incluindo a parte acima do limite, que paga IRS e SS no salário)
     var cartao = e.forma === "cartao" ? refTotal : 0;
     var liquidoSubsidio = e.duodecimos ? 0 : subsidio - irsSubsidio - 0.11 * subsidio;
-    var brutoAno = e.base * 14 + refTotal * 11;
+    var brutoAno = e.base * 14 + outros * 12 + refTotal * 11;
     return { R: R, irsMes: irsMes, taxaMes: R > 0 ? irsMes / R : 0, irsDuod: irsDuod, duod: duod, ss: ss, liquido: liquido,
              cartao: cartao, refTotal: refTotal, refTributado: refTributado, refIsento: refIsento, lim: lim,
              irsSubsidio: irsSubsidio, liquidoSubsidio: liquidoSubsidio, brutoAno: brutoAno };

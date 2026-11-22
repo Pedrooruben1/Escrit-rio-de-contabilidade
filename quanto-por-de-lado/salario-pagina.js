@@ -41,6 +41,8 @@
     if (q.get("modo") === "c") {
       if (q.has("b")) $("s-base").value = q.get("b");
       if (q.has("v")) $("s-ref").value = q.get("v");
+      if (q.has("o")) $("s-outros").value = q.get("o");
+      if (q.get("os") === "0") $("s-outros-ss").checked = false;
       if (q.has("n")) $("s-dias").value = q.get("n");
       if (q.has("u")) marcar("s-duod", q.get("u"));
       if (q.has("f")) marcar("s-forma", q.get("f"));
@@ -48,7 +50,7 @@
       if (q.has("k")) $("s-dep").value = q.get("k");
       if (q.has("j") && q.get("j") !== "0") { $("s-jovem-sim").checked = true; $("s-jovem-ano").value = q.get("j"); }
     }
-    ["s-base", "s-ref"].forEach(function (id) {
+    ["s-base", "s-ref", "s-outros"].forEach(function (id) {
       var c = $(id);
       c.value = euros(lerEuros(c.value));
       c.addEventListener("blur", function () { c.value = euros(lerEuros(c.value)); });
@@ -57,7 +59,7 @@
     function val(nome) { var r = f.querySelector('input[name="' + nome + '"]:checked'); return r ? r.value : null; }
 
     function dados() {
-      return { base: lerEuros($("s-base").value), duodecimos: val("s-duod") === "1", refeicao: lerEuros($("s-ref").value),
+      return { base: lerEuros($("s-base").value), outros: lerEuros($("s-outros").value), outrosSS: $("s-outros-ss").checked, duodecimos: val("s-duod") === "1", refeicao: lerEuros($("s-ref").value),
                dias: Math.min(31, Math.round(lerEuros($("s-dias").value))), forma: val("s-forma"), situacao: val("s-sit"),
                dependentes: parseInt($("s-dep").value, 10) || 0,
                jovem: $("s-jovem-sim").checked ? parseInt($("s-jovem-ano").value, 10) : 0 };
@@ -66,6 +68,7 @@
       var p = new URLSearchParams({ modo: "c", b: String(e.base), u: e.duodecimos ? "1" : "0", v: String(e.refeicao), n: String(e.dias),
                                     f: e.forma, e: e.situacao, k: String(e.dependentes) });
       if (e.jovem) p.set("j", String(e.jovem));
+      if (e.outros) { p.set("o", String(e.outros)); if (!e.outrosSS) p.set("os", "0"); }
       return location.origin + location.pathname + "?" + p.toString();
     }
 
@@ -76,6 +79,8 @@
       $("s-liq").textContent = euros(r.liquido);
       $("s-cartao").textContent = r.cartao > 0 ? "e " + euros(r.cartao) + " € no cartão de refeição" : "";
       $("s-r-base").textContent = euros(e.base) + " €";
+      $("s-l-outros").hidden = !(e.outros > 0);
+      $("s-r-outros").textContent = "+" + euros(e.outros) + " €";
       $("s-l-duod").hidden = !e.duodecimos;
       $("s-r-duod").textContent = "+" + euros(r.duod) + " €";
       $("s-r-ss").textContent = "-" + euros(r.ss) + " €";

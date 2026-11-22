@@ -15,12 +15,12 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<link rel="stylesheet" href="/estilo.css?v=7">
+<link rel="stylesheet" href="/estilo.css?v=8">
 <script src="/site.js"></script>
-<script src="calculo.js?v=7" defer></script>
-<script src="pagina.js?v=7" defer></script>
-<script src="salario.js?v=7" defer></script>
-<script src="salario-pagina.js?v=7" defer></script>
+<script src="calculo.js?v=8" defer></script>
+<script src="pagina.js?v=8" defer></script>
+<script src="salario.js?v=8" defer></script>
+<script src="salario-pagina.js?v=8" defer></script>
 </head>
 <body>
 <svg class="defs" width="0" height="0" aria-hidden="true" focusable="false">
@@ -61,8 +61,13 @@
   <section class="wrap calculadora" id="modo-c" hidden aria-label="Salário líquido">
     <form class="perfil calc-form" id="calc-sal" aria-label="O teu salário">
       <fieldset>
-        <legend><label for="s-base">Salário base bruto</label></legend>
+        <legend><label for="s-base">Vencimento base bruto</label></legend>
         <p class="campo-euro"><input id="s-base" type="text" inputmode="decimal" autocomplete="off" value="1.500,00"> <span>€ por mês</span></p>
+        <p class="pequeno">É o valor do contrato, a linha "Vencimento base" do recibo. Não ponhas o "Total bruto", que já inclui subsídios, prémios e o subsídio de alimentação.</p>
+        <p class="legenda segunda"><label for="s-outros">Prémios ou outros abonos</label></p>
+        <p class="campo-euro"><input id="s-outros" type="text" inputmode="decimal" autocomplete="off" value="0,00"> <span>€ por mês</span></p>
+        <label><input type="checkbox" id="s-outros-ss" checked> Também descontam para a Segurança Social</label>
+        <p class="pequeno">Gratificações, prémios, isenção de horário. Pagam sempre IRS. Algumas gratificações ligadas aos resultados da empresa não pagam Segurança Social: vê no teu recibo.</p>
         <p class="legenda segunda">Subsídios de férias e de Natal</p>
         <label><input type="radio" name="s-duod" value="0" checked> Pagos à parte (normalmente em junho e novembro)</label>
         <label><input type="radio" name="s-duod" value="1"> Em duodécimos (um bocado todos os meses)</label>
@@ -104,7 +109,8 @@
       <p class="valor"><span id="s-liq">0</span> € <small>por mês</small></p>
       <p class="pct" id="s-cartao"></p>
       <dl class="parcelas">
-        <div><dt>Salário bruto</dt><dd id="s-r-base"></dd></div>
+        <div><dt>Vencimento base</dt><dd id="s-r-base"></dd></div>
+        <div id="s-l-outros"><dt>Prémios e outros abonos</dt><dd id="s-r-outros"></dd></div>
         <div id="s-l-duod"><dt>Duodécimos dos subsídios</dt><dd id="s-r-duod"></dd></div>
         <div><dt>Segurança Social (11 %)</dt><dd id="s-r-ss"></dd></div>
         <div><dt>IRS retido<span class="dt-nota" id="s-r-taxa"></span></dt><dd id="s-r-irs"></dd></div>
