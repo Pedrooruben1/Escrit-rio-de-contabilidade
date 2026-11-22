@@ -1,11 +1,15 @@
 /* Quanto pôr de lado por mês para o IRS e a Segurança Social (recibos verdes, regime simplificado).
    Valores de 2026. Fontes (confirmadas em 22/11/2026):
-   - IRS, taxas: artigo 68.º do CIRS, redação do DL 212/2026 (Portal das Finanças).
+   - IRS, taxas: artigo 68.º do CIRS, redação do DL 212/2026 (Portal das Finanças); taxa adicional de
+     solidariedade: artigo 68.º-A (2,5 % de 80.000 a 250.000 €, 5 % acima).
    - Regime simplificado: artigo 31.º do CIRS (coeficientes, n.º 2, n.º 10, n.º 13).
    - Dedução específica: artigo 25.º, n.º 1, a) do CIRS (8,54 x IAS).
    - Mínimo de existência: artigo 70.º do CIRS.
    - Retenção na fonte: artigo 101.º, n.º 1 do CIRS (23 % e 11,5 %).
    - IAS 2026: 537,13 € (Portaria 480-A/2025/1).
+   - IRS Jovem: artigo 12.º-B do CIRS e folheto "IRS Jovem 2025" da AT (isenção sobre o rendimento bruto,
+     limite de 55 x IAS, rendimento isento conta para a taxa). Na categoria B aplicamos a parte isenta em
+     proporção ao rendimento coletável: é uma aproximação.
    - Segurança Social: Guia Prático "Novo regime dos trabalhadores independentes" v1.14 (21,4 %, 70 % / 20 %,
      mínimo de 20 €, máximo de 12 x IAS, primeiro enquadramento só ao fim de 12 meses). */
 var CALC = (function () {
@@ -24,6 +28,8 @@ var CALC = (function () {
       if (c > ant) imposto += (Math.min(c, lim) - ant) * t;
       ant = lim;
     }
+    if (c > 80000) imposto += (Math.min(c, 250000) - 80000) * 0.025;
+    if (c > 250000) imposto += (c - 250000) * 0.05;
     return imposto;
   }
 
@@ -39,7 +45,9 @@ var CALC = (function () {
     return Math.max(0, Math.min(base, rl));
   }
 
-  // e: {mensal, tipo: p|o|s|v, ano: 1|2|3 (3 = terceiro ou seguintes), despesas (mensais), retencao: 0|0.5|1}
+  function pctJovem(n) { return !n ? 0 : n === 1 ? 1 : n <= 4 ? 0.75 : n <= 7 ? 0.5 : n <= 10 ? 0.25 : 0; }
+
+  // e: {mensal, tipo: p|o|s|v, ano: 1|2|3 (3 = terceiro ou seguintes), despesas (mensais), retencao: 0|0.5|1, jovem: 0 ou ano 1 a 10}
   function calcular(e) {
     var bruto = e.mensal * 12;
     var servicos = e.tipo !== "v";
@@ -62,12 +70,14 @@ var CALC = (function () {
     }
     var abat = e.tipo === "p" ? minimoExistencia(bruto, rl) : 0;
     var coletavel = Math.max(0, rl - abat);
-    var irs = Math.max(0, irsTaxas(coletavel) - DESP_GERAIS);
+    var isento = Math.min(pctJovem(e.jovem) * bruto, 55 * IAS);
+    var parteTributada = bruto > 0 ? 1 - isento / bruto : 1;
+    var irs = Math.max(0, irsTaxas(coletavel) * parteTributada - DESP_GERAIS);
     var retido = bruto * RET[e.tipo] * e.retencao;
     var acerto = irs - retido;                                     // > 0: a pagar em agosto; < 0: reembolso
     var porMes = ssMes + Math.max(0, acerto) / 12;
     return { bruto: bruto, ssMes: ssMes, ssAno: ssAno, irs: irs, retido: retido, acerto: acerto, porMes: porMes,
-             coletavel: coletavel, faltaDespesas: faltaDespesas, abatimento: abat,
+             isento: isento, coletavel: coletavel, faltaDespesas: faltaDespesas, abatimento: abat,
              pct: e.mensal > 0 ? porMes / e.mensal : 0 };
   }
   return { calcular: calcular, irsTaxas: irsTaxas };
