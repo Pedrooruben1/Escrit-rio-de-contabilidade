@@ -238,3 +238,6 @@ button.texto { font: inherit; color: inherit; background: none; border: 0; paddi
 #s-dias { width: 4.5em; }
 @media (max-width: 600px) { .modo-opcoes { grid-template-columns: 1fr; } }
 @media (max-width: 640px) { .calc-form { grid-template-columns: 1fr; } .campo-euro input { max-width: 100%; } .parcelas dd { white-space: nowrap; } }
+.ajuda-modo { max-width: 760px; margin-top: 16px; }
+.ajuda-modo summary { cursor: pointer; font-weight: 700; color: var(--azul); text-decoration: underline; text-decoration-color: var(--ambar); text-underline-offset: 5px; width: fit-content; }
+.ajuda-modo p { margin: 10px 0 0; max-width: 46em; }
