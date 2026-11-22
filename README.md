@@ -80,4 +80,7 @@ O que o GitHub Pages serve é o branch `claude/site`, que tem os mesmos ficheiro
 
 Partes automáticas, que só existem no branch `claude/site` e são escritas pela tarefa de publicação (`scripts/site_atualizar.py`):
 - `ultima/`: a imagem e os dados da última publicação do Instagram. A página principal mostra-a no lugar do desenho do telemóvel.
-- `prazos/`: a página "Prazos da semana", gerada a partir do `prazos.json` da publicação de segunda-feira.
+- `prazos/`: a página de prazos. Tem a ferramenta "Os teus prazos" (filtro por perfil, guardado só no browser, e ficheiros `.ics` para o calendário, um por perfil em `prazos/ics/`) e, por baixo, os prazos da semana gerados a partir do `prazos.json` da publicação de segunda-feira.
+- `prazos/calendario.json`: os prazos da ferramenta, com a fonte oficial de cada um (não aparece na página). A versão inicial está em `dados/calendario.json`. Às segundas, se faltarem menos de 35 dias para o fim da lista, a proposta do Telegram traz também o mês seguinte, e depois de aprovada a tarefa corre `site_atualizar.py calendario`.
+
+O `prazos.js` (em `site/prazos/`) é copiado para `prazos/` no branch `claude/site` como os outros ficheiros.
