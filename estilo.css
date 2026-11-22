@@ -170,3 +170,5 @@ button.ligacao { font-family: inherit; font-size: inherit; font-weight: 800; bac
   .perfil { grid-template-columns: 1fr; }
   .calendario-acoes { padding: 22px 20px; }
 }
+button.texto { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; text-decoration: underline; text-decoration-color: var(--ambar); text-underline-offset: 4px; }
+.calendario-acoes .pequeno a { color: inherit; font-weight: 500; text-decoration-color: var(--ambar); text-underline-offset: 4px; }
