@@ -15,12 +15,12 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<link rel="stylesheet" href="/estilo.css?v=9">
+<link rel="stylesheet" href="/estilo.css?v=10">
 <script src="/site.js"></script>
-<script src="calculo.js?v=9" defer></script>
-<script src="pagina.js?v=9" defer></script>
-<script src="salario.js?v=9" defer></script>
-<script src="salario-pagina.js?v=9" defer></script>
+<script src="calculo.js?v=10" defer></script>
+<script src="pagina.js?v=10" defer></script>
+<script src="salario.js?v=10" defer></script>
+<script src="salario-pagina.js?v=10" defer></script>
 </head>
 <body>
 <svg class="defs" width="0" height="0" aria-hidden="true" focusable="false">
@@ -67,7 +67,7 @@
         <p class="legenda segunda"><label for="s-outros">Prémios ou outros abonos</label></p>
         <p class="campo-euro"><input id="s-outros" type="text" inputmode="decimal" autocomplete="off" value="0,00"> <span>€ por mês</span></p>
         <label><input type="checkbox" id="s-outros-ss" checked> Também descontam para a Segurança Social</label>
-        <p class="pequeno">Gratificações, prémios, isenção de horário. Pagam sempre IRS. Algumas gratificações ligadas aos resultados da empresa não pagam Segurança Social: vê no teu recibo.</p>
+        <p class="pequeno">Só gratificações, prémios ou isenção de horário. Os duodécimos dos subsídios não entram aqui: escolhe "Em duodécimos" mais abaixo. Estes abonos pagam sempre IRS. Algumas gratificações ligadas aos resultados da empresa não pagam Segurança Social: vê no teu recibo.</p>
         <p class="legenda segunda">Subsídios de férias e de Natal</p>
         <label><input type="radio" name="s-duod" value="0" checked> Pagos à parte (normalmente em junho e novembro)</label>
         <label><input type="radio" name="s-duod" value="1"> Em duodécimos (um bocado todos os meses)</label>
@@ -119,6 +119,7 @@
         <div><dt>IRS retido<span class="dt-nota" id="s-r-taxa"></span></dt><dd id="s-r-irs"></dd></div>
         <div><dt>Subsídio de alimentação</dt><dd id="s-r-ref"></dd></div>
       </dl>
+      <p class="aviso-calc" id="s-aviso" hidden></p>
       <p class="pequeno" id="s-notas"></p>
       <p class="partilhar"><button class="texto" type="button" id="s-copiar">Copiar a ligação com estes valores</button></p>
     </div>
