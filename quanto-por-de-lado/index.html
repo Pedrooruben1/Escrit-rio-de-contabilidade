@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Quanto pôr de lado nos recibos verdes · bem.contado</title>
-<meta name="description" content="Calcula quanto pôr de lado por mês para o IRS e a Segurança Social se passas recibos verdes no regime simplificado. Valores de 2026, sem registo.">
-<meta property="og:title" content="Quanto pôr de lado nos recibos verdes">
+<title>Calculadora de salário líquido e recibos verdes (2026) · bem.contado</title>
+<meta name="description" content="Salário líquido com as tabelas de retenção de 2026, subsídio de alimentação em cartão ou dinheiro e IRS Jovem. Para recibos verdes, quanto pôr de lado por mês para o IRS e a Segurança Social.">
+<meta property="og:title" content="Calculadora de salário líquido e recibos verdes">
 <meta property="og:description" content="Quanto guardar por mês para o IRS e a Segurança Social, a partir do que faturas. Valores de 2026.">
 <meta property="og:image" content="https://bemcontadopt.pt/og.png">
 <meta property="og:url" content="https://bemcontadopt.pt/quanto-por-de-lado/">
@@ -15,10 +15,12 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<link rel="stylesheet" href="/estilo.css?v=3">
+<link rel="stylesheet" href="/estilo.css?v=4">
 <script src="/site.js"></script>
-<script src="calculo.js?v=3" defer></script>
-<script src="pagina.js?v=3" defer></script>
+<script src="calculo.js?v=4" defer></script>
+<script src="pagina.js?v=4" defer></script>
+<script src="salario.js?v=4" defer></script>
+<script src="salario-pagina.js?v=4" defer></script>
 </head>
 <body>
 <svg class="defs" width="0" height="0" aria-hidden="true" focusable="false">
@@ -36,11 +38,78 @@
 <main>
   <section class="hero wrap calc-topo">
     <div class="texto">
-      <p class="antes">Recibos verdes · valores de 2026</p>
-      <h1>Quanto pôr de lado</h1>
-      <p class="sub">Quanto guardar todos os meses para o IRS e a Segurança Social, a partir do que faturas. Para quem passa recibos verdes no regime simplificado.</p>
+      <p class="antes">Salário e recibos verdes · valores de 2026</p>
+      <h1>Quanto fica para ti</h1>
+      <p class="sub">Com contrato, mostramos o salário líquido. A recibos verdes, quanto pôr de lado todos os meses para o IRS e a Segurança Social.</p>
     </div>
   </section>
+
+  <section class="wrap modos" aria-labelledby="t-modo">
+    <h2 id="t-modo" class="pergunta">Como trabalhas?</h2>
+    <div class="modo-opcoes" id="modo">
+      <label class="modo-opcao"><input type="radio" name="modo" value="c"><span><b>Por conta de outrem</b> Tenho contrato e recebo salário</span></label>
+      <label class="modo-opcao"><input type="radio" name="modo" value="r"><span><b>A recibos verdes</b> Sou trabalhador independente</span></label>
+    </div>
+  </section>
+
+  <section class="wrap calculadora" id="modo-c" hidden aria-label="Salário líquido">
+    <form class="perfil calc-form" id="calc-sal" aria-label="O teu salário">
+      <fieldset>
+        <legend><label for="s-base">Salário base bruto</label></legend>
+        <p class="campo-euro"><input id="s-base" type="text" inputmode="decimal" autocomplete="off" value="1.500,00"> <span>€ por mês</span></p>
+        <p class="legenda segunda">Subsídios de férias e de Natal</p>
+        <label><input type="radio" name="s-duod" value="0" checked> Pagos à parte (normalmente em junho e novembro)</label>
+        <label><input type="radio" name="s-duod" value="1"> Em duodécimos (um bocado todos os meses)</label>
+      </fieldset>
+      <fieldset>
+        <legend>Subsídio de alimentação</legend>
+        <p class="campo-euro"><input id="s-ref" type="text" inputmode="decimal" autocomplete="off" value="6,15"> <span>€ por dia</span></p>
+        <p class="campo-euro"><input id="s-dias" type="text" inputmode="numeric" autocomplete="off" value="22"> <span>dias por mês</span></p>
+        <label><input type="radio" name="s-forma" value="cartao"> Em cartão</label>
+        <label><input type="radio" name="s-forma" value="dinheiro" checked> Em dinheiro, com o salário</label>
+        <p class="pequeno">Sem IRS nem Segurança Social até 6,15 € por dia em dinheiro e 10,46 € em cartão.</p>
+      </fieldset>
+      <fieldset>
+        <legend>Situação</legend>
+        <label><input type="radio" name="s-sit" value="n" checked> Não casado</label>
+        <label><input type="radio" name="s-sit" value="d"> Casado ou unido de facto, os dois com rendimentos</label>
+        <label><input type="radio" name="s-sit" value="u"> Casado ou unido de facto, só um com rendimentos</label>
+        <p class="legenda segunda"><label for="s-dep">Dependentes</label></p>
+        <select id="s-dep"><option value="0">Nenhum</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select>
+      </fieldset>
+      <fieldset>
+        <legend>IRS Jovem</legend>
+        <label><input type="checkbox" id="s-jovem-sim"> Tenho até 35 anos e não sou dependente dos meus pais</label>
+        <div class="so-jovem-s">
+          <p class="legenda segunda"><label for="s-jovem-ano">Ano de rendimentos do trabalho</label></p>
+          <select id="s-jovem-ano">
+            <option value="1">1.º ano (isenção de 100 %)</option>
+            <option value="2">2.º ano (75 %)</option><option value="3">3.º ano (75 %)</option><option value="4">4.º ano (75 %)</option>
+            <option value="5">5.º ano (50 %)</option><option value="6">6.º ano (50 %)</option><option value="7">7.º ano (50 %)</option>
+            <option value="8">8.º ano (25 %)</option><option value="9">9.º ano (25 %)</option><option value="10">10.º ano (25 %)</option>
+          </select>
+          <p class="pequeno">A empresa só aplica o IRS Jovem na retenção se lhe disseres que estás nessa situação.</p>
+        </div>
+      </fieldset>
+    </form>
+
+    <div class="resultado" id="resultado-sal" aria-live="polite">
+      <p class="rotulo">Recebes na conta cerca de</p>
+      <p class="valor"><span id="s-liq">0</span> € <small>por mês</small></p>
+      <p class="pct" id="s-cartao"></p>
+      <dl class="parcelas">
+        <div><dt>Salário bruto</dt><dd id="s-r-base"></dd></div>
+        <div id="s-l-duod"><dt>Duodécimos dos subsídios</dt><dd id="s-r-duod"></dd></div>
+        <div><dt>Segurança Social (11 %)</dt><dd id="s-r-ss"></dd></div>
+        <div><dt>IRS retido<span class="dt-nota" id="s-r-taxa"></span></dt><dd id="s-r-irs"></dd></div>
+        <div><dt>Subsídio de alimentação</dt><dd id="s-r-ref"></dd></div>
+      </dl>
+      <p class="pequeno" id="s-notas"></p>
+      <p class="partilhar"><button class="texto" type="button" id="s-copiar">Copiar a ligação com estes valores</button></p>
+    </div>
+  </section>
+
+  <div id="modo-r" hidden>
 
   <section class="wrap calculadora" aria-labelledby="t-dados">
     <form class="perfil calc-form" id="calc" aria-label="Os teus dados">
@@ -120,11 +189,13 @@
     </div>
     <noscript><p>A calculadora precisa do JavaScript ligado.</p></noscript>
   </section>
+  </div>
 
   <section class="wrap explicacao" aria-labelledby="t-como">
     <h2 id="t-como">Como fazemos a conta</h2>
-    <p><b>Segurança Social.</b> 21,4 % sobre 70 % do que faturas em serviços (20 % nas vendas), com um mínimo de 20 € por mês. Quem abre atividade pela primeira vez só começa a pagar no 12.º mês depois do início. Na declaração trimestral podes pedir que a base seja até 25 % abaixo ou acima.</p>
-    <p><b>IRS.</b> No regime simplificado, só uma parte do que faturas conta como rendimento: 75 % nas profissões da tabela do artigo 151.º, 35 % nos outros serviços e 15 % nas vendas. Nos serviços, no ano em que abres atividade e no seguinte, essa parte desce para metade e para três quartos, se não tiveres salário nem pensão e não tiveres fechado atividade nos cinco anos anteriores. Nos serviços, uma parte tem de ser justificada com despesas: 15 % do que faturas, de que se descontam logo 4.587,09 €. Ao rendimento que sobra aplicamos as taxas de 2026 (e a taxa adicional de solidariedade, acima de 80.000 €) e descontamos 250 € de despesas gerais familiares, que quase toda a gente atinge. Nas profissões da tabela (exceto o código 1519), quem fatura até cerca de 16.500 € por ano tem ainda o desconto do mínimo de existência.</p>
+    <p><b>Salário.</b> A retenção de IRS segue as tabelas de 2026 para o Continente (Despacho n.º 233-A/2026), com a fórmula oficial: remuneração × taxa, menos a parcela a abater e a parcela por dependente. Os subsídios de férias e de Natal têm retenção à parte. Em duodécimos, retém-se em cada mês a parte proporcional. A Segurança Social é 11 %. O subsídio de alimentação não paga IRS nem Segurança Social até 6,15 € por dia em dinheiro ou 10,46 € em cartão; o que passar paga. A retenção é um adiantamento: o IRS final acerta-se na declaração. Não incluímos as tabelas da Madeira e dos Açores, pessoas com deficiência, horas extra nem outros prémios. Em novembro de 2026 a retenção foi reduzida para metade (Despacho n.º 12523-A/2026); em dezembro volta ao normal.</p>
+    <p><b>Recibos verdes: Segurança Social.</b> 21,4 % sobre 70 % do que faturas em serviços (20 % nas vendas), com um mínimo de 20 € por mês. Quem abre atividade pela primeira vez só começa a pagar no 12.º mês depois do início. Na declaração trimestral podes pedir que a base seja até 25 % abaixo ou acima.</p>
+    <p><b>Recibos verdes: IRS.</b> No regime simplificado, só uma parte do que faturas conta como rendimento: 75 % nas profissões da tabela do artigo 151.º, 35 % nos outros serviços e 15 % nas vendas. Nos serviços, no ano em que abres atividade e no seguinte, essa parte desce para metade e para três quartos, se não tiveres salário nem pensão e não tiveres fechado atividade nos cinco anos anteriores. Nos serviços, uma parte tem de ser justificada com despesas: 15 % do que faturas, de que se descontam logo 4.587,09 €. Ao rendimento que sobra aplicamos as taxas de 2026 (e a taxa adicional de solidariedade, acima de 80.000 €) e descontamos 250 € de despesas gerais familiares, que quase toda a gente atinge. Nas profissões da tabela (exceto o código 1519), quem fatura até cerca de 16.500 € por ano tem ainda o desconto do mínimo de existência.</p>
     <p><b>IRS Jovem.</b> Até aos 35 anos, quem não é dependente pode ter uma parte do rendimento isenta nos primeiros 10 anos de rendimentos do trabalho: 100 % no primeiro, 75 % do segundo ao quarto, 50 % do quinto ao sétimo e 25 % do oitavo ao décimo, até 29.542,15 € por ano. A parte isenta não paga IRS, mas conta para a taxa aplicada ao resto. Não muda a Segurança Social. Nos recibos verdes, a forma exata como a AT reparte a isenção no regime simplificado ainda não está esclarecida num documento oficial, por isso este valor é uma aproximação.</p>
     <p><b>O que fica de fora.</b> Esta conta parte do princípio de que os recibos verdes são o teu único rendimento e de que entregas a declaração sozinho. Não entram salários, rendas ou pensões, dependentes e outras deduções, o IVA (que não é teu: se o cobras, guarda-o à parte) nem a contabilidade organizada. Com qualquer uma destas, a conta muda e vale a pena falar com um contabilista certificado.</p>
     <p class="aviso">Estimativa com informação geral, a partir do Código do IRS, do Código Contributivo e dos valores publicados para 2026. Não substitui a análise do teu caso.</p>
@@ -132,6 +203,8 @@
 
   <section class="wrap explicacao faq" aria-labelledby="t-faq">
     <h2 id="t-faq">Perguntas frequentes</h2>
+    <h3>É melhor receber o subsídio de alimentação em cartão ou em dinheiro?</h3>
+    <p>Em cartão o limite sem impostos é mais alto: 10,46 € por dia, contra 6,15 € em dinheiro, em 2026. Com 10,46 € por dia e 22 dias, em dinheiro pagarias IRS e Segurança Social sobre 94,82 € por mês; em cartão não pagas nada. A diferença é que o cartão só serve para alimentação.</p>
     <h3>Quanto devo pôr de lado nos recibos verdes?</h3>
     <p>Depende do que faturas, da atividade e de os clientes reterem IRS ou não. Por exemplo, quem fatura 1.500 € por mês numa profissão da tabela do artigo 151.º, sem retenção e com atividade há mais de dois anos, deve guardar cerca de 343 € por mês: 225 € para a Segurança Social e 118 € para o IRS. Usa a calculadora acima para o teu caso.</p>
     <h3>Quando se paga a Segurança Social como trabalhador independente?</h3>
@@ -143,6 +216,7 @@
   </section>
   <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"É melhor receber o subsídio de alimentação em cartão ou em dinheiro?","acceptedAnswer":{"@type":"Answer","text":"Em cartão o limite sem impostos é mais alto: 10,46 € por dia, contra 6,15 € em dinheiro, em 2026. Com 10,46 € por dia e 22 dias, em dinheiro pagarias IRS e Segurança Social sobre 94,82 € por mês; em cartão não pagas nada. A diferença é que o cartão só serve para alimentação."}},
 {"@type":"Question","name":"Quanto devo pôr de lado nos recibos verdes?","acceptedAnswer":{"@type":"Answer","text":"Depende do que faturas, da atividade e de os clientes reterem IRS ou não. Por exemplo, quem fatura 1.500 € por mês numa profissão da tabela do artigo 151.º, sem retenção e com atividade há mais de dois anos, deve guardar cerca de 343 € por mês: 225 € para a Segurança Social e 118 € para o IRS."}},
 {"@type":"Question","name":"Quando se paga a Segurança Social como trabalhador independente?","acceptedAnswer":{"@type":"Answer","text":"Todos os meses, entre o dia 10 e o dia 20, sobre o mês anterior. O valor é calculado a partir da declaração trimestral, entregue até ao fim de janeiro, abril, julho e outubro. Quem abre atividade pela primeira vez só começa a pagar no 12.º mês depois do início."}},
 {"@type":"Question","name":"O que são os pagamentos por conta?","acceptedAnswer":{"@type":"Answer","text":"São adiantamentos do IRS que quem tem rendimentos de categoria B paga até ao dia 20 de julho, de setembro e de dezembro. No total correspondem a 65 % do IRS de há dois anos, descontadas as retenções, e não se pagam se cada um ficar abaixo de 50 €."}},
@@ -154,7 +228,7 @@
   <svg class="linha" viewBox="0 0 1000 20" preserveAspectRatio="none" aria-hidden="true"><path class="pontilhado" d="M0 10 C 250 4, 520 16, 1000 8"/></svg>
   <div class="rodape">
     <p class="marca" aria-label="bem.contado">bem<svg class="ponto" viewBox="0 0 10 10" aria-hidden="true"><rect x="1" y="1.6" width="8" height="8"/></svg>contado</p>
-    <p><a href="/">Início</a> · <a href="/prazos/">Prazos</a> · <a href="/quanto-por-de-lado/">Quanto pôr de lado</a> · <a href="https://www.instagram.com/bem.contadopt/">Instagram</a> · <a href="mailto:bem.contado@outlook.pt">bem.contado@outlook.pt</a></p>
+    <p><a href="/">Início</a> · <a href="/prazos/">Prazos</a> · <a href="/quanto-por-de-lado/">Calculadora</a> · <a href="https://www.instagram.com/bem.contadopt/">Instagram</a> · <a href="mailto:bem.contado@outlook.pt">bem.contado@outlook.pt</a></p>
   </div>
 </footer>
 </body>

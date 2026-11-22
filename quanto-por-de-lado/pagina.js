@@ -47,7 +47,7 @@
     }
 
     function ligacao(e) {
-      var p = new URLSearchParams({ m: String(e.mensal), t: e.tipo, a: String(e.ano), r: String(e.retencao) });
+      var p = new URLSearchParams({ modo: "r", m: String(e.mensal), t: e.tipo, a: String(e.ano), r: String(e.retencao) });
       if (e.ano !== 3) p.set("i", String(e.mes));
       if (e.despesas) p.set("d", String(e.despesas));
       if (e.ajuste) p.set("s", String(e.ajuste));
@@ -102,7 +102,7 @@
       }
       $("r-compara").textContent = comp;
       $("copiar-ligacao").dataset.url = ligacao(e);
-      try { history.replaceState(null, "", ligacao(e)); } catch (x) {}
+      if (!$("modo-r").hidden) { try { history.replaceState(null, "", ligacao(e)); } catch (x) {} }
       res.hidden = false;
     }
 
@@ -112,6 +112,7 @@
       if (navigator.clipboard) navigator.clipboard.writeText(url).then(function () { feito("Ligação copiada"); }, function () { window.prompt("Copia esta ligação:", url); });
       else window.prompt("Copia esta ligação:", url);
     });
+    document.addEventListener("modo-mudou", atualizar);
     f.addEventListener("input", atualizar);
     f.addEventListener("change", atualizar);
     f.addEventListener("submit", function (ev) { ev.preventDefault(); });
