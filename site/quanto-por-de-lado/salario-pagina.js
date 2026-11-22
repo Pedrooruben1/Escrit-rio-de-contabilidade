@@ -90,6 +90,11 @@
       $("s-r-taxa").textContent = "taxa efetiva de " + pct(r.taxaMes) + " sobre " + euros(r.R) + " €";
       $("s-r-ref").textContent = r.refTotal > 0 ? euros(r.refTotal) + " €" + (r.refTributado > 0 ? " (" + euros(r.refTributado) + " € com impostos)" : " (sem impostos)") : "0,00 €";
 
+      // aviso: os duodécimos postos também em "outros abonos"
+      var duodMes = 2 * e.base / 12, aviso = "";
+      if (e.outros > 0 && Math.abs(e.outros - duodMes) < 1) aviso = "Os " + euros(e.outros) + " € em \"Prémios ou outros abonos\" são iguais aos duodécimos dos subsídios" + (e.duodecimos ? ", que já estão contados. Assim ficam somados duas vezes: tira-os desse campo." : ". Se são os duodécimos, tira-os desse campo e escolhe \"Em duodécimos\".");
+      $("s-aviso").textContent = aviso;
+      $("s-aviso").hidden = !aviso;
       var notas = [];
       if (!e.duodecimos && e.base > 0) notas.push("Nos meses dos subsídios de férias e de Natal recebes também cerca de " + euros(r.liquidoSubsidio) + " € líquidos de cada um.");
       if (r.refTributado > 0) {
