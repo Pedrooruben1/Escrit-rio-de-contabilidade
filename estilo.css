@@ -144,3 +144,29 @@ footer { padding-bottom: 48px; margin-top: 24px; }
   .js .bolha.resposta.espera { opacity: 1; }
   .escrevendo::after { animation: none; }
 }
+
+/* ferramenta "Os teus prazos" */
+.ferramenta { padding-top: 24px; padding-bottom: 56px; }
+.ferramenta > .sub { max-width: 40em; }
+.perfil { display: grid; grid-template-columns: 1.3fr .8fr .8fr; gap: 18px 28px; margin: 26px 0 10px; max-width: 980px; }
+.perfil fieldset { border: 0; margin: 0; padding: 0; min-width: 0; }
+.perfil legend { font-weight: 800; font-size: 15px; letter-spacing: 1.2px; text-transform: uppercase; color: var(--ambar-letra-pequena); margin-bottom: 8px; padding: 0; }
+.perfil label { display: flex; gap: 10px; align-items: flex-start; padding: 7px 0; font-size: 17px; cursor: pointer; line-height: 1.35; }
+.perfil input { accent-color: var(--azul); width: 19px; height: 19px; margin: 1px 0 0; flex: none; }
+.perfil.particular .so-atividade { display: none; }
+.mes-titulo { font-size: 20px; margin: 34px 0 0; }
+.ferramenta .prazo h4 { font-size: clamp(19px, 2.3vw, 23px); letter-spacing: -.3px; margin: 0 0 6px; }
+.nota-prazo { font-weight: 700; color: var(--azul); }
+.vazio { font-size: 18px; margin: 26px 0 0; }
+.pequeno { font-size: 15px; color: var(--suave); max-width: 46em; }
+.calendario-acoes { margin-top: 40px; padding: 26px 28px; border-radius: 22px; position: relative; max-width: 820px; }
+.calendario-acoes::before { content: ""; position: absolute; inset: 0; border: 3px solid var(--azul); border-radius: 22px; filter: url(#traco); opacity: .8; pointer-events: none; }
+.calendario-acoes h3 { margin: 0 0 6px; font-size: 22px; }
+.calendario-acoes p { margin: 8px 0; }
+button.ligacao { font-family: inherit; font-size: inherit; font-weight: 800; background: none; border: 0; padding: 0; cursor: pointer; text-align: left; }
+.semana h2 { margin-bottom: 4px; }
+.semana .prazo h3 { font-size: clamp(19px, 2.3vw, 23px); letter-spacing: -.3px; margin: 0 0 6px; }
+@media (max-width: 780px) {
+  .perfil { grid-template-columns: 1fr; }
+  .calendario-acoes { padding: 22px 20px; }
+}

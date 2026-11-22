@@ -1,0 +1,202 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//bem.contado//Prazos//PT
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Prazos (bem.contado)
+X-WR-TIMEZONE:Europe/Lisbon
+REFRESH-INTERVAL;VALUE=DURATION:P1D
+X-PUBLISHED-TTL:P1D
+BEGIN:VEVENT
+UID:46a0c35369e67fb50477@bemcontadopt.pt
+DTSTAMP:20261122T112318Z
+DTSTART;VALUE=DATE:20261125
+DTEND;VALUE=DATE:20261126
+SUMMARY:Contribuições dos trabalhadores à Segurança Social (outubro)
+DESCRIPTION:Pagamento das contribuições relativas aos salários de outubr
+ o. O prazo vai do dia 10 ao dia 25. Informação geral: confirma sempre an
+ tes de entregar ou pagar. https://bemcontadopt.pt/prazos/
+URL:https://bemcontadopt.pt/prazos/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P2DT15H
+DESCRIPTION:Daqui a 3 dias: Contribuições dos trabalhadores à Segurança
+  Social (outubro)
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15H
+DESCRIPTION:Amanhã: Contribuições dos trabalhadores à Segurança Social
+  (outubro)
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:2afe44067286c871c923@bemcontadopt.pt
+DTSTAMP:20261122T112318Z
+DTSTART;VALUE=DATE:20261207
+DTEND;VALUE=DATE:20261208
+SUMMARY:Comunicação das faturas de novembro
+DESCRIPTION:Quem passa faturas comunica à AT as que emitiu em novembro\, o
+ u que não emitiu nenhuma. As faturas e as faturas-recibo emitidas no Port
+ al das Finanças já ficam comunicadas. Informação geral: confirma sempr
+ e antes de entregar ou pagar. https://bemcontadopt.pt/prazos/
+URL:https://bemcontadopt.pt/prazos/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P2DT15H
+DESCRIPTION:Daqui a 3 dias: Comunicação das faturas de novembro
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15H
+DESCRIPTION:Amanhã: Comunicação das faturas de novembro
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:9a1752ea306b1ac4e8ed@bemcontadopt.pt
+DTSTAMP:20261122T112318Z
+DTSTART;VALUE=DATE:20261210
+DTEND;VALUE=DATE:20261211
+SUMMARY:Declaração Mensal de Remunerações à AT (novembro)
+DESCRIPTION:Entrega da declaração com os salários pagos em novembro e as
+  retenções de IRS feitas. Informação geral: confirma sempre antes de e
+ ntregar ou pagar. https://bemcontadopt.pt/prazos/
+URL:https://bemcontadopt.pt/prazos/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P2DT15H
+DESCRIPTION:Daqui a 3 dias: Declaração Mensal de Remunerações à AT (no
+ vembro)
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15H
+DESCRIPTION:Amanhã: Declaração Mensal de Remunerações à AT (novembro)
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:6e461e6f694861a1f6b3@bemcontadopt.pt
+DTSTAMP:20261122T112318Z
+DTSTART;VALUE=DATE:20261210
+DTEND;VALUE=DATE:20261211
+SUMMARY:Declaração de remunerações à Segurança Social (novembro)
+DESCRIPTION:Entrega da declaração com os salários de novembro. Quem já 
+ aderiu ao novo modelo de comunicação da Segurança Social deixa de a ent
+ regar. Informação geral: confirma sempre antes de entregar ou pagar. htt
+ ps://bemcontadopt.pt/prazos/
+URL:https://bemcontadopt.pt/prazos/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P2DT15H
+DESCRIPTION:Daqui a 3 dias: Declaração de remunerações à Segurança So
+ cial (novembro)
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15H
+DESCRIPTION:Amanhã: Declaração de remunerações à Segurança Social (n
+ ovembro)
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:2b325c615a044ec76c04@bemcontadopt.pt
+DTSTAMP:20261122T112318Z
+DTSTART;VALUE=DATE:20261220
+DTEND;VALUE=DATE:20261221
+SUMMARY:Contribuições à Segurança Social como independente (novembro)
+DESCRIPTION:Pagamento das contribuições do mês anterior\, entre o dia 10
+  e o dia 20. Nos primeiros 12 meses de atividade há\, em regra\, isençã
+ o. O dia 20 calha a um domingo. Para não arriscar\, paga até sexta-feira
+ \, dia 18. Informação geral: confirma sempre antes de entregar ou pagar.
+  https://bemcontadopt.pt/prazos/
+URL:https://bemcontadopt.pt/prazos/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P2DT15H
+DESCRIPTION:Daqui a 3 dias: Contribuições à Segurança Social como indep
+ endente (novembro)
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15H
+DESCRIPTION:Amanhã: Contribuições à Segurança Social como independente
+  (novembro)
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:2e5f0aac2926c98e7e73@bemcontadopt.pt
+DTSTAMP:20261122T112318Z
+DTSTART;VALUE=DATE:20261221
+DTEND;VALUE=DATE:20261222
+SUMMARY:Entrega das retenções na fonte de novembro
+DESCRIPTION:Quem fez retenções de IRS ou IRC em novembro\, por exemplo no
+ s salários\, nas rendas ou nos recibos verdes que pagou\, entrega esse va
+ lor ao Estado. Informação geral: confirma sempre antes de entregar ou pa
+ gar. https://bemcontadopt.pt/prazos/
+URL:https://bemcontadopt.pt/prazos/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P2DT15H
+DESCRIPTION:Daqui a 3 dias: Entrega das retenções na fonte de novembro
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15H
+DESCRIPTION:Amanhã: Entrega das retenções na fonte de novembro
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:0dc11700e68855166600@bemcontadopt.pt
+DTSTAMP:20261122T112318Z
+DTSTART;VALUE=DATE:20261221
+DTEND;VALUE=DATE:20261222
+SUMMARY:IRS: 3.º pagamento por conta
+DESCRIPTION:Para quem tem rendimentos de trabalho independente (categoria B
+ ) e foi notificado pela AT com pagamentos por conta. O valor é calculado 
+ a partir do IRS do ano anterior. Informação geral: confirma sempre antes
+  de entregar ou pagar. https://bemcontadopt.pt/prazos/
+URL:https://bemcontadopt.pt/prazos/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P2DT15H
+DESCRIPTION:Daqui a 3 dias: IRS: 3.º pagamento por conta
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15H
+DESCRIPTION:Amanhã: IRS: 3.º pagamento por conta
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:21fd2a9ec1451667fe4d@bemcontadopt.pt
+DTSTAMP:20261122T112318Z
+DTSTART;VALUE=DATE:20261225
+DTEND;VALUE=DATE:20261226
+SUMMARY:Contribuições dos trabalhadores à Segurança Social (novembro)
+DESCRIPTION:Pagamento das contribuições relativas aos salários de novemb
+ ro. O prazo vai do dia 10 ao dia 25. O dia 25 é feriado. Para não arrisc
+ ar\, paga até dia 24. Informação geral: confirma sempre antes de entreg
+ ar ou pagar. https://bemcontadopt.pt/prazos/
+URL:https://bemcontadopt.pt/prazos/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P2DT15H
+DESCRIPTION:Daqui a 3 dias: Contribuições dos trabalhadores à Segurança
+  Social (novembro)
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15H
+DESCRIPTION:Amanhã: Contribuições dos trabalhadores à Segurança Social
+  (novembro)
+END:VALARM
+END:VEVENT
+END:VCALENDAR

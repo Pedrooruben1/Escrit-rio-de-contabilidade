@@ -1,0 +1,125 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//bem.contado//Prazos//PT
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Prazos (bem.contado)
+X-WR-TIMEZONE:Europe/Lisbon
+REFRESH-INTERVAL;VALUE=DURATION:P1D
+X-PUBLISHED-TTL:P1D
+BEGIN:VEVENT
+UID:45c2167d0597c0eb789b@bemcontadopt.pt
+DTSTAMP:20261122T112318Z
+DTSTART;VALUE=DATE:20261125
+DTEND;VALUE=DATE:20261126
+SUMMARY:Pagamento do IVA do 3.º trimestre
+DESCRIPTION:Pagamento do IVA apurado na declaração do 3.º trimestre (jul
+ ho a setembro)\, para quem está no regime trimestral. Informação geral:
+  confirma sempre antes de entregar ou pagar. https://bemcontadopt.pt/prazo
+ s/
+URL:https://bemcontadopt.pt/prazos/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P2DT15H
+DESCRIPTION:Daqui a 3 dias: Pagamento do IVA do 3.º trimestre
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15H
+DESCRIPTION:Amanhã: Pagamento do IVA do 3.º trimestre
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:cfdb277ab899045c9448@bemcontadopt.pt
+DTSTAMP:20261122T112318Z
+DTSTART;VALUE=DATE:20261130
+DTEND;VALUE=DATE:20261201
+SUMMARY:IMI: prestação de novembro
+DESCRIPTION:Se o IMI deste ano passou dos 100 €\, há uma prestação a p
+ agar em novembro: a 2.ª\, se o total ficou entre 100 € e 500 €\, ou a
+  3.ª\, se passou dos 500 €. Informação geral: confirma sempre antes d
+ e entregar ou pagar. https://bemcontadopt.pt/prazos/
+URL:https://bemcontadopt.pt/prazos/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P2DT15H
+DESCRIPTION:Daqui a 3 dias: IMI: prestação de novembro
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15H
+DESCRIPTION:Amanhã: IMI: prestação de novembro
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:2afe44067286c871c923@bemcontadopt.pt
+DTSTAMP:20261122T112318Z
+DTSTART;VALUE=DATE:20261207
+DTEND;VALUE=DATE:20261208
+SUMMARY:Comunicação das faturas de novembro
+DESCRIPTION:Quem passa faturas comunica à AT as que emitiu em novembro\, o
+ u que não emitiu nenhuma. As faturas e as faturas-recibo emitidas no Port
+ al das Finanças já ficam comunicadas. Informação geral: confirma sempr
+ e antes de entregar ou pagar. https://bemcontadopt.pt/prazos/
+URL:https://bemcontadopt.pt/prazos/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P2DT15H
+DESCRIPTION:Daqui a 3 dias: Comunicação das faturas de novembro
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15H
+DESCRIPTION:Amanhã: Comunicação das faturas de novembro
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:3a7097443f90edbbbb5f@bemcontadopt.pt
+DTSTAMP:20261122T112318Z
+DTSTART;VALUE=DATE:20261215
+DTEND;VALUE=DATE:20261216
+SUMMARY:IRC: 3.º pagamento por conta
+DESCRIPTION:Para as empresas com período de tributação igual ao ano civi
+ l que têm pagamentos por conta a fazer. O valor é calculado a partir do 
+ IRC do ano anterior. Informação geral: confirma sempre antes de entregar
+  ou pagar. https://bemcontadopt.pt/prazos/
+URL:https://bemcontadopt.pt/prazos/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P2DT15H
+DESCRIPTION:Daqui a 3 dias: IRC: 3.º pagamento por conta
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15H
+DESCRIPTION:Amanhã: IRC: 3.º pagamento por conta
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:2e5f0aac2926c98e7e73@bemcontadopt.pt
+DTSTAMP:20261122T112318Z
+DTSTART;VALUE=DATE:20261221
+DTEND;VALUE=DATE:20261222
+SUMMARY:Entrega das retenções na fonte de novembro
+DESCRIPTION:Quem fez retenções de IRS ou IRC em novembro\, por exemplo no
+ s salários\, nas rendas ou nos recibos verdes que pagou\, entrega esse va
+ lor ao Estado. Informação geral: confirma sempre antes de entregar ou pa
+ gar. https://bemcontadopt.pt/prazos/
+URL:https://bemcontadopt.pt/prazos/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P2DT15H
+DESCRIPTION:Daqui a 3 dias: Entrega das retenções na fonte de novembro
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15H
+DESCRIPTION:Amanhã: Entrega das retenções na fonte de novembro
+END:VALARM
+END:VEVENT
+END:VCALENDAR

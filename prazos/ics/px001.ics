@@ -1,0 +1,33 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//bem.contado//Prazos//PT
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Prazos (bem.contado)
+X-WR-TIMEZONE:Europe/Lisbon
+REFRESH-INTERVAL;VALUE=DURATION:P1D
+X-PUBLISHED-TTL:P1D
+BEGIN:VEVENT
+UID:cfdb277ab899045c9448@bemcontadopt.pt
+DTSTAMP:20261122T112318Z
+DTSTART;VALUE=DATE:20261130
+DTEND;VALUE=DATE:20261201
+SUMMARY:IMI: prestação de novembro
+DESCRIPTION:Se o IMI deste ano passou dos 100 €\, há uma prestação a p
+ agar em novembro: a 2.ª\, se o total ficou entre 100 € e 500 €\, ou a
+  3.ª\, se passou dos 500 €. Informação geral: confirma sempre antes d
+ e entregar ou pagar. https://bemcontadopt.pt/prazos/
+URL:https://bemcontadopt.pt/prazos/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P2DT15H
+DESCRIPTION:Daqui a 3 dias: IMI: prestação de novembro
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15H
+DESCRIPTION:Amanhã: IMI: prestação de novembro
+END:VALARM
+END:VEVENT
+END:VCALENDAR

@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Prazos da semana · bem.contado</title>
-<meta name="description" content="Os prazos fiscais e da Segurança Social de cada semana, com a fonte oficial. Atualizado à segunda-feira.">
+<title>Prazos fiscais e da Segurança Social · bem.contado</title>
+<meta name="description" content="Os prazos das Finanças e da Segurança Social filtrados para o teu caso: particular, trabalhador independente ou empresa, IVA mensal ou trimestral. Com ficheiro para o calendário.">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data: https://bemcontadopt.goatcounter.com; base-uri 'none'; form-action 'none'; object-src 'none'">
-<meta property="og:title" content="Prazos da semana · bem.contado">
-<meta property="og:description" content="Os prazos fiscais e da Segurança Social de cada semana, com a fonte oficial. Atualizado à segunda-feira.">
+<meta property="og:title" content="Prazos fiscais e da Segurança Social · bem.contado">
+<meta property="og:description" content="Os prazos das Finanças e da Segurança Social filtrados para o teu caso: particular, trabalhador independente ou empresa, IVA mensal ou trimestral. Com ficheiro para o calendário.">
 <meta property="og:image" content="https://bemcontadopt.pt/og.png">
 <meta property="og:url" content="https://bemcontadopt.pt/prazos/">
 <link rel="canonical" href="https://bemcontadopt.pt/prazos/">
@@ -18,6 +18,7 @@
 <link rel="preload" href="../fonts/manrope-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="../estilo.css">
 <script src="../site.js"></script>
+<script src="prazos.js" defer></script>
 </head>
 <body>
 <svg class="defs" width="0" height="0" aria-hidden="true" focusable="false">
@@ -34,10 +35,10 @@
 <main>
   <section class="hero wrap">
     <div class="texto">
-      <p class="antes">Atualizado à segunda-feira</p>
-      <h1>Prazos da semana</h1>
-      <p class="sub">Todas as segundas-feiras juntamos aqui os prazos fiscais e da Segurança Social dessa semana que interessam a particulares, trabalhadores independentes e empresas, cada um com a fonte oficial.</p>
-      <p class="acoes"><a class="btn" href="https://www.instagram.com/bem.contadopt/" data-contar="instagram-prazos">Seguir no Instagram</a></p>
+      <p class="antes">Finanças e Segurança Social</p>
+      <h1>Prazos</h1>
+      <p class="sub">Os prazos fiscais e da Segurança Social que estão a chegar, filtrados para o teu caso. Às segundas-feiras publicamos também os da semana no Instagram.</p>
+      <p class="ligacoes"><a class="ligacao" href="#teus">Ver os teus prazos</a> <a class="ligacao" href="https://www.instagram.com/bem.contadopt/" data-contar="instagram-prazos">Seguir no Instagram</a></p>
     </div>
     <svg class="desenho" viewBox="0 0 400 330" role="img" aria-label="Desenho de um calendário com um dia marcado a âmbar">
       <g class="mao">
@@ -49,6 +50,44 @@
         <path class="tr d5 ambar" d="M226 206 l10 11 l22 -24"/>
       </g>
     </svg>
+  </section>
+  <section class="wrap ferramenta" id="teus" aria-labelledby="t-teus">
+    <h2 id="t-teus">Os teus prazos</h2>
+    <p class="sub">Escolhe o teu caso e vê só os prazos das Finanças e da Segurança Social que te dizem respeito. Depois, se quiseres, junta-os ao calendário do telemóvel.</p>
+    <form class="perfil" id="perfil" aria-label="O teu caso">
+      <fieldset>
+        <legend>A tua situação</legend>
+        <label><input type="radio" name="s" value="p" checked> Particular (só salário ou pensão)</label>
+        <label><input type="radio" name="s" value="s"> Trabalhador independente, regime simplificado</label>
+        <label><input type="radio" name="s" value="o"> Trabalhador independente, contabilidade organizada</label>
+        <label><input type="radio" name="s" value="e"> Empresa (sociedade)</label>
+      </fieldset>
+      <fieldset class="so-atividade">
+        <legend>IVA</legend>
+        <label><input type="radio" name="i" value="x" checked> Isento (artigo 53.º)</label>
+        <label><input type="radio" name="i" value="t"> Trimestral</label>
+        <label><input type="radio" name="i" value="m"> Mensal</label>
+      </fieldset>
+      <fieldset>
+        <legend>Também tens</legend>
+        <label class="so-atividade"><input type="checkbox" name="t"> Trabalhadores</label>
+        <label><input type="checkbox" name="c" checked> Carro</label>
+        <label><input type="checkbox" name="h" checked> Casa ou outro imóvel</label>
+      </fieldset>
+    </form>
+    <noscript><p>Para filtrar os prazos é preciso ter o JavaScript ligado.</p></noscript>
+    <div id="lista-teus" aria-live="polite"></div>
+    <div class="calendario-acoes" id="cal" hidden>
+      <h3>Juntar ao calendário</h3>
+      <p>O ficheiro tem só os prazos do caso que escolheste, com aviso três dias antes e na véspera.</p>
+      <p class="ligacoes">
+        <a class="ligacao" id="cal-sub" href="#" data-contar="calendario-subscrever">Subscrever no iPhone ou Mac</a>
+        <a class="ligacao" id="cal-ics" href="#" download data-contar="calendario-descarregar">Descarregar o ficheiro .ics</a>
+        <button class="ligacao" type="button" id="cal-copiar" data-contar="calendario-copiar">Copiar o endereço para o Google Calendar</button>
+      </p>
+      <p class="pequeno">Ao subscrever, os prazos novos aparecem sozinhos no calendário quando atualizarmos a lista. O ficheiro descarregado fica como está. No Google Calendar, no computador: Outros calendários, Adicionar a partir de URL, e cola o endereço.</p>
+    </div>
+    <p class="aviso">Informação geral, a partir da agenda fiscal da Autoridade Tributária e da Segurança Social. Mostramos os prazos mais comuns: há obrigações para casos específicos (operações com outros países da União Europeia, imposto do selo, setores especiais) que não estão aqui. Os prazos podem ser prorrogados por despacho, por isso confirma sempre antes de entregar ou pagar.</p>
   </section>
 </main>
 <footer class="wrap">

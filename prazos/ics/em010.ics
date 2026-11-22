@@ -1,0 +1,189 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//bem.contado//Prazos//PT
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Prazos (bem.contado)
+X-WR-TIMEZONE:Europe/Lisbon
+REFRESH-INTERVAL;VALUE=DURATION:P1D
+X-PUBLISHED-TTL:P1D
+BEGIN:VEVENT
+UID:af4b6cadcf19cf5e1051@bemcontadopt.pt
+DTSTAMP:20261122T112318Z
+DTSTART;VALUE=DATE:20261125
+DTEND;VALUE=DATE:20261126
+SUMMARY:Pagamento do IVA de setembro
+DESCRIPTION:Pagamento do IVA apurado na declaração de setembro\, para que
+ m está no regime mensal. Informação geral: confirma sempre antes de ent
+ regar ou pagar. https://bemcontadopt.pt/prazos/
+URL:https://bemcontadopt.pt/prazos/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P2DT15H
+DESCRIPTION:Daqui a 3 dias: Pagamento do IVA de setembro
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15H
+DESCRIPTION:Amanhã: Pagamento do IVA de setembro
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ddbb06b8a00b3fbb141a@bemcontadopt.pt
+DTSTAMP:20261122T112318Z
+DTSTART;VALUE=DATE:20261130
+DTEND;VALUE=DATE:20261201
+SUMMARY:IUC dos carros com matrícula de novembro
+DESCRIPTION:Pagamento do Imposto Único de Circulação dos veículos cuja 
+ matrícula faz anos em novembro. Informação geral: confirma sempre antes
+  de entregar ou pagar. https://bemcontadopt.pt/prazos/
+URL:https://bemcontadopt.pt/prazos/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P2DT15H
+DESCRIPTION:Daqui a 3 dias: IUC dos carros com matrícula de novembro
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15H
+DESCRIPTION:Amanhã: IUC dos carros com matrícula de novembro
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:2afe44067286c871c923@bemcontadopt.pt
+DTSTAMP:20261122T112318Z
+DTSTART;VALUE=DATE:20261207
+DTEND;VALUE=DATE:20261208
+SUMMARY:Comunicação das faturas de novembro
+DESCRIPTION:Quem passa faturas comunica à AT as que emitiu em novembro\, o
+ u que não emitiu nenhuma. As faturas e as faturas-recibo emitidas no Port
+ al das Finanças já ficam comunicadas. Informação geral: confirma sempr
+ e antes de entregar ou pagar. https://bemcontadopt.pt/prazos/
+URL:https://bemcontadopt.pt/prazos/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P2DT15H
+DESCRIPTION:Daqui a 3 dias: Comunicação das faturas de novembro
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15H
+DESCRIPTION:Amanhã: Comunicação das faturas de novembro
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:3a7097443f90edbbbb5f@bemcontadopt.pt
+DTSTAMP:20261122T112318Z
+DTSTART;VALUE=DATE:20261215
+DTEND;VALUE=DATE:20261216
+SUMMARY:IRC: 3.º pagamento por conta
+DESCRIPTION:Para as empresas com período de tributação igual ao ano civi
+ l que têm pagamentos por conta a fazer. O valor é calculado a partir do 
+ IRC do ano anterior. Informação geral: confirma sempre antes de entregar
+  ou pagar. https://bemcontadopt.pt/prazos/
+URL:https://bemcontadopt.pt/prazos/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P2DT15H
+DESCRIPTION:Daqui a 3 dias: IRC: 3.º pagamento por conta
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15H
+DESCRIPTION:Amanhã: IRC: 3.º pagamento por conta
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:82b2408b1bea23142889@bemcontadopt.pt
+DTSTAMP:20261122T112318Z
+DTSTART;VALUE=DATE:20261221
+DTEND;VALUE=DATE:20261222
+SUMMARY:Declaração periódica do IVA de outubro
+DESCRIPTION:Envio da declaração do IVA das operações de outubro\, para 
+ quem está no regime mensal. Informação geral: confirma sempre antes de 
+ entregar ou pagar. https://bemcontadopt.pt/prazos/
+URL:https://bemcontadopt.pt/prazos/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P2DT15H
+DESCRIPTION:Daqui a 3 dias: Declaração periódica do IVA de outubro
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15H
+DESCRIPTION:Amanhã: Declaração periódica do IVA de outubro
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:2e5f0aac2926c98e7e73@bemcontadopt.pt
+DTSTAMP:20261122T112318Z
+DTSTART;VALUE=DATE:20261221
+DTEND;VALUE=DATE:20261222
+SUMMARY:Entrega das retenções na fonte de novembro
+DESCRIPTION:Quem fez retenções de IRS ou IRC em novembro\, por exemplo no
+ s salários\, nas rendas ou nos recibos verdes que pagou\, entrega esse va
+ lor ao Estado. Informação geral: confirma sempre antes de entregar ou pa
+ gar. https://bemcontadopt.pt/prazos/
+URL:https://bemcontadopt.pt/prazos/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P2DT15H
+DESCRIPTION:Daqui a 3 dias: Entrega das retenções na fonte de novembro
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15H
+DESCRIPTION:Amanhã: Entrega das retenções na fonte de novembro
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:6b5ba9e941a93d4f9964@bemcontadopt.pt
+DTSTAMP:20261122T112318Z
+DTSTART;VALUE=DATE:20261228
+DTEND;VALUE=DATE:20261229
+SUMMARY:Pagamento do IVA de outubro
+DESCRIPTION:Pagamento do IVA apurado na declaração de outubro\, para quem
+  está no regime mensal. Informação geral: confirma sempre antes de entr
+ egar ou pagar. https://bemcontadopt.pt/prazos/
+URL:https://bemcontadopt.pt/prazos/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P2DT15H
+DESCRIPTION:Daqui a 3 dias: Pagamento do IVA de outubro
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15H
+DESCRIPTION:Amanhã: Pagamento do IVA de outubro
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:50891b9182455f7425b7@bemcontadopt.pt
+DTSTAMP:20261122T112318Z
+DTSTART;VALUE=DATE:20261231
+DTEND;VALUE=DATE:20270101
+SUMMARY:IUC dos carros com matrícula de dezembro
+DESCRIPTION:Pagamento do Imposto Único de Circulação dos veículos cuja 
+ matrícula faz anos em dezembro. Informação geral: confirma sempre antes
+  de entregar ou pagar. https://bemcontadopt.pt/prazos/
+URL:https://bemcontadopt.pt/prazos/
+TRANSP:TRANSPARENT
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-P2DT15H
+DESCRIPTION:Daqui a 3 dias: IUC dos carros com matrícula de dezembro
+END:VALARM
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT15H
+DESCRIPTION:Amanhã: IUC dos carros com matrícula de dezembro
+END:VALARM
+END:VEVENT
+END:VCALENDAR
