@@ -12,6 +12,6 @@ Story: quiz: Em cartão, em 2027 (previsto): quanto fica isento de IRS por dia? 
 Fonte: https://eco.sapo.pt/2026/11/12/cerca-de-24-milhoes-de-trabalhadores-recebem-subsidio-de-refeicao-atraves-de-cartao/
 https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/cirs_rep/Pages/irs2.aspx
 Conta verificada: 6,15 × 1,70 = 10,455 (2026); 6,30 × 1,70 = 10,71 (2027); 6,30 − 6,15 = 0,15
-Por confirmar: a data de 1 de janeiro de 2027 não aparece na fonte da ECO que consegui ler, por isso não entra no story. O artigo do Público não abre daqui. Os 10,97 € (10,965 €) são o valor previsto para 2028 e ficaram de fora. O Código do IRS fala em "vales de refeição"; a ECO aplica a mesma regra ao cartão. Nas opções, 6,30 € é o limite previsto para o pagamento em dinheiro e 10,455 € é o limite atual em cartão.
+Por confirmar: na ECO, a data de 1 de janeiro só aparece a propósito dos acordos de empresa e convenções coletivas, não como entrada em vigor na função pública, por isso não entra no story. O artigo do Público não abre daqui. Os 10,97 € (10,965 €) são o valor previsto para 2028 e ficaram de fora. O Código do IRS fala em "vales de refeição"; a ECO aplica a mesma regra ao cartão. Nas opções, 6,30 € é o limite previsto para o pagamento em dinheiro e 10,455 € é o limite atual em cartão.
 
 Story para terça-feira, 24/11: publicar à mão. Não precisa de resposta; para outra proposta, não, seguido do que preferem.
