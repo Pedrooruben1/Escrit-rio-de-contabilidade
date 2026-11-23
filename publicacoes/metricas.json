@@ -1,0 +1,37 @@
+[
+ {
+  "semana": "2026-11-16 a 2026-11-22",
+  "data": "2026-11-23",
+  "seguidores": 13,
+  "publicacoes": [
+   {
+    "id": "18114682457125539",
+    "data": "2026-11-18",
+    "serie": "apresentacao",
+    "gostos": 3,
+    "comentarios": 0
+   },
+   {
+    "id": "18162697234503103",
+    "data": "2026-11-19",
+    "serie": "noticia",
+    "gostos": 4,
+    "comentarios": 0
+   },
+   {
+    "id": "18643549936032195",
+    "data": "2026-11-20",
+    "serie": "aprender",
+    "gostos": 3,
+    "comentarios": 0
+   },
+   {
+    "id": "17986338359901832",
+    "data": "2026-11-21",
+    "serie": "curiosidade",
+    "gostos": 4,
+    "comentarios": 0
+   }
+  ]
+ }
+]
