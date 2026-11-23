@@ -3,7 +3,7 @@
  "serie": "story",
  "fundo": "branco",
  "publicar_as": "13:00",
- "proposta": 1,
+ "proposta": 2,
  "estado": "so_story",
  "enviado_em": "2026-11-23T19:00:38Z",
  "tentativas": 1,
@@ -11,18 +11,18 @@
  "publicar_video": false,
  "media_id": null,
  "permalink": null,
- "ultima_resposta": null,
+ "ultima_resposta": "2026-11-23T20:59:04.256Z",
  "opcoes": {
   "A": {
-   "tema": "Prestações do IMI quando o valor total passa dos 500 € (quiz)",
+   "tema": "Limite diário do subsídio de refeição em cartão isento de IRS em 2027, valor previsto (quiz)",
    "formato": "Só story",
    "imagens": [],
    "video": null,
    "capa": null,
-   "story": "https://raw.githubusercontent.com/Pedrooruben1/Escrit-rio-de-contabilidade/claude/publicacoes/publicacoes/2026-11-24/story.png",
+   "story": "https://raw.githubusercontent.com/Pedrooruben1/Escrit-rio-de-contabilidade/claude/publicacoes/publicacoes/2026-11-24/p2/story.png",
    "descritivo": "",
    "texto_alternativo": [],
-   "story_texto": "quiz: IMI total acima de 500 €: em regra, quantas prestações? | 1; 2; 3 (certa)"
+   "story_texto": "quiz: Em cartão, em 2027 (previsto): quanto fica isento de IRS por dia? | 6,30 €; 10,455 €; 10,71 € (certa)"
   }
  }
 }
