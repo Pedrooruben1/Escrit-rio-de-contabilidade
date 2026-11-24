@@ -4,14 +4,14 @@
  "fundo": "branco",
  "publicar_as": "13:00",
  "proposta": 1,
- "estado": "pendente",
+ "estado": "aprovada",
  "enviado_em": "2026-11-24T19:01:21Z",
  "tentativas": 1,
- "opcao_aprovada": null,
+ "opcao_aprovada": "A",
  "publicar_video": false,
  "media_id": null,
  "permalink": null,
- "ultima_resposta": null,
+ "ultima_resposta": "2026-11-24T20:53:33.721Z",
  "opcoes": {
   "A": {
    "tema": "Como se calcula a contribuição mensal dos trabalhadores independentes (recibos verdes) para a Segurança Social",
