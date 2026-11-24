@@ -1,0 +1,42 @@
+{
+ "data": "2026-11-25",
+ "serie": "aprender",
+ "fundo": "branco",
+ "publicar_as": "13:00",
+ "proposta": 1,
+ "estado": "pendente",
+ "enviado_em": null,
+ "tentativas": 0,
+ "opcao_aprovada": null,
+ "publicar_video": false,
+ "media_id": null,
+ "permalink": null,
+ "ultima_resposta": null,
+ "opcoes": {
+  "A": {
+   "tema": "Como se calcula a contribuição mensal dos trabalhadores independentes (recibos verdes) para a Segurança Social",
+   "formato": "carrossel de 6 imagens",
+   "imagens": [
+    "https://raw.githubusercontent.com/Pedrooruben1/Escrit-rio-de-contabilidade/claude/publicacoes/publicacoes/2026-11-25/slide_1.png",
+    "https://raw.githubusercontent.com/Pedrooruben1/Escrit-rio-de-contabilidade/claude/publicacoes/publicacoes/2026-11-25/slide_2.png",
+    "https://raw.githubusercontent.com/Pedrooruben1/Escrit-rio-de-contabilidade/claude/publicacoes/publicacoes/2026-11-25/slide_3.png",
+    "https://raw.githubusercontent.com/Pedrooruben1/Escrit-rio-de-contabilidade/claude/publicacoes/publicacoes/2026-11-25/slide_4.png",
+    "https://raw.githubusercontent.com/Pedrooruben1/Escrit-rio-de-contabilidade/claude/publicacoes/publicacoes/2026-11-25/slide_5.png",
+    "https://raw.githubusercontent.com/Pedrooruben1/Escrit-rio-de-contabilidade/claude/publicacoes/publicacoes/2026-11-25/slide_6.png"
+   ],
+   "video": null,
+   "capa": null,
+   "story": "https://raw.githubusercontent.com/Pedrooruben1/Escrit-rio-de-contabilidade/claude/publicacoes/publicacoes/2026-11-25/story.png",
+   "descritivo": "Em regra, a contribuição mensal de quem passa recibos verdes para a Segurança Social sai de três contas.\n\nExemplo simplificado: um trabalhador independente teve 3000 € de rendimentos de prestação de serviços nos três meses declarados e não tem outra atividade.\n\n1. Rendimento relevante\nNos serviços conta 70% do valor: 70% de 3000 € = 2100 €. Na produção e venda de bens, e nos serviços de hotelaria, restauração e bebidas, o coeficiente é 20%.\n\n2. Base mensal\nO rendimento relevante divide-se por três meses: 2100 € ÷ 3 = 700 €. É a base de incidência contributiva, que produz efeitos no próprio mês e nos dois meses seguintes.\n\n3. Taxa\nAplica-se a taxa de 21,4%: 21,4% de 700 € = 149,80 €.\n\nResultado\nA contribuição é de 149,80 € por mês, paga entre o dia 10 e o dia 20 do mês seguinte àquele a que respeita. Sem rendimentos, ou se a conta der menos de 20 €, a contribuição fica nos 20 € por mês.\n\nA declaração trimestral entrega-se até ao último dia de janeiro, abril, julho e outubro, com os rendimentos dos três meses anteriores. O exemplo segue a regra geral: o primeiro enquadramento só produz efeitos no 1.º dia do 12.º mês depois do início de atividade, quem tem contabilidade organizada segue outra regra (lucro tributável do ano anterior a dividir por 12), os empresários em nome individual, entre outros, têm a taxa de 25,2% e quem acumula com trabalho por conta de outrem pode, em certas condições, estar isento.\n\nGuarde para conferir a conta na próxima declaração trimestral.\n#recibosverdes #trabalhadorindependente #segurancasocial #contribuicoes",
+   "texto_alternativo": [
+    "Ilustração de um recibo ao lado de uma escada com três degraus numerados, em destaque, que leva a uma moeda, com o texto \"Recibos verdes: a contribuição para a Segurança Social calcula-se em três passos\".",
+    "Três recibos de 1000 unidos por uma chaveta com o total 3000, com o texto \"1. Somar o valor dos serviços prestados nos três meses. No exemplo, 3000 €\".",
+    "Uma barra de 3000 dividida em 70% (2100, em destaque) e 30%, com o texto \"2. Nos serviços, em regra, conta 70% desse valor: é o rendimento relevante\".",
+    "Um bloco de 2100 dividido por 3 em três blocos de 700, com seta \"×21,4%\" para uma moeda de 149,80 a pagar cada mês, com o texto \"3. Dividir por três meses e aplicar a taxa de 21,4%\".",
+    "Calendário do mês seguinte com um traço entre os dias 10 e 20 e uma moeda de 149,80, com o texto \"Resultado: 149,80 € por mês, pagos entre os dias 10 e 20 do mês seguinte\".",
+    "Um recibo com 0 e uma seta para uma moeda de 20 €, com o texto \"Sem rendimentos no trimestre, a contribuição é de 20 € por mês\"."
+   ],
+   "story_texto": "quiz: Serviços em geral: que parte conta para a Segurança Social? | 50%; 70% (certa); 100%"
+  }
+ }
+}

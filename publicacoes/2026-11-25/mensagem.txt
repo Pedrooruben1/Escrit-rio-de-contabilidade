@@ -1,0 +1,51 @@
+Proposta para quarta-feira, 25/11/2026 · Aprender
+
+Recomendação: Publicação + story, porque quarta é dia de Aprender na grelha e o cálculo da contribuição dos independentes dá um exemplo com números simples.
+
+Tema: Como se calcula a contribuição mensal de quem passa recibos verdes para a Segurança Social
+Porquê este tema: é a conta por trás da contribuição de quem entrega a declaração trimestral e o guia oficial da Segurança Social (publicado a 14/01/2026) explica-a com coeficientes e taxa fixos: 70% dos serviços, a dividir por três, vezes 21,4%. Não foi encontrada notícia desta semana que mude alguma coisa para as pessoas.
+Formato: carrossel de 6 imagens
+Fundo: branco, texto azul #17324D e destaque âmbar
+Publicar às: quarta, 25/11, às 13h00
+Texto da imagem:
+Imagem 1: Recibos verdes: a contribuição para a Segurança Social calcula-se em [três passos].
+Imagem 2: 1. Somar o valor dos serviços prestados nos três meses. No exemplo, [3000 €].
+Imagem 3: 2. Nos serviços, em regra, conta [70%] desse valor: é o rendimento relevante.
+Imagem 4: 3. Dividir por três meses e aplicar a taxa de [21,4%].
+Imagem 5: Resultado: [149,80 €] por mês, pagos entre os dias 10 e 20 do mês seguinte.
+Imagem 6: Sem rendimentos no trimestre, a contribuição é de [20 €] por mês.
+
+Descritivo para o Instagram:
+Em regra, a contribuição mensal de quem passa recibos verdes para a Segurança Social sai de três contas.
+
+Exemplo simplificado: um trabalhador independente teve 3000 € de rendimentos de prestação de serviços nos três meses declarados e não tem outra atividade.
+
+1. Rendimento relevante
+Nos serviços conta 70% do valor: 70% de 3000 € = 2100 €. Na produção e venda de bens, e nos serviços de hotelaria, restauração e bebidas, o coeficiente é 20%.
+
+2. Base mensal
+O rendimento relevante divide-se por três meses: 2100 € ÷ 3 = 700 €. É a base de incidência contributiva, que produz efeitos no próprio mês e nos dois meses seguintes.
+
+3. Taxa
+Aplica-se a taxa de 21,4%: 21,4% de 700 € = 149,80 €.
+
+Resultado
+A contribuição é de 149,80 € por mês, paga entre o dia 10 e o dia 20 do mês seguinte àquele a que respeita. Sem rendimentos, ou se a conta der menos de 20 €, a contribuição fica nos 20 € por mês.
+
+A declaração trimestral entrega-se até ao último dia de janeiro, abril, julho e outubro, com os rendimentos dos três meses anteriores. O exemplo segue a regra geral: o primeiro enquadramento só produz efeitos no 1.º dia do 12.º mês depois do início de atividade, quem tem contabilidade organizada segue outra regra (lucro tributável do ano anterior a dividir por 12), os empresários em nome individual, entre outros, têm a taxa de 25,2% e quem acumula com trabalho por conta de outrem pode, em certas condições, estar isento.
+
+Guarde para conferir a conta na próxima declaração trimestral.
+#recibosverdes #trabalhadorindependente #segurancasocial #contribuicoes
+
+Texto alternativo:
+Imagem 1: Ilustração de um recibo ao lado de uma escada com três degraus numerados, em destaque, que leva a uma moeda, com o texto "Recibos verdes: a contribuição para a Segurança Social calcula-se em três passos".
+Imagem 2: Três recibos de 1000 unidos por uma chaveta com o total 3000, com o texto "1. Somar o valor dos serviços prestados nos três meses. No exemplo, 3000 €".
+Imagem 3: Uma barra de 3000 dividida em 70% (2100, em destaque) e 30%, com o texto "2. Nos serviços, em regra, conta 70% desse valor: é o rendimento relevante".
+Imagem 4: Um bloco de 2100 dividido por 3 em três blocos de 700, com seta "×21,4%" para uma moeda de 149,80 a pagar cada mês, com o texto "3. Dividir por três meses e aplicar a taxa de 21,4%".
+Imagem 5: Calendário do mês seguinte com um traço entre os dias 10 e 20 e uma moeda de 149,80, com o texto "Resultado: 149,80 € por mês, pagos entre os dias 10 e 20 do mês seguinte".
+Imagem 6: Um recibo com 0 e uma seta para uma moeda de 20 €, com o texto "Sem rendimentos no trimestre, a contribuição é de 20 € por mês".
+
+Story: quiz: Serviços em geral: que parte conta para a Segurança Social? | 50%; 70% (certa); 100% (a imagem do story vai no Telegram; o autocolante coloca-se na zona livre a meio, na aplicação)
+
+Fonte: https://www.seg-social.pt/ptss/pssd/documento/cmdddzytm006agq2y1ci6tibc
+Conta verificada: 1000 × 3 = 3000; 70% de 3000 = 2100; 2100 ÷ 3 = 700; 21,4% de 700 = 149,80
