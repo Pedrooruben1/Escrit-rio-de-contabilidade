@@ -1,0 +1,28 @@
+{
+ "data": "2026-11-26",
+ "serie": "story",
+ "fundo": "azul",
+ "publicar_as": "13:00",
+ "proposta": 1,
+ "estado": "so_story",
+ "enviado_em": null,
+ "tentativas": 0,
+ "opcao_aprovada": null,
+ "publicar_video": false,
+ "media_id": null,
+ "permalink": null,
+ "ultima_resposta": null,
+ "opcoes": {
+  "A": {
+   "tema": "Contribuição mínima dos trabalhadores independentes sem rendimentos para a Segurança Social (quiz)",
+   "formato": "Só story",
+   "imagens": [],
+   "video": null,
+   "capa": null,
+   "story": "https://raw.githubusercontent.com/Pedrooruben1/Escrit-rio-de-contabilidade/claude/publicacoes/publicacoes/2026-11-26/story.png",
+   "descritivo": "",
+   "texto_alternativo": [],
+   "story_texto": "quiz: Independente sem rendimentos e obrigado a contribuir: quanto paga? | 10 € por mês; 20 € por mês (certa); 50 € por mês"
+  }
+ }
+}
